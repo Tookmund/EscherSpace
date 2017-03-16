@@ -7,7 +7,7 @@ Quake 3 Arena in Space!
 
 
 
-Based on escherquake
+Based on escherquake by Johnny Goodnow
 
 SPACE
 
@@ -35,7 +35,4 @@ SPACE
 
 Maybe?
 ---
-- [ ] Fix View Angles when changing ground 
-
 - [ ] Stop Spawn Floating
-
