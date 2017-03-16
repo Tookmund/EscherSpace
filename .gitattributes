@@ -4,3 +4,5 @@
 # to native line endings on checkout.
 *.c text
 *.h text
+*.txt text
+*.md text
