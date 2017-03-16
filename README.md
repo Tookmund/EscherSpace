@@ -5,12 +5,15 @@ SpaceQuake
 
 Quake 3 Arena in Space!
 
-
-
 Based on escherquake by Johnny Goodnow
 
-SPACE
+*N.B. This mod is ALPHA. It is playable but there will be bugs*
 
+This is not a standard git repository but rather a place to store this code.
+
+It uses comments as a VCS instead of git as that's how it started
+
+SPACE
 -----
 
 - [x] Knockback
@@ -29,10 +32,10 @@ SPACE
 - [x] Railgun only with lightning firerate
 - [x] Recharge ammo over time
 - [x] Disable rail hum and rail spiral
-- [ ] Fix jumping angles
+- [x] Fix jumping angles
 - [ ] Fix Weapons
 - [ ] Clanking when not on floor
 
 Maybe?
----
+-----
 - [ ] Stop Spawn Floating
