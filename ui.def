@@ -1,0 +1,3 @@
+EXPORTS
+	vmMain=_vmMain
+	dllEntry=_dllEntry

@@ -1,0 +1,7 @@
+-as you change your axis of orientation, set one of the awards (IMPRESSIVE) to 
+a certain value (0 for on the ground, 1 on the right wall, 2 on the ceiling, etc).
+
+use that value in bg_pmove PM_CheckDuck method to set the pm->ps->viewheight 
+to the croucn viewheight when on the ceiling so all items are visible.
+
+-make sure to disable all other uses of that award

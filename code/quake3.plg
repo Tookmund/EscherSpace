@@ -1,0 +1,424 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: botlib - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP88.tmp" with contents
+[
+/nologo /G5 /MTd /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_LIB" /D "BOTLIB" /D "DEBUG" /D "_MBCS" /FR".\Debug/" /Fp".\Debug/botlib.pch" /YX /Fo".\Debug/" /Fd".\Debug/" /GZ  /GZ /c 
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_bspq3.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_cluster.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_debug.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_entity.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_file.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_main.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_move.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_optimize.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_reach.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_route.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_routealt.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_aas_sample.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_ai_char.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_ai_chat.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_ai_gen.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_ai_goal.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_ai_move.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_ai_weap.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_ai_weight.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_ea.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\be_interface.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\l_crc.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\l_libvar.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\l_log.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\l_memory.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\l_precomp.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\l_script.c"
+"C:\ygpip\Quake III Arena\mygame\code\botlib\l_struct.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP88.tmp" 
+Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP89.tmp" with contents
+[
+/nologo /out:".\Debug\botlib.lib" 
+".\Debug\be_aas_bspq3.obj"
+".\Debug\be_aas_cluster.obj"
+".\Debug\be_aas_debug.obj"
+".\Debug\be_aas_entity.obj"
+".\Debug\be_aas_file.obj"
+".\Debug\be_aas_main.obj"
+".\Debug\be_aas_move.obj"
+".\Debug\be_aas_optimize.obj"
+".\Debug\be_aas_reach.obj"
+".\Debug\be_aas_route.obj"
+".\Debug\be_aas_routealt.obj"
+".\Debug\be_aas_sample.obj"
+".\Debug\be_ai_char.obj"
+".\Debug\be_ai_chat.obj"
+".\Debug\be_ai_gen.obj"
+".\Debug\be_ai_goal.obj"
+".\Debug\be_ai_move.obj"
+".\Debug\be_ai_weap.obj"
+".\Debug\be_ai_weight.obj"
+".\Debug\be_ea.obj"
+".\Debug\be_interface.obj"
+".\Debug\l_crc.obj"
+".\Debug\l_libvar.obj"
+".\Debug\l_log.obj"
+".\Debug\l_memory.obj"
+".\Debug\l_precomp.obj"
+".\Debug\l_script.obj"
+".\Debug\l_struct.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP89.tmp"
+<h3>Output Window</h3>
+Compiling...
+be_aas_bspq3.c
+be_aas_cluster.c
+be_aas_debug.c
+be_aas_entity.c
+be_aas_file.c
+be_aas_main.c
+be_aas_move.c
+be_aas_optimize.c
+be_aas_reach.c
+be_aas_route.c
+be_aas_routealt.c
+be_aas_sample.c
+be_ai_char.c
+be_ai_chat.c
+be_ai_gen.c
+be_ai_goal.c
+be_ai_move.c
+be_ai_weap.c
+be_ai_weight.c
+be_ea.c
+be_interface.c
+l_crc.c
+l_libvar.c
+l_log.c
+l_memory.c
+l_precomp.c
+l_script.c
+l_struct.c
+Creating library...
+<h3>
+--------------------Configuration: renderer - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8A.tmp" with contents
+[
+/nologo /G5 /MTd /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_LIB" /D "_MBCS" /FR".\Debug/" /Fp".\Debug/renderer.pch" /YX /Fo".\Debug/" /Fd".\Debug/" /GZ  /GZ /c 
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_animation.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_backend.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_bsp.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_cmds.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_curve.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_flares.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_font.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_image.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_init.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_light.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_main.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_marks.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_mesh.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_model.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_noise.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_scene.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_shade.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_shade_calc.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_shader.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_shadows.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_sky.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_surface.c"
+"C:\ygpip\Quake III Arena\mygame\code\renderer\tr_world.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_gamma.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_glimp.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_qgl.c"
+"C:\ygpip\Quake III Arena\mygame\code\jpeg-6\jerror.c"
+"C:\ygpip\Quake III Arena\mygame\code\jpeg-6\jmemnobs.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8A.tmp" 
+Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8B.tmp" with contents
+[
+/nologo /out:".\Debug\renderer.lib" 
+".\Debug\tr_animation.obj"
+".\Debug\tr_backend.obj"
+".\Debug\tr_bsp.obj"
+".\Debug\tr_cmds.obj"
+".\Debug\tr_curve.obj"
+".\Debug\tr_flares.obj"
+".\Debug\tr_font.obj"
+".\Debug\tr_image.obj"
+".\Debug\tr_init.obj"
+".\Debug\tr_light.obj"
+".\Debug\tr_main.obj"
+".\Debug\tr_marks.obj"
+".\Debug\tr_mesh.obj"
+".\Debug\tr_model.obj"
+".\Debug\tr_noise.obj"
+".\Debug\tr_scene.obj"
+".\Debug\tr_shade.obj"
+".\Debug\tr_shade_calc.obj"
+".\Debug\tr_shader.obj"
+".\Debug\tr_shadows.obj"
+".\Debug\tr_sky.obj"
+".\Debug\tr_surface.obj"
+".\Debug\tr_world.obj"
+".\Debug\win_gamma.obj"
+".\Debug\win_glimp.obj"
+".\Debug\win_qgl.obj"
+".\Debug\jcapimin.obj"
+".\Debug\jccoefct.obj"
+".\Debug\jccolor.obj"
+".\Debug\jcdctmgr.obj"
+".\Debug\jchuff.obj"
+".\Debug\jcinit.obj"
+".\Debug\jcmainct.obj"
+".\Debug\jcmarker.obj"
+".\Debug\jcmaster.obj"
+".\Debug\jcomapi.obj"
+".\Debug\jcparam.obj"
+".\Debug\jcphuff.obj"
+".\Debug\jcprepct.obj"
+".\Debug\jcsample.obj"
+".\Debug\jctrans.obj"
+".\Debug\jdapimin.obj"
+".\Debug\jdapistd.obj"
+".\Debug\jdatadst.obj"
+".\Debug\jdatasrc.obj"
+".\Debug\jdcoefct.obj"
+".\Debug\jdcolor.obj"
+".\Debug\jddctmgr.obj"
+".\Debug\jdhuff.obj"
+".\Debug\jdinput.obj"
+".\Debug\jdmainct.obj"
+".\Debug\jdmarker.obj"
+".\Debug\jdmaster.obj"
+".\Debug\jdpostct.obj"
+".\Debug\jdsample.obj"
+".\Debug\jdtrans.obj"
+".\Debug\jerror.obj"
+".\Debug\jfdctflt.obj"
+".\Debug\jidctflt.obj"
+".\Debug\jmemmgr.obj"
+".\Debug\jmemnobs.obj"
+".\Debug\jutils.obj"
+]
+Creating command line "link.exe -lib @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8B.tmp"
+<h3>Output Window</h3>
+Compiling...
+tr_animation.c
+tr_backend.c
+tr_bsp.c
+tr_cmds.c
+tr_curve.c
+tr_flares.c
+tr_font.c
+tr_image.c
+tr_init.c
+tr_light.c
+tr_main.c
+tr_marks.c
+tr_mesh.c
+tr_model.c
+tr_noise.c
+tr_scene.c
+tr_shade.c
+tr_shade_calc.c
+tr_shader.c
+tr_shadows.c
+tr_sky.c
+tr_surface.c
+tr_world.c
+win_gamma.c
+win_glimp.c
+win_qgl.c
+jerror.c
+jmemnobs.c
+Creating library...
+<h3>
+--------------------Configuration: quake3 - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8C.tmp" with contents
+[
+/nologo /G5 /MTd /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /FR".\Debug/" /Fp".\Debug/quake3.pch" /YX /Fo".\Debug/" /Fd".\Debug/" /GZ  /GZ /c 
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_cgame.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_cin.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_console.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_input.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_keys.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_main.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_net_chan.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_parse.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_scrn.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\cl_ui.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\cm_load.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\cm_patch.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\cm_polylib.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\cm_test.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\cm_trace.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\cmd.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\common.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\cvar.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\files.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\huffman.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\msg.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\net_chan.c"
+"C:\ygpip\Quake III Arena\mygame\code\game\q_math.c"
+"C:\ygpip\Quake III Arena\mygame\code\game\q_shared.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\snd_adpcm.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\snd_dma.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\snd_mem.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\snd_mix.c"
+"C:\ygpip\Quake III Arena\mygame\code\client\snd_wavelet.c"
+"C:\ygpip\Quake III Arena\mygame\code\server\sv_bot.c"
+"C:\ygpip\Quake III Arena\mygame\code\server\sv_ccmds.c"
+"C:\ygpip\Quake III Arena\mygame\code\server\sv_client.c"
+"C:\ygpip\Quake III Arena\mygame\code\server\sv_game.c"
+"C:\ygpip\Quake III Arena\mygame\code\server\sv_init.c"
+"C:\ygpip\Quake III Arena\mygame\code\server\sv_main.c"
+"C:\ygpip\Quake III Arena\mygame\code\server\sv_net_chan.c"
+"C:\ygpip\Quake III Arena\mygame\code\server\sv_snapshot.c"
+"C:\ygpip\Quake III Arena\mygame\code\server\sv_world.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\unzip.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\vm.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\vm_interpreted.c"
+"C:\ygpip\Quake III Arena\mygame\code\qcommon\vm_x86.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_input.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_main.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_net.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_shared.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_snd.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_syscon.c"
+"C:\ygpip\Quake III Arena\mygame\code\win32\win_wndproc.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8C.tmp" 
+Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8D.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib winmm.lib wsock32.lib /nologo /stack:0x800000 /subsystem:windows /incremental:yes /pdb:".\Debug/quake3.pdb" /map:".\Debug/quake3.map" /debug /machine:IX86 /out:".\Debug/quake3.exe" /pdbtype:sept 
+".\Debug\cl_cgame.obj"
+".\Debug\cl_cin.obj"
+".\Debug\cl_console.obj"
+".\Debug\cl_input.obj"
+".\Debug\cl_keys.obj"
+".\Debug\cl_main.obj"
+".\Debug\cl_net_chan.obj"
+".\Debug\cl_parse.obj"
+".\Debug\cl_scrn.obj"
+".\Debug\cl_ui.obj"
+".\Debug\cm_load.obj"
+".\Debug\cm_patch.obj"
+".\Debug\cm_polylib.obj"
+".\Debug\cm_test.obj"
+".\Debug\cm_trace.obj"
+".\Debug\cmd.obj"
+".\Debug\common.obj"
+".\Debug\cvar.obj"
+".\Debug\files.obj"
+".\Debug\huffman.obj"
+".\Debug\md4.obj"
+".\Debug\msg.obj"
+".\Debug\net_chan.obj"
+".\Debug\q_math.obj"
+".\Debug\q_shared.obj"
+".\Debug\snd_adpcm.obj"
+".\Debug\snd_dma.obj"
+".\Debug\snd_mem.obj"
+".\Debug\snd_mix.obj"
+".\Debug\snd_wavelet.obj"
+".\Debug\sv_bot.obj"
+".\Debug\sv_ccmds.obj"
+".\Debug\sv_client.obj"
+".\Debug\sv_game.obj"
+".\Debug\sv_init.obj"
+".\Debug\sv_main.obj"
+".\Debug\sv_net_chan.obj"
+".\Debug\sv_snapshot.obj"
+".\Debug\sv_world.obj"
+".\Debug\unzip.obj"
+".\Debug\vm.obj"
+".\Debug\vm_interpreted.obj"
+".\Debug\vm_x86.obj"
+".\Debug\win_input.obj"
+".\Debug\win_main.obj"
+".\Debug\win_net.obj"
+".\Debug\win_shared.obj"
+".\Debug\win_snd.obj"
+".\Debug\win_syscon.obj"
+".\Debug\win_wndproc.obj"
+".\win32\winquake.res"
+".\botlib\Debug\botlib.lib"
+".\renderer\Debug\renderer.lib"
+]
+Creating command line "link.exe @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8D.tmp"
+<h3>Output Window</h3>
+Compiling...
+cl_cgame.c
+cl_cin.c
+cl_console.c
+cl_input.c
+cl_keys.c
+cl_main.c
+cl_net_chan.c
+cl_parse.c
+cl_scrn.c
+cl_ui.c
+cm_load.c
+cm_patch.c
+cm_polylib.c
+cm_test.c
+cm_trace.c
+cmd.c
+common.c
+cvar.c
+files.c
+huffman.c
+msg.c
+net_chan.c
+q_math.c
+q_shared.c
+snd_adpcm.c
+snd_dma.c
+snd_mem.c
+snd_mix.c
+snd_wavelet.c
+sv_bot.c
+sv_ccmds.c
+sv_client.c
+sv_game.c
+sv_init.c
+sv_main.c
+sv_net_chan.c
+sv_snapshot.c
+sv_world.c
+unzip.c
+vm.c
+vm_interpreted.c
+vm_x86.c
+win_input.c
+win_main.c
+win_net.c
+win_shared.c
+win_snd.c
+win_syscon.c
+win_wndproc.c
+Linking...
+LINK : LNK6004: .\Debug/quake3.exe not found or not built by the last incremental link; performing full link
+Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8F.bat" with contents
+[
+@echo off
+rem bash -c "perl ./unix/cons -- debug"
+]
+Creating command line "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP8F.bat"
+Post build processing..
+
+
+
+<h3>Results</h3>
+quake3.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>
