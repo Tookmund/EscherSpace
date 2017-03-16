@@ -1176,17 +1176,22 @@ void ClientSpawn(gentity_t *ent) {
 
 	client->ps.clientNum = index;
 
+	/* SPAAACE rail
 	client->ps.stats[STAT_WEAPONS] = ( 1 << WP_MACHINEGUN );
+	
 	if ( g_gametype.integer == GT_TEAM ) {
 		client->ps.ammo[WP_MACHINEGUN] = 50;
 	} else {
 		client->ps.ammo[WP_MACHINEGUN] = 100;
 	}
-
+	*/
+	client->ps.stats[STAT_WEAPONS] = ( 1 << WP_RAILGUN );
+	client->ps.ammo[WP_RAILGUN] = 100;
+	/*
 	client->ps.stats[STAT_WEAPONS] |= ( 1 << WP_GAUNTLET );
 	client->ps.ammo[WP_GAUNTLET] = -1;
 	client->ps.ammo[WP_GRAPPLING_HOOK] = -1;
-
+	*/
 	// health will count down towards max_health
 	ent->health = client->ps.stats[STAT_HEALTH] = client->ps.stats[STAT_MAX_HEALTH] + 25;
 

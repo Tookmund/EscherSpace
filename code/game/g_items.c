@@ -233,7 +233,7 @@ int Pickup_Ammo (gentity_t *ent, gentity_t *other)
 
 
 int Pickup_Weapon (gentity_t *ent, gentity_t *other) {
-	int		quantity;
+	int quantity;
 
 	if ( ent->count < 0 ) {
 		quantity = 0; // None for you, sir!
@@ -255,7 +255,7 @@ int Pickup_Weapon (gentity_t *ent, gentity_t *other) {
 			}
 		}
 	}
-
+	
 	// add the weapon
 	other->client->ps.stats[STAT_WEAPONS] |= ( 1 << ent->item->giTag );
 
@@ -880,7 +880,11 @@ be on an entity that hasn't spawned yet.
 void G_SpawnItem (gentity_t *ent, gitem_t *item) {
 	G_SpawnFloat( "random", "0", &ent->random );
 	G_SpawnFloat( "wait", "0", &ent->wait );
-
+	// SPAAACE no items
+	if ( item->giType == IT_AMMO || item->giType == IT_WEAPON ) {
+		return;
+	}
+	//*/
 	RegisterItem( item );
 	if ( G_ItemDisabled(item) )
 		return;

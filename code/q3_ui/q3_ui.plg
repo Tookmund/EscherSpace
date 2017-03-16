@@ -6,56 +6,15 @@
 --------------------Configuration: q3_ui - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP13.tmp" with contents
+Creating temporary file "C:\Users\2130CO~1\AppData\Local\Temp\RSP6497.tmp" with contents
 [
 /nologo /G5 /MTd /W3 /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_USRDLL" /D "UI_EXPORTS" /D "_MBCS" /FR".\q3_ui___Win32_Debug/" /Fp"Debug/q3_ui.pch" /YX /Fo"Debug/" /Fd"Debug/" /GZ  /GZ /c 
-"C:\ygpip\quake3\escherquake\code\game\bg_misc.c"
-"C:\ygpip\quake3\escherquake\code\game\q_math.c"
-"C:\ygpip\quake3\escherquake\code\game\q_shared.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_addbots.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_atoms.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_cdkey.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_cinematics.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_confirm.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_connect.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_controls2.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_credits.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_demo2.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_display.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_gameinfo.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_ingame.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_main.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_menu.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_mfield.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_mods.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_network.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_options.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_playermodel.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_players.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_playersettings.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_preferences.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_qmenu.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_removebots.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_serverinfo.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_servers2.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_setup.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_sound.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_sparena.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_specifyserver.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_splevel.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_sppostgame.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_spreset.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_spskill.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_startserver.c"
-"C:\ygpip\quake3\escherquake\code\ui\ui_syscalls.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_team.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_teamorders.c"
-"C:\ygpip\quake3\escherquake\code\q3_ui\ui_video.c"
+"C:\ygpip\quake3\escherspace\code\q3_ui\ui_controls2.c"
 ]
-Creating command line "cl.exe @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP13.tmp" 
-Creating temporary file "C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP14.tmp" with contents
+Creating command line "cl.exe @C:\Users\2130CO~1\AppData\Local\Temp\RSP6497.tmp" 
+Creating temporary file "C:\Users\2130CO~1\AppData\Local\Temp\RSP6498.tmp" with contents
 [
-kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib odbc32.lib odbccp32.lib /nologo /base:"0x40000000" /subsystem:windows /dll /incremental:yes /pdb:"..\Debug\ui.pdb" /map:"Debug\uix86.map" /debug /machine:IX86 /def:".\ui.def" /out:"C:\ygpip\quake3\escherquake\uix86.dll" /implib:"Debug/uix86.lib" /pdbtype:sept 
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /base:"0x40000000" /subsystem:windows /dll /incremental:yes /pdb:"..\Debug\ui.pdb" /map:"Debug\uix86.map" /debug /machine:IX86 /def:".\ui.def" /out:"C:\ygpip\quake3\escherspace\uix86.dll" /implib:"Debug/uix86.lib" /pdbtype:sept 
 .\Debug\bg_misc.obj
 .\Debug\q_math.obj
 .\Debug\q_shared.obj
@@ -99,53 +58,11 @@ kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32
 .\Debug\ui_teamorders.obj
 .\Debug\ui_video.obj
 ]
-Creating command line "link.exe @C:\DOCUME~1\hrgieger\LOCALS~1\Temp\RSP14.tmp"
+Creating command line "link.exe @C:\Users\2130CO~1\AppData\Local\Temp\RSP6498.tmp"
 <h3>Output Window</h3>
 Compiling...
-bg_misc.c
-q_math.c
-q_shared.c
-ui_addbots.c
-ui_atoms.c
-ui_cdkey.c
-ui_cinematics.c
-ui_confirm.c
-ui_connect.c
 ui_controls2.c
-ui_credits.c
-ui_demo2.c
-ui_display.c
-ui_gameinfo.c
-ui_ingame.c
-ui_main.c
-ui_menu.c
-ui_mfield.c
-ui_mods.c
-ui_network.c
-ui_options.c
-ui_playermodel.c
-ui_players.c
-ui_playersettings.c
-ui_preferences.c
-ui_qmenu.c
-ui_removebots.c
-ui_serverinfo.c
-ui_servers2.c
-ui_setup.c
-ui_sound.c
-ui_sparena.c
-ui_specifyserver.c
-ui_splevel.c
-ui_sppostgame.c
-ui_spreset.c
-ui_spskill.c
-ui_startserver.c
-ui_syscalls.c
-ui_team.c
-ui_teamorders.c
-ui_video.c
 Linking...
-   Creating library Debug/uix86.lib and object Debug/uix86.exp
 
 
 

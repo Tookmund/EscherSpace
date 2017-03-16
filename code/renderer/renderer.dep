@@ -1,0 +1,732 @@
+# Microsoft Developer Studio Generated Dependency File, included by renderer.mak
+
+tr_animation.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_backend.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_bsp.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_cmds.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_curve.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_flares.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_font.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_image.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_init.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_light.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_main.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_marks.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_mesh.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_model.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_noise.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_scene.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_shade.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_shade_calc.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_shader.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_shadows.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_sky.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_surface.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+tr_world.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+..\win32\win_gamma.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	"..\win32\glw_win.h"\
+	"..\win32\win_local.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+..\win32\win_glimp.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	"..\win32\glw_win.h"\
+	"..\win32\resource.h"\
+	"..\win32\win_local.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+..\win32\win_qgl.c : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	"..\win32\glw_win.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+"..\jpeg-6\jcapimin.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jccoefct.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jccolor.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcdctmgr.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jdct.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jchuff.c" : \
+	"..\jpeg-6\jchuff.h"\
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcinit.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcmainct.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcmarker.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcmaster.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcomapi.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcparam.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcphuff.c" : \
+	"..\jpeg-6\jchuff.h"\
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcprepct.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jcsample.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jctrans.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdapimin.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdapistd.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdatadst.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdatasrc.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdcoefct.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdcolor.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jddctmgr.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jdct.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdhuff.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jdhuff.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdinput.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdmainct.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdmarker.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdmaster.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdpostct.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdsample.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jdtrans.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jerror.c" : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	"..\jpeg-6\jversion.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+"..\jpeg-6\jfdctflt.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jdct.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jidctflt.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jdct.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jmemmgr.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmemsys.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	
+
+"..\jpeg-6\jmemnobs.c" : \
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmemsys.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	"..\qcommon\cm_public.h"\
+	"..\qcommon\qcommon.h"\
+	"..\qcommon\qfiles.h"\
+	".\qgl.h"\
+	".\qgl_linked.h"\
+	".\tr_local.h"\
+	".\tr_public.h"\
+	
+
+"..\jpeg-6\jutils.c" : \
+	"..\jpeg-6\jconfig.h"\
+	"..\jpeg-6\jerror.h"\
+	"..\jpeg-6\jinclude.h"\
+	"..\jpeg-6\jmorecfg.h"\
+	"..\jpeg-6\jpegint.h"\
+	"..\jpeg-6\jpeglib.h"\
+	

@@ -124,6 +124,9 @@ typedef struct
 #define ID_JOYTHRESHOLD	40
 #define ID_SMOOTHMOUSE	41
 
+//* SPAAACE alt fire
+#define ID_ALT			34
+//*/
 #define ANIM_IDLE		0
 #define ANIM_RUN		1
 #define ANIM_WALK		2
@@ -220,7 +223,9 @@ typedef struct
 	int					playerTorso;
 	int					playerWeapon;
 	qboolean			playerChat;
-
+	//* SPAAACE alt fire
+	menuaction_s		altfire;
+	//*/
 	menubitmap_s		back;
 	menutext_s			name;
 } controls_t; 	
@@ -268,6 +273,9 @@ static bind_t g_bindings[] =
 	/**********RESET GRAVITY 3/13/08************/
 	{"resetgrav",		"reset gravity",	ID_RESETGRAV,	ANIM_IDLE,		'r',			-1,		-1,	-1},
 	/**********RESET GRAVITY 3/13/08************/
+	//* SPAAACE alt fire
+	{"+button12",		"Alt Fire",			ID_ALT,			ANIM_ATTACK,	'f',			-1,		-1,	-1},
+	//*/
 	{(char*)NULL,		(char*)NULL,		0,				0,				-1,				-1,		-1,	-1},
 };
 
@@ -304,7 +312,10 @@ static menucommon_s *g_movement_controls[] =
 };
 
 static menucommon_s *g_weapons_controls[] = {
-	(menucommon_s *)&s_controls.attack,           
+	(menucommon_s *)&s_controls.attack,
+	//* SPAAACE alt fire
+	(menucommon_s *)&s_controls.altfire,
+	//*/
 	(menucommon_s *)&s_controls.nextweapon,
 	(menucommon_s *)&s_controls.prevweapon,
 	(menucommon_s *)&s_controls.autoswitch,    
@@ -1352,7 +1363,13 @@ static void Controls_MenuInit( void )
 	s_controls.resetgrav.generic.ownerdraw = Controls_DrawKeyBinding;
 	s_controls.resetgrav.generic.id        = ID_RESETGRAV;
 	/**********RESET GRAVITY 3/13/08************/
-
+	//* SPAAACE alt fire
+	s_controls.altfire.generic.type      = MTYPE_ACTION;
+	s_controls.altfire.generic.flags     = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS|QMF_GRAYED|QMF_HIDDEN;
+	s_controls.altfire.generic.callback  = Controls_ActionEvent;
+	s_controls.altfire.generic.ownerdraw = Controls_DrawKeyBinding;
+	s_controls.altfire.generic.id        = ID_ALT;
+	//*/
 	s_controls.run.generic.type	     = MTYPE_ACTION;
 	s_controls.run.generic.flags     = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS|QMF_GRAYED|QMF_HIDDEN;
 	s_controls.run.generic.callback  = Controls_ActionEvent;
@@ -1616,7 +1633,9 @@ static void Controls_MenuInit( void )
 	/**********RESET GRAVITY 3/13/08************/
 	Menu_AddItem( &s_controls.menu, &s_controls.resetgrav );
 	/**********RESET GRAVITY 3/13/08************/
-
+	//* SPAAACE alt fire
+	Menu_AddItem( &s_controls.menu, &s_controls.altfire );
+	//*/
 	Menu_AddItem( &s_controls.menu, &s_controls.attack );
 	Menu_AddItem( &s_controls.menu, &s_controls.nextweapon );
 	Menu_AddItem( &s_controls.menu, &s_controls.prevweapon );

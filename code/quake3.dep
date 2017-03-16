@@ -1,0 +1,655 @@
+# Microsoft Developer Studio Generated Dependency File, included by quake3.mak
+
+client\cl_cgame.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\botlib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\cl_cin.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_local.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\cl_console.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\cl_input.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\cl_keys.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\cl_main.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\cl_net_chan.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\cl_parse.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\cl_scrn.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\cl_ui.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\botlib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+qcommon\cm_load.c : \
+	".\bspc\l_qfiles.h"\
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_local.h"\
+	".\qcommon\cm_polylib.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\qcommon\unzip.h"\
+	
+
+qcommon\cm_patch.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_local.h"\
+	".\qcommon\cm_patch.h"\
+	".\qcommon\cm_polylib.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+qcommon\cm_polylib.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_local.h"\
+	".\qcommon\cm_polylib.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+qcommon\cm_test.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_local.h"\
+	".\qcommon\cm_polylib.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+qcommon\cm_trace.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_local.h"\
+	".\qcommon\cm_polylib.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+qcommon\cmd.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+qcommon\common.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+qcommon\cvar.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+qcommon\files.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\qcommon\unzip.h"\
+	
+
+qcommon\huffman.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+qcommon\msg.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+qcommon\net_chan.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+game\q_math.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	
+
+game\q_shared.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	
+
+client\snd_adpcm.c : \
+	".\client\snd_local.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+client\snd_dma.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_local.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+client\snd_mem.c : \
+	".\client\snd_local.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+client\snd_mix.c : \
+	".\client\snd_local.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+client\snd_wavelet.c : \
+	".\client\snd_local.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	
+
+server\sv_bot.c : \
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\botlib.h"\
+	".\game\g_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\server\server.h"\
+	
+
+server\sv_ccmds.c : \
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\g_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\server\server.h"\
+	
+
+server\sv_client.c : \
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\g_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\server\server.h"\
+	
+
+server\sv_game.c : \
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\botlib.h"\
+	".\game\g_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\server\server.h"\
+	
+
+server\sv_init.c : \
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\g_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\server\server.h"\
+	
+
+server\sv_main.c : \
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\g_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\server\server.h"\
+	
+
+server\sv_net_chan.c : \
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\g_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\server\server.h"\
+	
+
+server\sv_snapshot.c : \
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\g_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\server\server.h"\
+	
+
+server\sv_world.c : \
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\g_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\server\server.h"\
+	
+
+qcommon\unzip.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\qcommon\unzip.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	
+
+qcommon\vm.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\qcommon\vm_local.h"\
+	
+
+qcommon\vm_interpreted.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\qcommon\vm_local.h"\
+	
+
+qcommon\vm_x86.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\qcommon\vm_local.h"\
+	
+
+win32\win_input.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	".\win32\win_local.h"\
+	
+
+win32\win_main.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	".\win32\resource.h"\
+	".\win32\win_local.h"\
+	
+
+win32\win_net.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\win32\win_local.h"\
+	
+
+win32\win_shared.c : \
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\win32\win_local.h"\
+	
+
+win32\win_snd.c : \
+	".\client\snd_local.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\win32\win_local.h"\
+	
+
+win32\win_syscon.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	".\win32\resource.h"\
+	".\win32\win_local.h"\
+	
+
+win32\win_wndproc.c : \
+	".\cgame\cg_public.h"\
+	".\cgame\tr_types.h"\
+	".\client\client.h"\
+	".\client\keys.h"\
+	".\client\snd_public.h"\
+	".\game\bg_lib.h"\
+	".\game\bg_public.h"\
+	".\game\q_shared.h"\
+	".\game\surfaceflags.h"\
+	".\qcommon\cm_public.h"\
+	".\qcommon\qcommon.h"\
+	".\qcommon\qfiles.h"\
+	".\renderer\tr_public.h"\
+	".\ui\keycodes.h"\
+	".\ui\ui_public.h"\
+	".\win32\win_local.h"\
+	
+
+win32\winquake.rc : \
+	".\win32\qe3.ico"\
+	".\win32\resource.h"\
+	

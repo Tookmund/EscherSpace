@@ -1,0 +1,2238 @@
+# Microsoft Developer Studio Generated Dependency File, included by game.mak
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\ai_chat.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\ai_chat.c : \
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\ai_chat.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\ai_chat.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\ai_cmd.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\ai_cmd.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\ai_cmd.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\ai_cmd.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\ai_dmnet.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\ai_dmnet.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\ai_dmnet.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\ai_dmnet.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\ai_dmq3.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\ai_dmq3.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\ai_dmq3.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\ai_dmq3.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\ai_main.c : \
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\ai_main.c : \
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\ai_main.c : \
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\ai_main.c : \
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\ai_team.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\ai_team.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\ai_team.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\ai_team.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\ai_vcmd.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\ai_vcmd.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\ai_vcmd.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\ai_vcmd.c : \
+	"..\..\ui\menudef.h"\
+	".\ai_chat.h"\
+	".\ai_cmd.h"\
+	".\ai_dmnet.h"\
+	".\ai_dmq3.h"\
+	".\ai_main.h"\
+	".\ai_team.h"\
+	".\ai_vcmd.h"\
+	".\be_aas.h"\
+	".\be_ai_char.h"\
+	".\be_ai_chat.h"\
+	".\be_ai_gen.h"\
+	".\be_ai_goal.h"\
+	".\be_ai_move.h"\
+	".\be_ai_weap.h"\
+	".\be_ea.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\botlib.h"\
+	".\chars.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\inv.h"\
+	".\match.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	".\syn.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\bg_misc.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\bg_misc.c : \
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\bg_misc.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\bg_misc.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\bg_pmove.c : \
+	".\bg_lib.h"\
+	".\bg_local.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\bg_pmove.c : \
+	".\bg_local.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\bg_pmove.c : \
+	".\bg_lib.h"\
+	".\bg_local.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\bg_pmove.c : \
+	".\bg_lib.h"\
+	".\bg_local.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\bg_slidemove.c : \
+	".\bg_lib.h"\
+	".\bg_local.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\bg_slidemove.c : \
+	".\bg_local.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\bg_slidemove.c : \
+	".\bg_lib.h"\
+	".\bg_local.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\bg_slidemove.c : \
+	".\bg_lib.h"\
+	".\bg_local.h"\
+	".\bg_public.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_active.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_active.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_active.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_active.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_arenas.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_arenas.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_arenas.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_arenas.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_bot.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_bot.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_bot.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_bot.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_client.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_client.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_client.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_client.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_cmds.c : \
+	"..\..\ui\menudef.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_cmds.c : \
+	"..\..\ui\menudef.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_cmds.c : \
+	"..\..\ui\menudef.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_cmds.c : \
+	"..\..\ui\menudef.h"\
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_combat.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_combat.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_combat.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_combat.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_items.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_items.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_items.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_items.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_main.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_main.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_main.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_main.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_mem.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_mem.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_mem.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_mem.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_misc.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_misc.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_misc.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_misc.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_missile.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_missile.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_missile.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_missile.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_mover.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_mover.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_mover.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_mover.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_session.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_session.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_session.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_session.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_spawn.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_spawn.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_spawn.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_spawn.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_svcmds.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_svcmds.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_svcmds.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_svcmds.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_syscalls.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_syscalls.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_syscalls.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_syscalls.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_target.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_target.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_target.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_target.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_team.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_team.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_team.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_team.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_trigger.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_trigger.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_trigger.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_trigger.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_utils.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_utils.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_utils.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_utils.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\g_weapon.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\g_weapon.c : \
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\g_weapon.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\g_weapon.c : \
+	".\bg_lib.h"\
+	".\bg_public.h"\
+	".\g_local.h"\
+	".\g_public.h"\
+	".\g_team.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\q_math.c : \
+	".\bg_lib.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\q_math.c : \
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\q_math.c : \
+	".\bg_lib.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\q_math.c : \
+	".\bg_lib.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+
+!IF  "$(CFG)" == "game - Win32 Release"
+
+.\q_shared.c : \
+	".\bg_lib.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug"
+
+.\q_shared.c : \
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release Alpha"
+
+!ELSEIF  "$(CFG)" == "game - Win32 Release TA"
+
+.\q_shared.c : \
+	".\bg_lib.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ELSEIF  "$(CFG)" == "game - Win32 Debug TA"
+
+.\q_shared.c : \
+	".\bg_lib.h"\
+	".\q_shared.h"\
+	".\surfaceflags.h"\
+	
+
+!ENDIF 
+

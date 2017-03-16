@@ -1416,10 +1416,11 @@ BG_TouchJumpPad
 ========================
 */
 void BG_TouchJumpPad( playerState_t *ps, entityState_t *jumppad ) {
+	/*
 	vec3_t	angles;
 	float p;
 	int effectNum;
-
+	
 	// spectators don't use jump pads
 	if ( ps->pm_type != PM_NORMAL ) {
 		return;
@@ -1448,6 +1449,7 @@ void BG_TouchJumpPad( playerState_t *ps, entityState_t *jumppad ) {
 	ps->jumppad_frame = ps->pmove_framecount;
 	// give the player the velocity from the jumppad
 	VectorCopy( jumppad->origin2, ps->velocity );
+	*/
 }
 
 /**********************************WALLWALKING**********************************/

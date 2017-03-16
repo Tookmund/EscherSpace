@@ -583,9 +583,10 @@ void weapon_railgun_fire (gentity_t *ent) {
 	int			unlinked;
 	int			passent;
 	gentity_t	*unlinkedEntities[MAX_RAIL_HITS];
-
-	damage = 100 * s_quadFactor;
-
+	
+	// SPAAACE rail damage
+	damage = 5 * s_quadFactor;
+	//*/
 	VectorMA (muzzle, 8192, forward, end);
 
 	// trace only against the solids, so the railgun will go through people
@@ -677,6 +678,7 @@ void weapon_railgun_fire (gentity_t *ent) {
 		ent->client->accurateCount = 0;
 	} else {
 		// check for "impressive" reward sound
+		/* SPAAACE unimpressive
 		ent->client->accurateCount += hits;
 		if ( ent->client->accurateCount >= 2 ) {
 			ent->client->accurateCount -= 2;
@@ -687,6 +689,7 @@ void weapon_railgun_fire (gentity_t *ent) {
 			ent->client->rewardTime = level.time + REWARD_SPRITE_TIME;
 		}
 		ent->client->accuracy_hits++;
+		*/
 	}
 
 }
@@ -964,6 +967,17 @@ FireWeapon
 ===============
 */
 void FireWeapon( gentity_t *ent ) {
+	//* SPAAACE alt fire init
+	usercmd_t	*ucmd;	
+	//* SPAAACE! knockback init
+	vec3_t kvel;
+	int knock;
+	
+	vec3_t newMuzzle;
+	vec3_t newForward;
+	vec3_t newRight;
+	vec3_t newUp;
+	//*/
 	if (ent->client->ps.powerups[PW_QUAD] ) {
 		s_quadFactor = g_quadfactor.value;
 	} else {
@@ -992,7 +1006,18 @@ void FireWeapon( gentity_t *ent ) {
 	AngleVectors (ent->client->ps.viewangles, forward, right, up);
 
 	CalcMuzzlePointOrigin ( ent, ent->client->oldOrigin, forward, right, up, muzzle );
+	// Recalculate using muzzle as origin
+	CalcMuzzlePointOrigin( ent, muzzle, newForward, newRight, newUp, newMuzzle);
 
+	//* SPAAACE! knockback
+	//VectorNegate(forward,kvel);
+	//VectorCopy(muzzle,kvel);
+	VectorNegate(newForward,kvel);
+	// SPAACE alt fire
+	ucmd = &ent->client->pers.cmd;
+	if (ucmd->buttons & BUTTON_ALT) knock = 100;
+	else knock = 0;
+	//*/
 	// fire the specific weapon
 	switch( ent->s.weapon ) {
 	case WP_GAUNTLET:
@@ -1010,6 +1035,9 @@ void FireWeapon( gentity_t *ent ) {
 		} else {
 			Bullet_Fire( ent, MACHINEGUN_SPREAD, MACHINEGUN_TEAM_DAMAGE );
 		}
+		//* SPAAACE! knockback machinegun
+		//knock = 200;
+		//*/
 		break;
 	case WP_GRENADE_LAUNCHER:
 		weapon_grenadelauncher_fire( ent );
@@ -1044,6 +1072,20 @@ void FireWeapon( gentity_t *ent ) {
 // FIXME		G_Error( "Bad ent->s.weapon" );
 		break;
 	}
+	//* SPAAACE! apply knockback
+	VectorScale(kvel,knock,kvel);
+	VectorAdd(ent->client->ps.velocity,kvel,ent->client->ps.velocity);
+
+	// Magic
+	if(!ent->client->ps.pm_time) {
+		int t;
+		t = knock*2;
+		if (t < 50) t = 50;
+		else if (t < 200) t = 200;
+		ent->client->ps.pm_time = t;
+		ent->client->ps.pm_flags |= PMF_TIME_KNOCKBACK;
+	}
+	//*/
 }
 
 

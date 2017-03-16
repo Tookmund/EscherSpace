@@ -641,6 +641,9 @@ typedef struct {
 	  //MAX CLIENTS-JG
       menufield_s			maxclients;
 /******************MAX CLIENTS**************************/
+//* SPAAACE! add gravity menu item
+	menufield_s			gravity;
+//*/
 	menuradiobutton_s	friendlyfire;
 	menufield_s			hostname;
 	menuradiobutton_s	pure;
@@ -738,6 +741,9 @@ static void ServerOptions_Start( void ) {
 	int		speedValue;
 	int		playerspeed;
 /************************************/
+//* SPAAACE! add gravity menu option
+	int gravity;
+//*/
 	int		dedicated;
 	int		friendlyfire;
 	int		flaglimit;
@@ -759,6 +765,9 @@ static void ServerOptions_Start( void ) {
 	//Added g_speed variable-JG 3/6/08
 	playerspeed	= atoi( s_serveroptions.playerspeed.field.buffer );
 	/************************************/
+	//* SPAAACE! add gravity menu option
+	gravity = atoi( s_serveroptions.gravity.field.buffer );
+	//*/
 	dedicated	 = s_serveroptions.dedicated.curvalue;
 	friendlyfire = s_serveroptions.friendlyfire.curvalue;
 	pure		 = s_serveroptions.pure.curvalue;
@@ -823,6 +832,10 @@ static void ServerOptions_Start( void ) {
 	//Added g_speed variable-JG 3/6/08
 	trap_Cvar_SetValue ("playerspeed", Com_Clamp( 0, playerspeed, playerspeed) );
 	/*****************************************************/
+	//* SPAAACE! set gravity menu option
+	trap_Cvar_SetValue( "gravity", gravity );
+	trap_Cvar_SetValue( "g_gravity", gravity );
+	//*/
 	trap_Cvar_SetValue ("timelimit", Com_Clamp( 0, timelimit, timelimit ) );
 	trap_Cvar_SetValue ("fraglimit", Com_Clamp( 0, fraglimit, fraglimit ) );
 	trap_Cvar_SetValue ("capturelimit", Com_Clamp( 0, flaglimit, flaglimit ) );
@@ -1050,7 +1063,14 @@ static void ServerOptions_SpeedStatusBar( void* ptr ) {
 		break;
 	}
 }
-
+//* SPAAACE Gravity variable
+static void ServerOptions_GravStatusBar( void* ptr ) {
+	switch( ((menucommon_s*)ptr)->id ) {
+	default:
+		UI_DrawString( 320, 440, "600 = Standard", UI_CENTER|UI_SMALLFONT, colorWhite );
+		break;
+	}
+}
 /*****************************************************/
 
 /*
@@ -1187,10 +1207,11 @@ static void ServerOptions_SetMenuItems( void ) {
 	//Added g_speed variable-JG 3/6/08
 	switch( s_serveroptions.gametype ) {
 	case GT_FFA:
+		// SPAAACE change com sprintf default value from 2 to 3
 	default:
 		Com_sprintf( s_serveroptions.fraglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ffa_fraglimit" ) ) );
 		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ffa_timelimit" ) ) );
-		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 2/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
+		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 3/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
 /****************************************************************************************************************************************************************/
 		//03-03-08-JG
 		Com_sprintf( s_serveroptions.maxclients.field.buffer, 4, "%i", (int)Com_Clamp( 1, 32, trap_Cvar_VariableValue( "sv_maxclients" ) ) );
@@ -1200,7 +1221,7 @@ static void ServerOptions_SetMenuItems( void ) {
 	case GT_TOURNAMENT:
 		Com_sprintf( s_serveroptions.fraglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_tourney_fraglimit" ) ) );
 		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_tourney_timelimit" ) ) );
-		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 2/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
+		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 3/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
 /****************************************************************************************************************************************************************/
 		//03-03-08-JG
 		Com_sprintf( s_serveroptions.maxclients.field.buffer, 4, "%i", (int)Com_Clamp( 1, 32, trap_Cvar_VariableValue( "sv_maxclients" ) ) );
@@ -1210,7 +1231,7 @@ static void ServerOptions_SetMenuItems( void ) {
 	case GT_TEAM:
 		Com_sprintf( s_serveroptions.fraglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_team_fraglimit" ) ) );
 		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_team_timelimit" ) ) );
-		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 2/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
+		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 3/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
 		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_team_friendly" ) );
 /****************************************************************************************************************************************************************/
 		//03-03-08-JG
@@ -1221,7 +1242,7 @@ static void ServerOptions_SetMenuItems( void ) {
 	case GT_CTF:
 		Com_sprintf( s_serveroptions.flaglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 100, trap_Cvar_VariableValue( "ui_ctf_capturelimit" ) ) );
 		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_timelimit" ) ) );
-		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 2/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
+		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 3/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
 		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_ctf_friendly" ) );
 /****************************************************************************************************************************************************************/
 		//03-03-08-JG
@@ -1233,6 +1254,10 @@ static void ServerOptions_SetMenuItems( void ) {
 	//Added g_speed variable-JG 3/6/08
 	Q_strncpyz( s_serveroptions.hostname.field.buffer, UI_Cvar_VariableString( "sv_hostname" ), sizeof( s_serveroptions.hostname.field.buffer ) );
 	s_serveroptions.pure.curvalue = Com_Clamp( 0, 1, trap_Cvar_VariableValue( "sv_pure" ) );
+
+	//* SPAAACE! add gravity variable
+	Com_sprintf( s_serveroptions.gravity.field.buffer, 4, "%i", (int)Com_Clamp( 25, 1000, trap_Cvar_VariableValue( "gravity" ) ) );
+	//*/
 
 	// set the map pic
 	Com_sprintf( picname, 64, "levelshots/%s", s_startserver.maplist[s_startserver.currentmap] );
@@ -1388,6 +1413,17 @@ static void ServerOptions_MenuInit( qboolean multiplayer ) {
       s_serveroptions.maxclients.field.widthInChars = 3;
       s_serveroptions.maxclients.field.maxchars     = 3;
 /******************************************************************************************************/
+//* SPAAACE! add gravity menu item
+	  y += BIGCHAR_HEIGHT+2;
+      s_serveroptions.gravity.generic.type       = MTYPE_FIELD;
+      s_serveroptions.gravity.generic.name       = "Gravity:";
+      s_serveroptions.gravity.generic.flags      = QMF_NUMBERSONLY|QMF_PULSEIFFOCUS|QMF_SMALLFONT;
+      s_serveroptions.gravity.generic.x	         = OPTIONS_X;
+      s_serveroptions.gravity.generic.y	         = y;
+      s_serveroptions.gravity.generic.statusbar  = ServerOptions_GravStatusBar;
+      s_serveroptions.gravity.field.widthInChars = 3;
+      s_serveroptions.gravity.field.maxchars     = 3;
+//*/
 	y += BIGCHAR_HEIGHT+2;
 	s_serveroptions.timelimit.generic.type       = MTYPE_FIELD;
 	s_serveroptions.timelimit.generic.name       = "Time Limit:";
@@ -1556,6 +1592,9 @@ static void ServerOptions_MenuInit( qboolean multiplayer ) {
 	//Added g_speed variable-JG 3/6/08
 	Menu_AddItem( &s_serveroptions.menu, &s_serveroptions.playerspeed );
 /**********************************************************************************************/
+//* SPAAACE! add gravity menu item
+	Menu_AddItem( &s_serveroptions.menu, &s_serveroptions.gravity );
+//*/
 	Menu_AddItem( &s_serveroptions.menu, &s_serveroptions.timelimit );
 	if( s_serveroptions.gametype >= GT_TEAM ) {
 		Menu_AddItem( &s_serveroptions.menu, &s_serveroptions.friendlyfire );

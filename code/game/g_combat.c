@@ -75,11 +75,11 @@ Toss the weapon and powerups for the killed player
 */
 void TossClientItems( gentity_t *self ) {
 	gitem_t		*item;
-	int			weapon;
+	//int			weapon;
 	float		angle;
 	int			i;
 	gentity_t	*drop;
-
+	/* SPAAACE don't drop weapons
 	// drop the weapon if not a gauntlet or machinegun
 	weapon = self->s.weapon;
 
@@ -104,7 +104,7 @@ void TossClientItems( gentity_t *self ) {
 		// spawn the item
 		Drop_Item( self, item, 0 );
 	}
-
+	*/
 	// drop all the powerups if not in teamplay
 	if ( g_gametype.integer != GT_TEAM ) {
 		angle = 45;

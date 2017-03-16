@@ -7,6 +7,9 @@
 #include "bg_public.h"
 #include "bg_local.h"
 
+//* SPAAACE!
+#include "SPAAACE.h"
+//*/
 pmove_t		*pm;
 //InvasionInfo_t *InvI;
 pml_t		pml;
@@ -1141,7 +1144,15 @@ PM_CheckJump
 static qboolean PM_CheckJump(/*qboolean BigJump*/)
 {
 	int Velocity = JUMP_VELOCITY;
-	int i;
+	//int i;
+	//* SPAAACE! jumping init
+	vec3_t forward;
+	vec3_t right;
+	vec3_t up;
+	vec3_t muzzle;
+	// TODO: Find real value
+	//vec3_t oldOrigin;
+	//*/
 	{
    
       if ( pm->ps->pm_flags & PMF_RESPAWNED ) {
@@ -1160,10 +1171,24 @@ static qboolean PM_CheckJump(/*qboolean BigJump*/)
          return qfalse;
       }
 
-	  	  /************************************************/
+	  /************************************************
 	  for (i = 0; i < 3; ++i)
 			pm->ps->velocity[i] -= Velocity * Gravity[i];
 	  /************************************************/
+	  //* SPAAACE! jumping
+	  // set aiming directions
+	  AngleVectors (pm->ps->viewangles, forward, right, up);
+	  CalcMuzzlePointOriginStuff(*(pm->ps), pm->ps->origin, forward, right, up, muzzle );
+	  // Recalculate using muzzle as origin
+	  CalcMuzzlePointOriginStuff( *(pm->ps), muzzle, forward, right, up, muzzle);
+	  AngleVectors (pm->ps->viewangles, forward, right, up);
+	  VectorNormalize(forward);
+	  VectorScale(forward,Velocity,forward);
+	  VectorAdd(pm->ps->velocity,forward,pm->ps->velocity);
+	  /*
+	  for (i = 0; i < 3; ++i)
+			pm->ps->velocity[i] -= kvel[i]; //Velocity * pm->ps->viewangles[i];
+	  //*/
 
       PM_AddEvent( EV_JUMP );
    
@@ -1434,7 +1459,10 @@ static void PM_AirMove(void)
 
 	fmove = pm->cmd.forwardmove;
 	smove = pm->cmd.rightmove;
-
+	//* SPAAACE! don't move in air
+	fmove = 0;
+	smove = 0;
+	//*/
 	cmd = pm->cmd;
 	scale = PM_CmdScale(&cmd);
 
@@ -3185,8 +3213,11 @@ static void PM_Weapon( void ) {
 		return;
 	}
 
+	//* SPAAACE alt fire
+	if ( !( (pm->cmd.buttons & BUTTON_ATTACK) || (pm->cmd.buttons & BUTTON_ALT) ) ){
+	//*/
 	// check for fire
-	if ( ! (pm->cmd.buttons & BUTTON_ATTACK) ) {
+	//if ( ! (pm->cmd.buttons & BUTTON_ATTACK) ) {
 		pm->ps->weaponTime = 0;
 		pm->ps->weaponstate = WEAPON_READY;
 		return;
@@ -3246,7 +3277,9 @@ static void PM_Weapon( void ) {
 		addTime = 100;
 		break;
 	case WP_RAILGUN:
-		addTime = 1500;
+		// SPAAACE rail
+		addTime = 50;
+		//addTime = 1500;
 		break;
 	case WP_BFG:
 		addTime = 200;
@@ -3500,8 +3533,9 @@ void PmoveSingle(pmove_t *pmove/*, InvasionInfo_t *InvInfo*/)
 	}
 
    // set the firing flag for continuous beam weapons
+	// SPAAACE alt fire
       if ( !(pm->ps->pm_flags & PMF_RESPAWNED) && pm->ps->pm_type != PM_INTERMISSION
-      && ( pm->cmd.buttons & BUTTON_ATTACK ) && pm->ps->ammo[ pm->ps->weapon ] ) {
+      && ( (pm->cmd.buttons & BUTTON_ATTACK)  /**/ || (pm->cmd.buttons & BUTTON_ALT)) /**/&& pm->ps->ammo[ pm->ps->weapon ] ) {
          pm->ps->eFlags |= EF_FIRING;
       } 
       else {
@@ -3560,10 +3594,11 @@ void PmoveSingle(pmove_t *pmove/*, InvasionInfo_t *InvInfo*/)
     //-JG 3/10/08
 	if (pm->cmd.upmove < 0)//is crouching and an alien//0
 	{ 
-		WallWalk = qtrue;
+		WallWalk = qfalse;//qtrue;
 	}
 	else
-		WallWalk=qfalse;
+		WallWalk = qtrue; //qfalse;
+	// SPAAACE! switch values for wallwalking
 /************************************************************/
 //	else
 //	{

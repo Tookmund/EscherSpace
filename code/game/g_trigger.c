@@ -164,7 +164,7 @@ void G_TouchJumpPad( gentity_t *ent, gentity_t *jumppad ) {
 	if ( ent->s.pos.trType == TR_STATIONARY ) {
 		ent->s.pos.trType = TR_GRAVITY;
 	}
-
+	
 	VectorCopy( jumppad->s.origin2, ent->s.pos.trDelta );
 	VectorCopy( ent->r.currentOrigin, ent->s.pos.trBase );
 	ent->s.pos.trTime = level.time;
@@ -261,6 +261,8 @@ void SP_trigger_push( gentity_t *self ) {
 
 
 void Use_target_push( gentity_t *self, gentity_t *other, gentity_t *activator ) {
+	return;
+	/* SPAAACE!
 	if ( !activator->client ) {
 		return;
 	}
@@ -279,6 +281,7 @@ void Use_target_push( gentity_t *self, gentity_t *other, gentity_t *activator ) 
 		activator->fly_sound_debounce_time = level.time + 1500;
 		G_Sound( activator, CHAN_AUTO, self->noise_index );
 	}
+	*/
 }
 
 /*QUAKED target_push (.5 .5 .5) (-8 -8 -8) (8 8 8) bouncepad

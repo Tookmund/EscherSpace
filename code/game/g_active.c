@@ -464,6 +464,16 @@ void ClientTimerActions( gentity_t *ent, int msec ) {
 		if ( client->ps.stats[STAT_ARMOR] > client->ps.stats[STAT_MAX_HEALTH] ) {
 			client->ps.stats[STAT_ARMOR]--;
 		}
+		//* SPAAACE rail ammo
+		if (client->ps.ammo[WP_RAILGUN] < 100) {
+			if (client->ps.ammo[WP_RAILGUN]+5 > 100) {
+				client->ps.ammo[WP_RAILGUN] = 100;
+			}
+			else {
+ 				client->ps.ammo[WP_RAILGUN] += 5;
+			}
+		}
+		//*/
 	}
 #ifdef MISSIONPACK
 	if( bg_itemlist[client->ps.stats[STAT_PERSISTANT_POWERUP]].giTag == PW_AMMOREGEN ) {
@@ -870,7 +880,7 @@ void ClientThink_real( gentity_t *ent ) {
 	// check for the hit-scan gauntlet, don't let the action
 	// go through as an attack unless it actually hits something
 	if ( client->ps.weapon == WP_GAUNTLET && !( ucmd->buttons & BUTTON_TALK ) &&
-		( ucmd->buttons & BUTTON_ATTACK ) && client->ps.weaponTime <= 0 ) {
+		( ucmd->buttons & BUTTON_ATTACK) && client->ps.weaponTime <= 0 ) {
 		pm.gauntletHit = CheckGauntletAttack( ent );
 	}
 

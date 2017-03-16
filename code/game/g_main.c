@@ -140,7 +140,7 @@ static cvarTable_t		gameCvarTable[] = {
 	{ &g_dedicated, "dedicated", "0", 0, 0, qfalse  },
 
 	{ &g_speed, "g_speed", "240", 0, 0, qtrue  },//new default 3/10/08 -JG Original Value:320
-	{ &g_gravity, "g_gravity", "800", 0, 0, qtrue  },
+	{ &g_gravity, "g_gravity", "25", CVAR_ARCHIVE, 0, qtrue  },
 	{ &g_knockback, "g_knockback", "1000", 0, 0, qtrue  },
 	{ &g_quadfactor, "g_quadfactor", "3", 0, 0, qtrue  },
 	{ &g_weaponRespawn, "g_weaponrespawn", "5", 0, 0, qtrue  },

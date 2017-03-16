@@ -213,7 +213,8 @@ CG_RailTrail
 ==========================
 */
 void CG_RailTrail (clientInfo_t *ci, vec3_t start, vec3_t end) {
-	vec3_t axis[36], move, move2, next_move, vec, temp;
+	// SPAAACE rail spiral
+	vec3_t axis[36], move, /*move2,*/ next_move, vec, temp;
 	float  len;
 	int    i, j, skip;
  
@@ -251,7 +252,7 @@ void CG_RailTrail (clientInfo_t *ci, vec3_t start, vec3_t end) {
 	re->shaderRGBA[0] = ci->color1[0] * 255;
     re->shaderRGBA[1] = ci->color1[1] * 255;
     re->shaderRGBA[2] = ci->color1[2] * 255;
-    re->shaderRGBA[3] = 255;
+    re->shaderRGBA[3] = 255; 
 
 	le->color[0] = ci->color1[0] * 0.75;
 	le->color[1] = ci->color1[1] * 0.75;
@@ -273,6 +274,8 @@ void CG_RailTrail (clientInfo_t *ci, vec3_t start, vec3_t end) {
 	skip = -1;
  
 	j = 18;
+	// SPAAACE rail spiral
+	/*
     for (i = 0; i < len; i += SPACING) {
 		if (i != skip) {
 			skip = i + SPACING;
@@ -310,11 +313,11 @@ void CG_RailTrail (clientInfo_t *ci, vec3_t start, vec3_t end) {
             le->pos.trDelta[1] = axis[j][1]*6;
             le->pos.trDelta[2] = axis[j][2]*6;
 		}
-
         VectorAdd (move, vec, move);
 
         j = j + ROTATION < 36 ? j + ROTATION : (j + ROTATION) % 36;
 	}
+	*/
 }
 
 /*
@@ -800,9 +803,11 @@ void CG_RegisterWeapon( int weaponNum ) {
 		break;
 
 	case WP_RAILGUN:
-		weaponInfo->readySound = trap_S_RegisterSound( "sound/weapons/railgun/rg_hum.wav", qfalse );
+		//SPAAACE no ready weaponInfo->readySound = trap_S_RegisterSound( "sound/weapons/railgun/rg_hum.wav", qfalse );
 		MAKERGB( weaponInfo->flashDlightColor, 1, 0.5f, 0 );
-		weaponInfo->flashSound[0] = trap_S_RegisterSound( "sound/weapons/railgun/railgf1a.wav", qfalse );
+		//weaponInfo->flashSound[0] = trap_S_RegisterSound( "sound/weapons/railgun/railgf1a.wav", qfalse );
+		// SPAAACE rail
+		weaponInfo->flashSound[0] = trap_S_RegisterSound( "sound/weapons/railgun/railfire.wav", qfalse );
 		cgs.media.railExplosionShader = trap_R_RegisterShader( "railExplosion" );
 		cgs.media.railRingsShader = trap_R_RegisterShader( "railDisc" );
 		cgs.media.railCoreShader = trap_R_RegisterShader( "railCore" );
@@ -1133,7 +1138,7 @@ different than the muzzle point used for determining hits.
 */
 static void CG_SpawnRailTrail( centity_t *cent, vec3_t origin ) {
 	clientInfo_t	*ci;
-
+	
 	if ( cent->currentState.weapon != WP_RAILGUN ) {
 		return;
 	}

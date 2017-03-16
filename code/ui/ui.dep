@@ -1,0 +1,95 @@
+# Microsoft Developer Studio Generated Dependency File, included by ui.mak
+
+..\game\bg_misc.c : \
+	"..\game\bg_lib.h"\
+	"..\game\bg_public.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	
+
+..\game\q_math.c : \
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	
+
+..\game\q_shared.c : \
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	
+
+ui_atoms.c : \
+	"..\..\ui\menudef.h"\
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\bg_public.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	".\keycodes.h"\
+	".\ui_local.h"\
+	".\ui_public.h"\
+	".\ui_shared.h"\
+	
+
+ui_gameinfo.c : \
+	"..\..\ui\menudef.h"\
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\bg_public.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	".\keycodes.h"\
+	".\ui_local.h"\
+	".\ui_public.h"\
+	".\ui_shared.h"\
+	
+
+ui_main.c : \
+	"..\..\ui\menudef.h"\
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\bg_public.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	".\keycodes.h"\
+	".\ui_local.h"\
+	".\ui_public.h"\
+	".\ui_shared.h"\
+	
+
+ui_players.c : \
+	"..\..\ui\menudef.h"\
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\bg_public.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	".\keycodes.h"\
+	".\ui_local.h"\
+	".\ui_public.h"\
+	".\ui_shared.h"\
+	
+
+ui_shared.c : \
+	"..\..\ui\menudef.h"\
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	".\keycodes.h"\
+	".\ui_shared.h"\
+	
+
+ui_syscalls.c : \
+	"..\..\ui\menudef.h"\
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\bg_public.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	".\keycodes.h"\
+	".\ui_local.h"\
+	".\ui_public.h"\
+	".\ui_shared.h"\
+	

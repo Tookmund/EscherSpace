@@ -1,0 +1,14 @@
+# Microsoft Developer Studio Generated Dependency File, included by q3_ui.mak
+
+..\ui\ui_syscalls.c : \
+	"..\..\ui\menudef.h"\
+	"..\cgame\tr_types.h"\
+	"..\game\bg_lib.h"\
+	"..\game\bg_public.h"\
+	"..\game\q_shared.h"\
+	"..\game\surfaceflags.h"\
+	"..\ui\keycodes.h"\
+	"..\ui\ui_local.h"\
+	"..\ui\ui_public.h"\
+	"..\ui\ui_shared.h"\
+	

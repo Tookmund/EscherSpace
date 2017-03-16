@@ -96,6 +96,7 @@ LINK32=link.exe
 # PROP Use_Debug_Libraries 0
 # PROP Output_Dir ".\Release"
 # PROP Intermediate_Dir ".\Release"
+# PROP Ignore_Export_Lib 0
 # PROP Target_Dir ""
 # ADD BASE CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_USRDLL" /D "Q3_UI_EXPORTS" /D "_MBCS" /YX /GF /c
 # ADD CPP /nologo /MT /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_USRDLL" /D "Q3_UI_EXPORTS" /D "_MBCS" /YX /GF /c
@@ -137,7 +138,7 @@ BSC32=bscmake.exe
 LINK32=link.exe
 # ADD BASE LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib odbc32.lib odbccp32.lib /nologo /base:"0x40000000" /subsystem:windows /dll /incremental:no /pdb:"..\Debug\ui.pdb" /map:"Debug\uix86.map" /debug /machine:IX86 /def:".\ui.def" /out:"..\Debug\uix86.dll" /implib:"Debug/uix86.lib" /pdbtype:sept
 # SUBTRACT BASE LINK32 /pdb:none
-# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib odbc32.lib odbccp32.lib /nologo /base:"0x40000000" /subsystem:windows /dll /pdb:"..\Debug\ui.pdb" /map:"Debug\uix86.map" /debug /machine:IX86 /def:".\ui.def" /out:"C:\ygpip\quake3\escherquake\uix86.dll" /implib:"Debug/uix86.lib" /pdbtype:sept
+# ADD LINK32 kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /base:"0x40000000" /subsystem:windows /dll /pdb:"..\Debug\ui.pdb" /map:"Debug\uix86.map" /debug /machine:IX86 /def:".\ui.def" /out:"C:\ygpip\quake3\escherspace\uix86.dll" /implib:"Debug/uix86.lib" /pdbtype:sept
 # SUBTRACT LINK32 /pdb:none /incremental:no
 
 !ENDIF 
