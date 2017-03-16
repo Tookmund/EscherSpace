@@ -7,7 +7,7 @@ Quake 3 Arena in Space!
 
 Based on escherquake by Johnny Goodnow
 
-_N.B. This mod is ALPHA. It is playable but there will be bugs_
+**N.B. This mod is ALPHA. It is playable but there will be bugs!**
 
 This is not a standard git repository but rather a place to store this code.
 
