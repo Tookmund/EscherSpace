@@ -3405,3 +3405,118 @@
   1:12 say: Orbb: WOW! This unit not see that one coming, baeram!
   1:16 ShutdownGame:
   1:16 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \sv_hostname\Bring It On\sv_punkbuster\0\sv_maxRate\0\sv_minPing\0\sv_maxPing\0\sv_floodProtect\1\g_redTeam\Stroggs\g_blueTeam\Pagans\dmflags\0\fraglimit\0\timelimit\0\sv_maxclients\8\capturelimit\0\g_maxGameClients\0\version\Q3 1.32 win-x86 Oct  7 2002\g_gametype\0\protocol\68\mapname\Q3DM3\sv_privateClients\0\sv_allowDownload\0\gamename\baseq3\g_needpass\0
+  0:00 ClientConnect: 0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientConnect: 1
+  0:00 ClientUserinfoChanged: 1 n\Mynx\t\0\model\mynx\hmodel\mynx\c1\4\c2\5\hc\70\w\0\l\0\skill\ 2.00\tt\0\tl\0
+  0:00 ClientBegin: 1
+  0:00 ClientConnect: 2
+  0:00 ClientUserinfoChanged: 2 n\Orbb\t\0\model\orbb\hmodel\orbb\c1\4\c2\5\hc\70\w\0\l\0\skill\ 2.00\tt\0\tl\0
+  0:00 ClientBegin: 2
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientBegin: 0
+  0:08 Item: 1 item_health
+  0:12 ShutdownGame:
+  0:12 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \g_maxGameClients\0\capturelimit\0\sv_maxclients\8\timelimit\0\fraglimit\0\dmflags\0\g_blueTeam\Pagans\g_redTeam\Stroggs\sv_floodProtect\1\sv_maxPing\0\sv_minPing\0\sv_maxRate\0\sv_punkbuster\0\sv_hostname\Bring It On\version\Q3 1.32 win-x86 Oct  7 2002\g_gametype\0\protocol\68\mapname\Q3DM3\sv_privateClients\0\sv_allowDownload\0\gamename\baseq3\g_needpass\0
+  0:00 ClientConnect: 0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientConnect: 1
+  0:00 ClientUserinfoChanged: 1 n\Mynx\t\0\model\mynx\hmodel\mynx\c1\4\c2\5\hc\70\w\0\l\0\skill\ 2.00\tt\0\tl\0
+  0:00 ClientBegin: 1
+  0:00 ClientConnect: 2
+  0:00 ClientUserinfoChanged: 2 n\Orbb\t\0\model\orbb\hmodel\orbb\c1\4\c2\5\hc\70\w\0\l\0\skill\ 2.00\tt\0\tl\0
+  0:00 ClientBegin: 2
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientBegin: 0
+  0:18 Kill: 0 2 10: baeram killed Orbb by MOD_RAILGUN
+  0:21 Item: 1 item_armor_shard
+  0:21 Item: 1 item_armor_shard
+  0:22 Item: 1 item_armor_shard
+  0:22 Item: 1 item_armor_shard
+  0:37 Kill: 2 0 10: Orbb killed baeram by MOD_RAILGUN
+  0:39 Item: 1 item_armor_body
+  0:42 ClientDisconnect: 1
+  0:42 say: Mynx: There's no place like home ... there's no place like home.
+  0:42 ShutdownGame:
+  0:42 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \g_maxGameClients\0\capturelimit\0\sv_maxclients\8\timelimit\0\fraglimit\0\dmflags\0\g_blueTeam\Pagans\g_redTeam\Stroggs\sv_floodProtect\1\sv_maxPing\0\sv_minPing\0\sv_maxRate\0\sv_punkbuster\0\sv_hostname\Bring It On\version\Q3 1.32 win-x86 Oct  7 2002\g_gametype\0\protocol\68\mapname\Q3DM6\sv_privateClients\0\sv_allowDownload\0\bot_minplayers\0\gamename\baseq3\g_needpass\0
+  0:00 ClientConnect: 0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientBegin: 0
+  1:12 ShutdownGame:
+  1:12 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \sv_hostname\Bring It On\sv_punkbuster\0\sv_maxRate\0\sv_minPing\0\sv_maxPing\0\sv_floodProtect\1\g_redTeam\Stroggs\g_blueTeam\Pagans\dmflags\0\fraglimit\0\timelimit\0\sv_maxclients\8\capturelimit\0\g_maxGameClients\0\version\Q3 1.32 win-x86 Oct  7 2002\g_gametype\0\protocol\68\mapname\Q3DM1\sv_privateClients\0\sv_allowDownload\0\gamename\baseq3\g_needpass\0
+  0:00 ClientConnect: 0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientBegin: 0
+  0:45 Item: 0 item_armor_shard
+  0:47 Item: 0 item_armor_shard
+  0:47 Item: 0 item_armor_shard
+  1:33 Item: 0 item_armor_shard
+  1:33 Item: 0 item_armor_shard
+  1:33 Item: 0 item_armor_shard
+  2:11 ShutdownGame:
+  2:11 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \g_maxGameClients\0\capturelimit\0\sv_maxclients\8\timelimit\0\fraglimit\0\dmflags\0\g_blueTeam\Pagans\g_redTeam\Stroggs\sv_floodProtect\1\sv_maxPing\0\sv_minPing\0\sv_maxRate\0\sv_punkbuster\0\sv_hostname\Bring It On\version\Q3 1.32 win-x86 Oct  7 2002\g_gametype\0\protocol\68\mapname\Q3DM1\sv_privateClients\0\sv_allowDownload\0\gamename\baseq3\g_needpass\0
+  0:00 ClientConnect: 0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientBegin: 0
+  0:04 Item: 0 item_armor_shard
+  0:04 Item: 0 item_armor_shard
+  0:44 Item: 0 item_armor_shard
+  0:44 Item: 0 item_armor_shard
+  0:44 Item: 0 item_armor_shard
+  1:17 Item: 0 item_armor_shard
+  1:17 Item: 0 item_armor_shard
+  1:17 Item: 0 item_armor_shard
+  2:01 Item: 0 item_armor_shard
+  2:02 Item: 0 item_armor_shard
+  2:02 Item: 0 item_armor_shard
+  2:26 Item: 0 item_armor_shard
+  2:43 ShutdownGame:
+  2:43 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \sv_hostname\Bring It On\sv_punkbuster\0\sv_maxRate\0\sv_minPing\0\sv_maxPing\0\sv_floodProtect\1\g_redTeam\Stroggs\g_blueTeam\Pagans\dmflags\0\fraglimit\0\timelimit\0\sv_maxclients\8\capturelimit\0\g_maxGameClients\0\version\Q3 1.32 win-x86 Oct  7 2002\g_gametype\0\protocol\68\mapname\Q3DM1\sv_privateClients\0\sv_allowDownload\0\gamename\baseq3\g_needpass\0
+  0:00 ClientConnect: 0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientBegin: 0
+  0:09 Item: 0 item_armor_shard
+  0:10 Item: 0 item_armor_shard
+  0:10 Item: 0 item_armor_shard
+  0:59 Item: 0 item_armor_shard
+  0:59 Item: 0 item_armor_shard
+  1:19 ClientConnect: 1
+  1:19 ClientUserinfoChanged: 1 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  1:21 ClientUserinfoChanged: 1 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  1:21 ClientUserinfoChanged: 1 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  1:21 ClientBegin: 1
+  2:25 Item: 0 item_armor_shard
+  2:25 Item: 0 item_armor_shard
+  2:26 Item: 0 item_armor_shard
+  2:37 ShutdownGame:
+  2:37 ------------------------------------------------------------
+  0:00 ------------------------------------------------------------
+  0:00 InitGame: \g_maxGameClients\0\capturelimit\0\sv_maxclients\8\timelimit\0\fraglimit\0\dmflags\0\g_blueTeam\Pagans\g_redTeam\Stroggs\sv_floodProtect\1\sv_maxPing\0\sv_minPing\0\sv_maxRate\0\sv_punkbuster\0\sv_hostname\Bring It On\version\Q3 1.32 win-x86 Oct  7 2002\g_gametype\0\protocol\68\mapname\Q3DM3\sv_privateClients\0\sv_allowDownload\0\gamename\baseq3\g_needpass\0
+  0:00 ClientConnect: 0
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientConnect: 1
+  0:00 ClientUserinfoChanged: 1 n\Mynx\t\0\model\mynx\hmodel\mynx\c1\4\c2\5\hc\70\w\0\l\0\skill\ 2.00\tt\0\tl\0
+  0:00 ClientBegin: 1
+  0:00 ClientConnect: 2
+  0:00 ClientUserinfoChanged: 2 n\Orbb\t\0\model\orbb\hmodel\orbb\c1\4\c2\5\hc\70\w\0\l\0\skill\ 2.00\tt\0\tl\0
+  0:00 ClientBegin: 2
+  0:00 ClientUserinfoChanged: 0 n\baeram\t\0\model\mynx/blue\hmodel\mynx/blue\g_redteam\\g_blueteam\\c1\1\c2\5\hc\100\w\0\l\0\tt\0\tl\0
+  0:00 ClientBegin: 0
+  0:10 ShutdownGame:
+  0:10 ------------------------------------------------------------

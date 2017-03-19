@@ -68,10 +68,10 @@ void DeathmatchScoreboardMessage( gentity_t *ent ) {
 			" %i %i %i %i %i %i %i %i %i %i %i %i %i %i", level.sortedClients[i],
 			cl->ps.persistant[PERS_SCORE], ping, (level.time - cl->pers.enterTime)/60000,
 			scoreFlags, g_entities[level.sortedClients[i]].s.powerups, accuracy, 
-			cl->ps.persistant[PERS_IMPRESSIVE_COUNT],
-			cl->ps.persistant[PERS_EXCELLENT_COUNT],
+			cl->ps.persistant[PERS_ORIGIN0],
+			cl->ps.persistant[PERS_ORIGIN1],
 			cl->ps.persistant[PERS_GAUNTLET_FRAG_COUNT], 
-			cl->ps.persistant[PERS_DEFEND_COUNT], 
+			cl->ps.persistant[PERS_ORIGIN2], 
 			cl->ps.persistant[PERS_ASSIST_COUNT], 
 			perfect,
 			cl->ps.persistant[PERS_CAPTURES]);
@@ -278,7 +278,7 @@ void Cmd_Give_f (gentity_t *ent)
 		if (!give_all)
 			return;
 	}
-
+	/* SPAAACE awards
 	if (Q_stricmp(name, "excellent") == 0) {
 		ent->client->ps.persistant[PERS_EXCELLENT_COUNT]++;
 		return;
@@ -299,7 +299,7 @@ void Cmd_Give_f (gentity_t *ent)
 		ent->client->ps.persistant[PERS_ASSIST_COUNT]++;
 		return;
 	}
-
+	*/
 	// spawn a specific item right on the player
 	if ( !give_all ) {
 		it = BG_FindItem (name);

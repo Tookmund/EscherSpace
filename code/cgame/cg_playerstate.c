@@ -295,8 +295,9 @@ CG_CheckLocalSounds
 ==================
 */
 void CG_CheckLocalSounds( playerState_t *ps, playerState_t *ops ) {
-	int			highScore, health, armor, reward;
-	sfxHandle_t sfx;
+	// SPAAACE awards
+	int			highScore, health, armor; //reward;
+	//sfxHandle_t sfx;
 
 	// don't play the sounds if the player just changed teams
 	if ( ps->persistant[PERS_TEAM] != ops->persistant[PERS_TEAM] ) {
@@ -336,6 +337,7 @@ void CG_CheckLocalSounds( playerState_t *ps, playerState_t *ops ) {
 	}
 
 	// reward sounds
+	/* SPAAACE awards
 	reward = qfalse;
 	if (ps->persistant[PERS_CAPTURES] != ops->persistant[PERS_CAPTURES]) {
 		pushReward(cgs.media.captureAwardSound, cgs.media.medalCapture, ps->persistant[PERS_CAPTURES]);
@@ -439,7 +441,7 @@ void CG_CheckLocalSounds( playerState_t *ps, playerState_t *ops ) {
 			}
 		}
 	}
-
+	*/
 	// timelimit warnings
 	if ( cgs.timelimit > 0 ) {
 		int		msec;

@@ -1150,8 +1150,7 @@ static qboolean PM_CheckJump(/*qboolean BigJump*/)
 	vec3_t right;
 	vec3_t up;
 	vec3_t muzzle;
-	// TODO: Find real value
-	//vec3_t oldOrigin;
+	vec3_t oldOrigin;
 	//*/
 	{
    
@@ -1178,10 +1177,14 @@ static qboolean PM_CheckJump(/*qboolean BigJump*/)
 	  //* SPAAACE! jumping
 	  // set aiming directions
 	  AngleVectors (pm->ps->viewangles, forward, right, up);
-	  CalcMuzzlePointOriginStuff(*(pm->ps), pm->ps->origin, forward, right, up, muzzle );
+	  //VectorCopy(pm->ps->origin,oldOrigin);
+	  oldOrigin[0] = pm->ps->persistant[PERS_ORIGIN0]/100.0f;
+	  oldOrigin[1] = pm->ps->persistant[PERS_ORIGIN1]/100.0f;
+	  oldOrigin[2] = pm->ps->persistant[PERS_ORIGIN2]/100.0f;
+	  CalcMuzzlePointOriginStuff(*(pm->ps), oldOrigin, forward, right, up, muzzle );
 	  // Recalculate using muzzle as origin
 	  CalcMuzzlePointOriginStuff( *(pm->ps), muzzle, forward, right, up, muzzle);
-	  AngleVectors (pm->ps->viewangles, forward, right, up);
+	  //AngleVectors (pm->ps->viewangles, forward, right, up);
 	  VectorNormalize(forward);
 	  VectorScale(forward,Velocity,forward);
 	  VectorAdd(pm->ps->velocity,forward,pm->ps->velocity);

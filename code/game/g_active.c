@@ -474,6 +474,7 @@ void ClientTimerActions( gentity_t *ent, int msec ) {
 			}
 		}
 		//*/
+
 	}
 #ifdef MISSIONPACK
 	if( bg_itemlist[client->ps.stats[STAT_PERSISTANT_POWERUP]].giTag == PW_AMMOREGEN ) {
@@ -936,6 +937,10 @@ void ClientThink_real( gentity_t *ent ) {
 	pm.pmove_msec = pmove_msec.integer;
 
 	VectorCopy( client->ps.origin, client->oldOrigin );
+	// SPAAACE origin copy
+	client->ps.persistant[PERS_ORIGIN0] = client->oldOrigin[0]*100;
+	client->ps.persistant[PERS_ORIGIN1] = client->oldOrigin[1]*100;
+	client->ps.persistant[PERS_ORIGIN2] = client->oldOrigin[2]*100;
 
 #ifdef MISSIONPACK
 		if (level.intermissionQueued != 0 && g_singlePlayer.integer) {

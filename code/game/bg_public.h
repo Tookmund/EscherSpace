@@ -244,9 +244,15 @@ typedef enum {
 	PERS_ATTACKEE_ARMOR,			// health/armor of last person we attacked
 	PERS_KILLED,					// count of the number of times you died
 	// player awards tracking
+	/* SPAAAACE awards
 	PERS_IMPRESSIVE_COUNT,			// two railgun hits in a row
 	PERS_EXCELLENT_COUNT,			// two successive kills in a short amount of time
 	PERS_DEFEND_COUNT,				// defend awards
+	*/
+	PERS_ORIGIN0,
+	PERS_ORIGIN1,
+	PERS_ORIGIN2,
+	//*/
 	PERS_ASSIST_COUNT,				// assist awards
 	PERS_GAUNTLET_FRAG_COUNT,		// kills with the guantlet
 	PERS_CAPTURES					// captures
