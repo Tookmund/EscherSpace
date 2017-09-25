@@ -1249,8 +1249,10 @@ typedef struct playerState_s {
 
 #define	BUTTON_ANY			2048			// any key whatsoever
 
-// SPAACE alt fire
+//* SPAACE alt fire and wallwalk toggle
 #define BUTTON_ALT			4096
+#define BUTTON_WALLTOG		8192
+//*/
 
 #define	MOVE_RUN			120			// if forwardmove or rightmove are >= MOVE_RUN,
 										// then BUTTON_WALKING should be set

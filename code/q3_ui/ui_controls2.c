@@ -109,24 +109,27 @@ typedef struct
 #define ID_GESTURE		29
 #define ID_CHAT			30
 #define ID_CHAT2		31
+//************SPAAACE********remove unneeded features - add alt fire thrust and reset gravity orientation
+#define ID_RESETGRAV	32
+#define ID_ALT			33
+#define ID_WALLTOG		34
+/* //original code
 #define ID_CHAT3		32
 #define ID_CHAT4		33
-/**********RESET GRAVITY 3/13/08************/
-#define ID_RESETGRAV	34
-/**********RESET GRAVITY 3/13/08************/
+
 // all others
 #define ID_FREELOOK		34
+//*************---**********************************/
 #define ID_INVERTMOUSE	35
 #define ID_ALWAYSRUN	36
 #define ID_AUTOSWITCH	37
 #define ID_MOUSESPEED	38
+/*********SPAAACE*********remove unneeded features
 #define ID_JOYENABLE	39
 #define ID_JOYTHRESHOLD	40
+//*********---**************************************/
 #define ID_SMOOTHMOUSE	41
 
-//* SPAAACE alt fire
-#define ID_ALT			34
-//*/
 #define ANIM_IDLE		0
 #define ANIM_RUN		1
 #define ANIM_WALK		2
@@ -167,9 +170,14 @@ typedef struct
 	menutext_s			looking;
 	menutext_s			weapons;
 	menutext_s			misc;
-/**********RESET GRAVITY 3/13/08************/
+
+//*****SPAAACE*****add change gravity orientation and ald fire thrust menu keys
 	menuaction_s		resetgrav;
-/**********RESET GRAVITY 3/13/08************/
+	menuaction_s		altfire;
+	menuaction_s		walltog;
+	//menuradiobutton_s	walltog;
+/******----************/
+
 	menuaction_s		walkforward;
 	menuaction_s		backpedal;
 	menuaction_s		stepleft;
@@ -195,7 +203,9 @@ typedef struct
 	menuaction_s		lookup;
 	menuaction_s		lookdown;
 	menuaction_s		mouselook;
+/************SPAAACE********remove unneeded features
 	menuradiobutton_s	freelook;
+//************---*************************************/
 	menuaction_s		centerview;
 	menuaction_s		zoomview;
 	menuaction_s		gesture;
@@ -210,10 +220,12 @@ typedef struct
 	qboolean			changesmade;
 	menuaction_s		chat;
 	menuaction_s		chat2;
+/************SPAAACE********remove unneeded features
 	menuaction_s		chat3;
 	menuaction_s		chat4;
 	menuradiobutton_s	joyenable;
 	menuslider_s		joythreshold;
+//*************---******************************/
 	int					section;
 	qboolean			waitingforkey;
 	char				playerModel[64];
@@ -223,9 +235,7 @@ typedef struct
 	int					playerTorso;
 	int					playerWeapon;
 	qboolean			playerChat;
-	//* SPAAACE alt fire
-	menuaction_s		altfire;
-	//*/
+
 	menubitmap_s		back;
 	menutext_s			name;
 } controls_t; 	
@@ -265,17 +275,20 @@ static bind_t g_bindings[] =
 	{"+attack", 		"attack",			ID_ATTACK,		ANIM_ATTACK,	K_CTRL,			-1,		-1, -1},
 	{"weapprev",		"prev weapon",		ID_WEAPPREV,	ANIM_IDLE,		'[',			-1,		-1, -1},
 	{"weapnext", 		"next weapon",		ID_WEAPNEXT,	ANIM_IDLE,		']',			-1,		-1, -1},
-	{"+button3", 		"gesture",			ID_GESTURE,		ANIM_GESTURE,	K_MOUSE3,		-1,		-1, -1},
+//**********SPAAACE************change name from gesture to toggle gravity	
+//	{"+button3", 		"gesture",			ID_GESTURE,		ANIM_GESTURE,	K_MOUSE3,		-1,		-1, -1},	//original code
+	{"+button3", 		"toggle gravity",	ID_GESTURE,		ANIM_GESTURE,	K_MOUSE3,		-1,		-1, -1},
+//*************************************************************************/
 	{"messagemode", 	"chat",				ID_CHAT,		ANIM_CHAT,		't',			-1,		-1, -1},
 	{"messagemode2", 	"chat - team",		ID_CHAT2,		ANIM_CHAT,		-1,				-1,		-1, -1},
+//*****SPAAACE*****add change gravity orientation and ald fire thrust menu keys, remove unneeded features
+	{"resetgrav",		"reset orientation",ID_RESETGRAV,	ANIM_IDLE,		'r',			-1,		-1,	-1},
+	{"+button12",		"thrust",			ID_ALT,			ANIM_ATTACK,	'f',			-1,		-1,	-1},
+	{"+button13",		"auto orientation",	ID_WALLTOG,		ANIM_IDLE,		'h'				-1,		-1,	-1},
+/*   //original code
 	{"messagemode3", 	"chat - target",	ID_CHAT3,		ANIM_CHAT,		-1,				-1,		-1, -1},
 	{"messagemode4", 	"chat - attacker",	ID_CHAT4,		ANIM_CHAT,		-1,				-1,		-1, -1},
-	/**********RESET GRAVITY 3/13/08************/
-	{"resetgrav",		"reset gravity",	ID_RESETGRAV,	ANIM_IDLE,		'r',			-1,		-1,	-1},
-	/**********RESET GRAVITY 3/13/08************/
-	//* SPAAACE alt fire
-	{"+button12",		"Alt Fire",			ID_ALT,			ANIM_ATTACK,	'f',			-1,		-1,	-1},
-	//*/
+//**************---*************************************************/
 	{(char*)NULL,		(char*)NULL,		0,				0,				-1,				-1,		-1,	-1},
 };
 
@@ -285,17 +298,24 @@ static configcvar_t g_configcvars[] =
 	{"m_pitch",			0,					0},
 	{"cg_autoswitch",	0,					0},
 	{"sensitivity",		0,					0},
+/*********SPAAACE*********remove unneeded features
 	{"in_joystick",		0,					0},
 	{"joy_threshold",	0,					0},
+//***********---************************************/
 	{"m_filter",		0,					0},
+/************SPAAACE********remove unneeded features
 	{"cl_freelook",		0,					0},
+//*************---*********************************/
 	{NULL,				0,					0}
 };
 
 static menucommon_s *g_movement_controls[] =
 {
+/**********SPAAACE***********remove unused menu items
+//original code
 	(menucommon_s *)&s_controls.alwaysrun,     
-	(menucommon_s *)&s_controls.run,            
+	(menucommon_s *)&s_controls.run,   
+//***************************************************/	
 	(menucommon_s *)&s_controls.walkforward,
 	(menucommon_s *)&s_controls.backpedal,
 	(menucommon_s *)&s_controls.stepleft,      
@@ -305,17 +325,21 @@ static menucommon_s *g_movement_controls[] =
 	(menucommon_s *)&s_controls.turnleft,      
 	(menucommon_s *)&s_controls.turnright,     
 	(menucommon_s *)&s_controls.sidestep,
-	/**********RESET GRAVITY 3/13/08************/
+	//*****SPAAACE*****add change gravity orientation and ald fire thrust menu keys
 	(menucommon_s *)&s_controls.resetgrav,
-	/**********RESET GRAVITY 3/13/08************/
-	NULL,
+	(menucommon_s *)&s_controls.altfire,
+	(menucommon_s *)&s_controls.walltog,
+	/**********************/
+	NULL
 };
 
 static menucommon_s *g_weapons_controls[] = {
-	(menucommon_s *)&s_controls.attack,
-	//* SPAAACE alt fire
+	(menucommon_s *)&s_controls.attack,    
+//* SPAAACE remove weapon selection from weapon menu and add reset orientation and thrust to weapon menu
+	(menucommon_s *)&s_controls.resetgrav,
 	(menucommon_s *)&s_controls.altfire,
-	//*/
+	(menucommon_s *)&s_controls.gesture,
+	/* original code 
 	(menucommon_s *)&s_controls.nextweapon,
 	(menucommon_s *)&s_controls.prevweapon,
 	(menucommon_s *)&s_controls.autoswitch,    
@@ -327,7 +351,8 @@ static menucommon_s *g_weapons_controls[] = {
 	(menucommon_s *)&s_controls.lightning,   
 	(menucommon_s *)&s_controls.railgun,          
 	(menucommon_s *)&s_controls.plasma,           
-	(menucommon_s *)&s_controls.bfg,              
+	(menucommon_s *)&s_controls.bfg,    
+//********************************************************************/	
 	NULL,
 };
 
@@ -338,22 +363,35 @@ static menucommon_s *g_looking_controls[] = {
 	(menucommon_s *)&s_controls.lookup,
 	(menucommon_s *)&s_controls.lookdown,
 	(menucommon_s *)&s_controls.mouselook,
+/************SPAAACE********remove unneeded features
 	(menucommon_s *)&s_controls.freelook,
+//*************---******************************/
 	(menucommon_s *)&s_controls.centerview,
 	(menucommon_s *)&s_controls.zoomview,
+/************SPAAACE********remove unneeded features
 	(menucommon_s *)&s_controls.joyenable,
 	(menucommon_s *)&s_controls.joythreshold,
+//*************---**********************************/
+
+	//*****SPAAACE*****add change gravity orientation and ald fire thrust menu keys
+	(menucommon_s *)&s_controls.resetgrav,
+    //***********************************************/
 	NULL,
 };
 
 static menucommon_s *g_misc_controls[] = {
-	(menucommon_s *)&s_controls.showscores, 
+	(menucommon_s *)&s_controls.showscores,
+/**********SPAAACE***********remove unused menu items
+//original code		
 	(menucommon_s *)&s_controls.useitem,
+//************************************************/
 	(menucommon_s *)&s_controls.gesture,
 	(menucommon_s *)&s_controls.chat,
 	(menucommon_s *)&s_controls.chat2,
+/************SPAAACE********remove unneeded features
 	(menucommon_s *)&s_controls.chat3,
 	(menucommon_s *)&s_controls.chat4,
+//**************---********************************/
 	NULL,
 };
 
@@ -832,9 +870,11 @@ static void Controls_GetConfig( void )
 	s_controls.alwaysrun.curvalue    = UI_ClampCvar( 0, 1, Controls_GetCvarValue( "cl_run" ) );
 	s_controls.autoswitch.curvalue   = UI_ClampCvar( 0, 1, Controls_GetCvarValue( "cg_autoswitch" ) );
 	s_controls.sensitivity.curvalue  = UI_ClampCvar( 2, 30, Controls_GetCvarValue( "sensitivity" ) );
+/************SPAAACE********remove unneeded features
 	s_controls.joyenable.curvalue    = UI_ClampCvar( 0, 1, Controls_GetCvarValue( "in_joystick" ) );
 	s_controls.joythreshold.curvalue = UI_ClampCvar( 0.05f, 0.75f, Controls_GetCvarValue( "joy_threshold" ) );
 	s_controls.freelook.curvalue     = UI_ClampCvar( 0, 1, Controls_GetCvarValue( "cl_freelook" ) );
+//***************---*******************************/
 }
 
 /*
@@ -874,9 +914,11 @@ static void Controls_SetConfig( void )
 	trap_Cvar_SetValue( "cl_run", s_controls.alwaysrun.curvalue );
 	trap_Cvar_SetValue( "cg_autoswitch", s_controls.autoswitch.curvalue );
 	trap_Cvar_SetValue( "sensitivity", s_controls.sensitivity.curvalue );
+/************SPAAACE********remove unneeded features
 	trap_Cvar_SetValue( "in_joystick", s_controls.joyenable.curvalue );
 	trap_Cvar_SetValue( "joy_threshold", s_controls.joythreshold.curvalue );
 	trap_Cvar_SetValue( "cl_freelook", s_controls.freelook.curvalue );
+//*************---****************************************/
 	trap_Cmd_ExecuteText( EXEC_APPEND, "in_restart\n" );
 }
 
@@ -908,9 +950,11 @@ static void Controls_SetDefaults( void )
 	s_controls.alwaysrun.curvalue    = Controls_GetCvarDefault( "cl_run" );
 	s_controls.autoswitch.curvalue   = Controls_GetCvarDefault( "cg_autoswitch" );
 	s_controls.sensitivity.curvalue  = Controls_GetCvarDefault( "sensitivity" );
+/************SPAAACE********remove unneeded features
 	s_controls.joyenable.curvalue    = Controls_GetCvarDefault( "in_joystick" );
 	s_controls.joythreshold.curvalue = Controls_GetCvarDefault( "joy_threshold" );
 	s_controls.freelook.curvalue     = Controls_GetCvarDefault( "cl_freelook" );
+//***************---********************************/
 }
 
 /*
@@ -1132,20 +1176,35 @@ static void Controls_MenuEvent( void* ptr, int event )
 				UI_PopMenu();
 			}
 			break;
-
+		/* SPAAACE toggle wallwalk radio button
+		case ID_WALLTOG:
+			if (s_controls.walltog.curvalue)
+			{
+				WallTog = qtrue;
+			}
+			else
+			{
+				WallTog = qfalse;
+			}
+			break;
+		//*/
+/************SPAAACE********remove unneeded features
 		case ID_FREELOOK:
+//*************---******************************/
 		case ID_MOUSESPEED:
 		case ID_INVERTMOUSE:
 		case ID_SMOOTHMOUSE:
 		case ID_ALWAYSRUN:
 		case ID_AUTOSWITCH:
+/************SPAAACE********remove unneeded features
 		case ID_JOYENABLE:
 		case ID_JOYTHRESHOLD:
 			if (event == QM_ACTIVATED)
 			{
 				s_controls.changesmade = qtrue;
-			}
-			break;		
+			}		
+//************---*************************************/
+			break;
 	}
 }
 
@@ -1356,20 +1415,34 @@ static void Controls_MenuInit( void )
 	s_controls.sidestep.generic.ownerdraw = Controls_DrawKeyBinding;
 	s_controls.sidestep.generic.id        = ID_STRAFE;
 
-	/**********RESET GRAVITY 3/13/08************/
+	//*****SPAAACE*****add change gravity orientation and ald fire thrust menu keys
 	s_controls.resetgrav.generic.type	  = MTYPE_ACTION;
 	s_controls.resetgrav.generic.flags     = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS|QMF_GRAYED|QMF_HIDDEN;
 	s_controls.resetgrav.generic.callback  = Controls_ActionEvent;
 	s_controls.resetgrav.generic.ownerdraw = Controls_DrawKeyBinding;
 	s_controls.resetgrav.generic.id        = ID_RESETGRAV;
-	/**********RESET GRAVITY 3/13/08************/
-	//* SPAAACE alt fire
+	
 	s_controls.altfire.generic.type      = MTYPE_ACTION;
 	s_controls.altfire.generic.flags     = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS|QMF_GRAYED|QMF_HIDDEN;
 	s_controls.altfire.generic.callback  = Controls_ActionEvent;
 	s_controls.altfire.generic.ownerdraw = Controls_DrawKeyBinding;
 	s_controls.altfire.generic.id        = ID_ALT;
-	//*/
+	
+	s_controls.walltog.generic.type      = MTYPE_ACTION;
+	s_controls.walltog.generic.flags     = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS|QMF_GRAYED|QMF_HIDDEN;
+	s_controls.walltog.generic.callback  = Controls_ActionEvent;
+	s_controls.walltog.generic.ownerdraw = Controls_DrawKeyBinding;
+	s_controls.walltog.generic.id        = ID_WALLTOG;
+	/*
+	s_controls.walltog.generic.type		= MTYPE_RADIOBUTTON;
+	s_controls.walltog.generic.flags		= QMF_SMALLFONT;
+	s_controls.walltog.generic.x			= SCREEN_WIDTH/2;
+	s_controls.walltog.generic.name		= "toggle wallwalk";
+	s_controls.walltog.generic.id			= ID_WALLTOG;
+	s_controls.walltog.generic.callback	= Controls_MenuEvent;
+	s_controls.walltog.generic.statusbar	= Controls_StatusBar;
+	//******************************************************************************/
+
 	s_controls.run.generic.type	     = MTYPE_ACTION;
 	s_controls.run.generic.flags     = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS|QMF_GRAYED|QMF_HIDDEN;
 	s_controls.run.generic.callback  = Controls_ActionEvent;
@@ -1465,7 +1538,7 @@ static void Controls_MenuInit( void )
 	s_controls.mouselook.generic.callback  = Controls_ActionEvent;
 	s_controls.mouselook.generic.ownerdraw = Controls_DrawKeyBinding;
 	s_controls.mouselook.generic.id        = ID_MOUSELOOK;
-
+/************SPAAACE********remove unneeded features
 	s_controls.freelook.generic.type		= MTYPE_RADIOBUTTON;
 	s_controls.freelook.generic.flags		= QMF_SMALLFONT;
 	s_controls.freelook.generic.x			= SCREEN_WIDTH/2;
@@ -1473,7 +1546,7 @@ static void Controls_MenuInit( void )
 	s_controls.freelook.generic.id			= ID_FREELOOK;
 	s_controls.freelook.generic.callback	= Controls_MenuEvent;
 	s_controls.freelook.generic.statusbar	= Controls_StatusBar;
-
+//********************---**********************************/
 	s_controls.centerview.generic.type	    = MTYPE_ACTION;
 	s_controls.centerview.generic.flags     = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS|QMF_GRAYED|QMF_HIDDEN;
 	s_controls.centerview.generic.callback  = Controls_ActionEvent;
@@ -1557,7 +1630,7 @@ static void Controls_MenuInit( void )
 	s_controls.chat2.generic.callback  = Controls_ActionEvent;
 	s_controls.chat2.generic.ownerdraw = Controls_DrawKeyBinding;
 	s_controls.chat2.generic.id        = ID_CHAT2;
-
+/************SPAAACE********remove unneeded features
 	s_controls.chat3.generic.type	   = MTYPE_ACTION;
 	s_controls.chat3.generic.flags     = QMF_LEFT_JUSTIFY|QMF_PULSEIFFOCUS|QMF_GRAYED|QMF_HIDDEN;
 	s_controls.chat3.generic.callback  = Controls_ActionEvent;
@@ -1587,7 +1660,7 @@ static void Controls_MenuInit( void )
 	s_controls.joythreshold.minvalue		  = 0.05f;
 	s_controls.joythreshold.maxvalue		  = 0.75f;
 	s_controls.joythreshold.generic.statusbar = Controls_StatusBar;
-
+//******************---***********************************/
 	s_controls.name.generic.type	= MTYPE_PTEXT;
 	s_controls.name.generic.flags	= QMF_CENTER_JUSTIFY|QMF_INACTIVE;
 	s_controls.name.generic.x		= 320;
@@ -1613,13 +1686,16 @@ static void Controls_MenuInit( void )
 	Menu_AddItem( &s_controls.menu, &s_controls.lookup );
 	Menu_AddItem( &s_controls.menu, &s_controls.lookdown );
 	Menu_AddItem( &s_controls.menu, &s_controls.mouselook );
+/************SPAAACE********remove unneeded features
 	Menu_AddItem( &s_controls.menu, &s_controls.freelook );
+//*************---************************************/
 	Menu_AddItem( &s_controls.menu, &s_controls.centerview );
 	Menu_AddItem( &s_controls.menu, &s_controls.zoomview );
+/************SPAAACE********remove unneeded features
 	Menu_AddItem( &s_controls.menu, &s_controls.joyenable );
 	Menu_AddItem( &s_controls.menu, &s_controls.joythreshold );
-
 	Menu_AddItem( &s_controls.menu, &s_controls.alwaysrun );
+//***************---*****************************/
 	Menu_AddItem( &s_controls.menu, &s_controls.run );
 	Menu_AddItem( &s_controls.menu, &s_controls.walkforward );
 	Menu_AddItem( &s_controls.menu, &s_controls.backpedal );
@@ -1630,16 +1706,15 @@ static void Controls_MenuInit( void )
 	Menu_AddItem( &s_controls.menu, &s_controls.turnleft );
 	Menu_AddItem( &s_controls.menu, &s_controls.turnright );
 	Menu_AddItem( &s_controls.menu, &s_controls.sidestep );
-	/**********RESET GRAVITY 3/13/08************/
+	//*****SPAAACE*****add change gravity orientation and ald fire thrust menu keys
 	Menu_AddItem( &s_controls.menu, &s_controls.resetgrav );
-	/**********RESET GRAVITY 3/13/08************/
-	//* SPAAACE alt fire
 	Menu_AddItem( &s_controls.menu, &s_controls.altfire );
-	//*/
+	Menu_AddItem( &s_controls.menu, &s_controls.walltog );
+	//***************************************************************/
 	Menu_AddItem( &s_controls.menu, &s_controls.attack );
-	Menu_AddItem( &s_controls.menu, &s_controls.nextweapon );
-	Menu_AddItem( &s_controls.menu, &s_controls.prevweapon );
-	Menu_AddItem( &s_controls.menu, &s_controls.autoswitch );
+	//Menu_AddItem( &s_controls.menu, &s_controls.nextweapon );
+	//Menu_AddItem( &s_controls.menu, &s_controls.prevweapon );
+	//Menu_AddItem( &s_controls.menu, &s_controls.autoswitch );
 	Menu_AddItem( &s_controls.menu, &s_controls.chainsaw );
 	Menu_AddItem( &s_controls.menu, &s_controls.machinegun );
 	Menu_AddItem( &s_controls.menu, &s_controls.shotgun );
@@ -1655,9 +1730,10 @@ static void Controls_MenuInit( void )
 	Menu_AddItem( &s_controls.menu, &s_controls.gesture );
 	Menu_AddItem( &s_controls.menu, &s_controls.chat );
 	Menu_AddItem( &s_controls.menu, &s_controls.chat2 );
+/************SPAAACE********remove unneeded features
 	Menu_AddItem( &s_controls.menu, &s_controls.chat3 );
 	Menu_AddItem( &s_controls.menu, &s_controls.chat4 );
-
+//***************---************************************/
 	Menu_AddItem( &s_controls.menu, &s_controls.back );
 
 	trap_Cvar_VariableStringBuffer( "name", s_controls.name.string, 16 );

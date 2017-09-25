@@ -132,6 +132,8 @@ void CG_BloodTrail( localEntity_t *le ) {
 	for ( ; t <= t2; t += step ) {
 		BG_EvaluateTrajectory( &le->pos, t, newOrigin );
 
+//****SPAAACE****firey explosion for the drone
+/*		//original code
 		blood = CG_SmokePuff( newOrigin, vec3_origin, 
 					  20,		// radius
 					  1, 1, 1, 1,	// color
@@ -140,6 +142,16 @@ void CG_BloodTrail( localEntity_t *le ) {
 					  0,		// fadeInTime
 					  0,		// flags
 					  cgs.media.bloodTrailShader );
+*/
+ 				blood = CG_SmokePuff( newOrigin, vec3_origin, 
+ 							  300,		// radius
+ 							  0.1f, 0.1f, 0.1f, 1.0f,	// color
+ 							  4000,		// trailTime
+ 							  t,		// startTime
+							  0,		// fadeInTime
+ 							  0,		// flags
+							  cgs.media.rocketExplosionShader );	
+//***-----****************************************/
 		// use the optimized version
 		blood->leType = LE_FALL_SCALE_FADE;
 		// drop a total of 40 units over its lifetime

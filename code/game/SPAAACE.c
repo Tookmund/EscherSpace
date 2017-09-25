@@ -85,4 +85,17 @@ void CalcMuzzlePointOriginStuff ( playerState_t ps, vec3_t origin, vec3_t forwar
 	// snap to integer coordinates for more efficient network bandwidth usage
 	SnapVector( muzzlePoint );*/
 }
+
+void CalcVecDir(pmove_t *pm, vec3_t forward, vec3_t right, vec3_t up, vec3_t muzzle) {
+	vec3_t oldOrigin;
+	// set aiming directions
+	AngleVectors (pm->ps->viewangles, forward, right, up);
+	//VectorCopy(pm->ps->origin,oldOrigin);
+	oldOrigin[0] = pm->ps->persistant[PERS_ORIGIN0]/100.0f;
+	oldOrigin[1] = pm->ps->persistant[PERS_ORIGIN1]/100.0f;
+	oldOrigin[2] = pm->ps->persistant[PERS_ORIGIN2]/100.0f;
+	CalcMuzzlePointOriginStuff(*(pm->ps), oldOrigin, forward, right, up, muzzle );
+	// Recalculate using muzzle as origin
+	CalcMuzzlePointOriginStuff( *(pm->ps), muzzle, forward, right, up, muzzle);
+}
 /**************************************************************************************************************/

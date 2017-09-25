@@ -886,6 +886,38 @@ static void CG_RegisterGraphics( void ) {
 	cgs.media.regenShader = trap_R_RegisterShader("powerups/regen" );
 	cgs.media.hastePuffShader = trap_R_RegisterShader("hasteSmokePuff" );
 
+	 //*****SPAAACE*************************register heart meter and weapon charge meter
+	cgs.media.heartIcons[0] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartM" );
+	cgs.media.heartIcons[1] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartL" );
+	cgs.media.heartIcons[2] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartK" );
+	cgs.media.heartIcons[3] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartJ" );
+	cgs.media.heartIcons[4] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartI" );
+	cgs.media.heartIcons[5] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartH" );
+	cgs.media.heartIcons[6] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartG" );
+	cgs.media.heartIcons[7] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartF" );
+	cgs.media.heartIcons[8] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartE" );
+	cgs.media.heartIcons[9] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartD" );
+	cgs.media.heartIcons[10] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartC" );
+	cgs.media.heartIcons[11] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartB" );
+	cgs.media.heartIcons[12] = trap_R_RegisterShaderNoMip(  "gfx/2d/heartA" );
+	cgs.media.heartIcons[13] = trap_R_RegisterShaderNoMip(  "gfx/2d/heart100" );
+
+	cgs.media.clipIcons[0] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip50" );
+	cgs.media.clipIcons[1] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip46" );
+	cgs.media.clipIcons[2] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip42" );
+	cgs.media.clipIcons[3] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip38" );
+	cgs.media.clipIcons[4] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip34" );
+	cgs.media.clipIcons[5] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip30" );
+	cgs.media.clipIcons[6] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip26" );
+	cgs.media.clipIcons[7] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip22" );
+	cgs.media.clipIcons[8] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip18" );
+	cgs.media.clipIcons[9] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip14" );
+	cgs.media.clipIcons[10] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip10" );
+	cgs.media.clipIcons[11] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip6" );
+	cgs.media.clipIcons[12] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip2" );
+	cgs.media.clipIcons[13] = trap_R_RegisterShaderNoMip(  "gfx/2d/clip0" );
+//****************************************************************************/
+
 #ifdef MISSIONPACK
 	if ( cgs.gametype == GT_CTF || cgs.gametype == GT_1FCTF || cgs.gametype == GT_HARVESTER || cg_buildScript.integer ) {
 #else
@@ -1925,7 +1957,10 @@ void CG_Init( int serverMessageNum, int serverCommandSequence, int clientNum ) {
 	CG_LoadingString( "graphics" );
 
 	CG_RegisterGraphics();
-
+//******SPAAACE*********************precache player models on map start
+	CG_InvCacheAllModels();
+	CG_ResetLoadingIcons();
+/*****************************************************/
 	CG_LoadingString( "clients" );
 
 	CG_RegisterClients();		// if low on memory, some clients will be deferred

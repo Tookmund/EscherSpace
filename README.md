@@ -8,6 +8,7 @@ Quake 3 Arena in Space!
 
 
 Based on escherquake by Johnny Goodnow
+
 SPACE
 
 -----
@@ -33,6 +34,7 @@ SPACE
 - [ ] Clanking when not on floor
 
 Maybe?
-------
+---
 - [ ] Stop Spawn Floating
 
+- [ ] CTF gravity toggle

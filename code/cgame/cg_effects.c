@@ -549,7 +549,9 @@ void CG_LaunchGib( vec3_t origin, vec3_t velocity, qhandle_t hModel ) {
 	le->bounceFactor = 0.6f;
 
 	le->leBounceSoundType = LEBS_BLOOD;
-	le->leMarkType = LEMT_BLOOD;
+/***SPAAACE***don't let drone explosion gibs leave blood splaters
+	le->leMarkType = LEMT_BLOOD;		//original code
+//***-----*****************************/
 }
 
 /*

@@ -117,6 +117,9 @@ static qboolean	CG_ParseAnimationFile( const char *filename, clientInfo_t *ci ) 
 			if ( !token ) {
 				break;
 			}
+			// SPAAACE default to mech footsteps
+			ci->footsteps = FOOTSTEP_MECH;
+			/*
 			if ( !Q_stricmp( token, "default" ) || !Q_stricmp( token, "normal" ) ) {
 				ci->footsteps = FOOTSTEP_NORMAL;
 			} else if ( !Q_stricmp( token, "boot" ) ) {
@@ -130,6 +133,7 @@ static qboolean	CG_ParseAnimationFile( const char *filename, clientInfo_t *ci ) 
 			} else {
 				CG_Printf( "Bad footsteps parm in %s: %s\n", filename, token );
 			}
+			*/
 			continue;
 		} else if ( !Q_stricmp( token, "headoffset" ) ) {
 			for ( i = 0 ; i < 3 ; i++ ) {
@@ -1069,6 +1073,52 @@ void CG_LoadDeferredPlayers( void ) {
 	}
 }
 
+//*********SPAAACE************precache player models on map start
+void CG_InvCacheAllModels(void)
+{
+	int i, mem;
+	clientInfo_t *ci, *PrevCI = NULL;
+
+	for (i = 0; i < 2; ++i)//i<Total number of models, not collection size!
+	{
+		//Modify the skin names as you wish, we used all blue or red.
+		//Do the same with teams. Or you can create a char collection
+		// of skin names with bg_misc.c like the model names if you wish...
+
+			ci = cgs.media.playerModels + i;
+			strcpy(ci->modelName, playerModels[i]);
+			strcpy(ci->skinName, "default");
+			strcpy(ci->headModelName, playerModels[i]);
+			strcpy(ci->headSkinName, "default");
+	      //ci->team = TEAM_BLUE;
+
+		ci->deferred = qfalse;
+		ci->infoValid = qtrue;
+
+		CG_CachingClient(ci->modelName, ci->skinName);
+
+		// if we are low on memory, deferred it
+		mem = trap_MemoryRemaining();
+		if (mem < 4000000)
+		{
+			if (mem < 4000000)
+				CG_Printf("Memory is low.  Using deferred model (%s, %s).\n", ci->modelName, ci->skinName);		
+			else if (PrevCI != NULL)
+				CG_CopyClientInfoModel(PrevCI, ci);
+			else
+				CG_Error("Don't have enough memory to load any model ???\n");
+
+			continue;
+		}
+
+		CG_LoadClientInfo(ci);
+
+		PrevCI = ci;
+	}
+}
+//****************---********************/
+
+
 /*
 =============================================================================
 
@@ -1548,6 +1598,42 @@ static void CG_HasteTrail( centity_t *cent ) {
 	// use the optimized local entity add
 	smoke->leType = LE_SCALE_FADE;
 }
+
+/************SPAAACE************smoke trail for a damaged drone (with haste)
+===============
+CG_SmokeTrail
+===============
+*/
+static void CG_SmokeTrail( centity_t *cent ) {
+	localEntity_t	*smoke;
+	vec3_t			origin;
+
+	if ( cent->trailTime > cg.time ) {
+		return;
+	}
+
+	cent->trailTime += 100;
+	if ( cent->trailTime < cg.time ) {
+		cent->trailTime = cg.time;
+	}
+
+	VectorCopy( cent->lerpOrigin, origin );
+	origin[2] -= 16;
+
+	smoke = CG_SmokePuff( origin, vec3_origin, 
+				  50, 
+				  1, 1, 1, 1,
+				  2000, 
+				  cg.time,
+				  0,
+				  0,
+				  cgs.media.smokePuffShader );
+
+	// use the optimized local entity add
+	smoke->leType = LE_SCALE_FADE;
+}
+//*************----****************************/
+
 
 #ifdef MISSIONPACK
 /*
@@ -2335,7 +2421,13 @@ void CG_Player( centity_t *cent ) {
 	//
 	legs.hModel = ci->legsModel;
 	legs.customSkin = ci->legsSkin;
-
+	//* SPAAACE scale down drone model
+	if (cgs.gametype == GT_DRONE) {
+		VectorScale(legs.axis[0], 0.5,legs.axis[0] );
+		VectorScale(legs.axis[1], 0.5,legs.axis[1] );
+		VectorScale(legs.axis[2], 0.5,legs.axis[2] );
+	}
+	//*/
 	VectorCopy( cent->lerpOrigin, legs.origin );
 
 	VectorCopy( cent->lerpOrigin, legs.lightingOrigin );
@@ -2581,6 +2673,8 @@ void CG_Player( centity_t *cent ) {
 		return;
 	}
 	head.customSkin = ci->headSkin;
+	//* SPAAACE 
+	
 
 	VectorCopy( cent->lerpOrigin, head.lightingOrigin );
 

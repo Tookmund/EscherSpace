@@ -527,7 +527,13 @@ static void CG_DrawStatusBar( void ) {
 	centity_t	*cent;
 	playerState_t	*ps;
 	int			value;
-	vec4_t		hcolor;
+//*******************SPAAACE************define colors for charge meter (ammo) and heart meter (health)
+	static float healthColor[4] = {1.0f, 0.0f, 0.0f, 0.75f};
+	static float clipColor[4] = {1.0f, 1.0f, 1.0f, 0.75f};
+	int x;			//x value for drawing health meter
+	int y;			//y value for drawing health meter
+	//	vec4_t		hcolor;		//original code
+//**********************************************************************************/
 	vec3_t		angles;
 	vec3_t		origin;
 #ifdef MISSIONPACK
@@ -553,6 +559,7 @@ static void CG_DrawStatusBar( void ) {
 	VectorClear( angles );
 
 	// draw any 3D icons first, so the changes back to 2D are minimized
+	/****************SPAAACE************don't draw ammo model, since we only have one weapon, don't draw head
 	if ( cent->currentState.weapon && cg_weapons[ cent->currentState.weapon ].ammoModel ) {
 		origin[0] = 70;
 		origin[1] = 0;
@@ -561,8 +568,8 @@ static void CG_DrawStatusBar( void ) {
 		CG_Draw3DModel( CHAR_WIDTH*3 + TEXT_ICON_SPACE, 432, ICON_SIZE, ICON_SIZE,
 					   cg_weapons[ cent->currentState.weapon ].ammoModel, 0, origin, angles );
 	}
-
 	CG_DrawStatusBarHead( 185 + CHAR_WIDTH*3 + TEXT_ICON_SPACE );
+    //**********************************************************************************/
 
 	if( cg.predictedPlayerState.powerups[PW_REDFLAG] ) {
 		CG_DrawStatusBarFlag( 185 + CHAR_WIDTH*3 + TEXT_ICON_SPACE + ICON_SIZE, TEAM_RED );
@@ -597,41 +604,137 @@ static void CG_DrawStatusBar( void ) {
 	//
 	// ammo
 	//
-	if ( cent->currentState.weapon ) {
+	if ( cent->currentState.weapon ) 
+	{
 		value = ps->ammo[cent->currentState.weapon];
-		if ( value > -1 ) {
-			if ( cg.predictedPlayerState.weaponstate == WEAPON_FIRING
-				&& cg.predictedPlayerState.weaponTime > 100 ) {
+/*********SPAAACE**********don't draw value for ammo
+		if ( value > -1 )				//original code
+		{
+			if ( cg.predictedPlayerState.weaponstate == WEAPON_FIRING && cg.predictedPlayerState.weaponTime > 100 ) 
+			{
 				// draw as dark grey when reloading
 				color = 2;	// dark grey
-			} else {
-				if ( value >= 0 ) {
+			} 
+			else 
+			{
+				if ( value >= 0 ) 
+				{
 					color = 0;	// green
-				} else {
+				} 
+				else 
+				{
 					color = 1;	// red
 				}
 			}
-			trap_R_SetColor( colors[color] );
-			
+			trap_R_SetColor( colors[color] );			
 			CG_DrawField (0, 432, 3, value);
 			trap_R_SetColor( NULL );
+//*************************************************/			
 
+//*********SPAAACE***********draw charge meter for ammo, don't draw ammo icon, since we only have 1 weapon
+			trap_R_SetColor( clipColor );
+			if(value <= 13*2)
+			{
+				color = (cg.time >> 8) & 1;	// flash
+				trap_R_SetColor( colors[color] );
+			}
+			if ( value >= 50*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[0] );
+			else if ( value >= 46*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[1] );
+			else if ( value >= 42*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[2] );
+			else if ( value >= 38*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[3] );
+			else if ( value >= 34*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[4] );
+			else if ( value >= 30*2)
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[5] );
+			else if ( value >= 26*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[6] );
+			else if ( value >= 22*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[7] );
+			else if ( value >= 18*2)
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[8] );
+			else if ( value >= 14*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[9] );
+			else if ( value >= 10*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[10] );
+			else if ( value >= 6*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[11] );
+			else if ( value >= 2*2 )
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[12] );
+			else 
+				CG_DrawPic( 0, 432, ICON_SIZE, ICON_SIZE, cgs.media.clipIcons[13] );
+
+			/*
+			//original code
 			// if we didn't draw a 3D icon, draw a 2D icon for ammo
-			if ( !cg_draw3dIcons.integer && cg_drawIcons.integer ) {
+			if ( !cg_draw3dIcons.integer && cg_drawIcons.integer ) 
+			{
 				qhandle_t	icon;
 
 				icon = cg_weapons[ cg.predictedPlayerState.weapon ].ammoIcon;
-				if ( icon ) {
+				if ( icon ) 
+				{
 					CG_DrawPic( CHAR_WIDTH*3 + TEXT_ICON_SPACE, 432, ICON_SIZE, ICON_SIZE, icon );
 				}
 			}
 		}
+//*****************************************************************************************/
 	}
 
 	//
 	// health
 	//
 	value = ps->stats[STAT_HEALTH];
+//************SPAAACE***********draw heart for health meter, don't show armor meter
+	trap_R_SetColor( healthColor );
+	//* SPAAACE move health meter if lagometer is going to be drawn
+	if ( !cg_lagometer.integer || cgs.localServer ) x = 595;
+	else x = 540;
+	y = 432;
+	if ( value >= 93 )
+		CG_DrawPic( x, y, ICON_SIZE, ICON_SIZE, cgs.media.heartIcons[13] );
+	else
+	if ( value >= 86 )
+		CG_DrawPic( x, y,ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[12] );
+	else
+	if ( value >= 79 )
+		CG_DrawPic( x, y,ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[11] );
+	else
+	if ( value >= 72 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[10] );
+	else
+	if ( value >= 65 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[9] );
+	else
+	if ( value >= 58 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[8] );
+	else
+	if ( value >= 51 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[7] );
+	else
+	if ( value >= 44 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[6] );
+	else
+	if ( value >= 37 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[5] );
+	else
+	if ( value >= 30 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[4] );
+	else
+	if ( value >= 23 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[3] );
+	else
+	if ( value >= 16 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[2] );
+	else
+	if ( value >= 9 )
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[1] );
+	else
+		CG_DrawPic( x, y, ICON_SIZE,ICON_SIZE, cgs.media.heartIcons[0] );
+	/*  //original code
 	if ( value > 100 ) {
 		trap_R_SetColor( colors[3] );		// white
 	} else if (value > 25) {
@@ -653,16 +756,19 @@ static void CG_DrawStatusBar( void ) {
 	// armor
 	//
 	value = ps->stats[STAT_ARMOR];
-	if (value > 0 ) {
+	if (value > 0 ) 
+	{
 		trap_R_SetColor( colors[0] );
 		CG_DrawField (370, 432, 3, value);
 		trap_R_SetColor( NULL );
 		// if we didn't draw a 3D icon, draw a 2D icon for armor
-		if ( !cg_draw3dIcons.integer && cg_drawIcons.integer ) {
+		if ( !cg_draw3dIcons.integer && cg_drawIcons.integer ) 
+		{
 			CG_DrawPic( 370 + CHAR_WIDTH*3 + TEXT_ICON_SPACE, 432, ICON_SIZE, ICON_SIZE, cgs.media.armorIcon );
 		}
 
 	}
+//************************************************************/
 #ifdef MISSIONPACK
 	//
 	// cubes
@@ -1032,10 +1138,11 @@ static void CG_DrawUpperRight( void ) {
 	if ( cg_drawTimer.integer ) {
 		y = CG_DrawTimer( y );
 	}
-	if ( cg_drawAttacker.integer ) {
+/*************SPAAACE*********don't draw attacker
+	if ( cg_drawAttacker.integer ) {		//original code
 		y = CG_DrawAttacker( y );
 	}
-
+//**************************************************/
 }
 
 /*
@@ -1942,15 +2049,34 @@ static void CG_DrawCrosshair(void) {
 		trap_R_SetColor( NULL );
 	}
 
-	w = h = cg_crosshairSize.value;
+	if (cgs.gametype != GT_DRONE || cg.zoomed) w = h = cg_crosshairSize.value;
+	else {
+		w = cg_crosshairSize.value * 28;
+		h = cg_crosshairSize.value * 20;
+	}
 
+
+	//*************SPAAACE***************************
+	/*
 	// pulse the size of the crosshair when picking up items
 	f = cg.time - cg.itemPickupBlendTime;
 	if ( f > 0 && f < ITEM_BLOB_TIME ) {
 		f /= ITEM_BLOB_TIME;
 		w *= ( 1 + f );
 		h *= ( 1 + f );
+	}*/
+	
+	//pulse the crosshair when you get hit
+	f = cg.time - cg.damageTime;
+	if ( f > 0 && f < ITEM_BLOB_TIME ) 
+	{
+		f /= ITEM_BLOB_TIME*6;
+		w *= ( 1 + f );
+		h *= ( 1 + f );
 	}
+	//**************************************************************
+
+
 
 	x = cg_crosshairX.integer;
 	y = cg_crosshairY.integer;
@@ -1960,6 +2086,16 @@ static void CG_DrawCrosshair(void) {
 	if (ca < 0) {
 		ca = 0;
 	}
+	//* SPAAACE dont draw crosshair if zoomed in in drone mode
+	if(cgs.gametype == GT_DRONE)
+	{
+		if(cg.zoomed==qtrue)
+			ca = 0;
+		else
+			ca = 4;
+	}
+	else if (ca == 4) ca = 0;
+	//*/
 	hShader = cgs.media.crosshairShader[ ca % NUM_CROSSHAIRS ];
 
 	trap_R_DrawStretchPic( x + cg.refdef.x + 0.5 * (cg.refdef.width - w), 
@@ -2057,7 +2193,10 @@ CG_DrawSpectator
 */
 static void CG_DrawSpectator(void) {
 	CG_DrawBigString(320 - 9 * 8, 440, "SPECTATOR", 1.0F);
-	if ( cgs.gametype == GT_TOURNAMENT ) {
+	//* SPAAACE don't wait to play in drone mode
+	//if ( cgs.gametype == GT_DRONE ) {
+	if (0) {
+	//*/
 		CG_DrawBigString(320 - 15 * 8, 460, "waiting to play", 1.0F);
 	}
 	else if ( cgs.gametype >= GT_TEAM ) {
@@ -2274,12 +2413,20 @@ static void CG_DrawAmmoWarning( void ) {
 	if ( !cg.lowAmmoWarning ) {
 		return;
 	}
-
+//**************SPAAACE change ammo warning to low charge warnging
+	/*   //original code
 	if ( cg.lowAmmoWarning == 2 ) {
 		s = "OUT OF AMMO";
 	} else {
 		s = "LOW AMMO WARNING";
 	}
+	*/
+    if ( cg.lowAmmoWarning == 2 ) {
+		s = "CHARGE DEPLETED";
+	} else {
+		s = "LOW CHARGE WARNING";
+	}
+//*********************************************/
 	w = CG_DrawStrlen( s ) * BIGCHAR_WIDTH;
 	CG_DrawBigString(320 - w / 2, 64, s, 1.0F);
 }
@@ -2352,8 +2499,10 @@ static void CG_DrawWarmup( void ) {
 		cg.warmupCount = 0;
 		return;
 	}
-
-	if (cgs.gametype == GT_TOURNAMENT) {
+	//* SPAAACE dont manage players in drone mode
+	//if (cgs.gametype == GT_DRONE) {
+	if (0) {
+	//*/
 		// find the two active players
 		ci1 = NULL;
 		ci2 = NULL;
@@ -2388,6 +2537,10 @@ static void CG_DrawWarmup( void ) {
 			s = "Free For All";
 		} else if ( cgs.gametype == GT_TEAM ) {
 			s = "Team Deathmatch";
+		//* SPAAACE setup string for drone
+		} else if (cgs.gametype == GT_DRONE) {
+			s = "Drone";
+		//*/
 		} else if ( cgs.gametype == GT_CTF ) {
 			s = "Capture the Flag";
 #ifdef MISSIONPACK
@@ -2540,8 +2693,9 @@ static void CG_Draw2D( void ) {
 #endif      
 			CG_DrawCrosshair();
 			CG_DrawCrosshairNames();
-			CG_DrawWeaponSelect();
-
+/****************SPAAACE************don't draw weapon select - only 1 weapon
+			CG_DrawWeaponSelect();		//original code
+//******************************************************/
 #ifndef MISSIONPACK
 			CG_DrawHoldableItem();
 #else

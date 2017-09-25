@@ -36,11 +36,17 @@ float	pm_spectatorfriction = 5.0f;
 float pm_Ladderfriction = 3000.0f;  // Friction is high enough so you don't slip down
 
 int		c_pmove = 0;
-
+//* SPAAACE max velocity
+const int	maxvel = 300;
+//*/
 /****************************WALLWALKING JG**********************************/
 static int JumpTime = 0;
 qboolean WallWalk = qfalse;//qtrue;55555 JG 3/10/08
 qboolean ceiling = qfalse;//Tells if on ceiling so it can lower the viewheight - Sandro and JG 3/06/08
+//* SPAAACE wallwalk toggle
+//qboolean WallTog = qfalse;
+int toggletimer = 0;
+//*/
 vec3_t Gravity;
 
 static qboolean Inv_ApplyNewGround(vec3_t Normal, qboolean AdvanceOnNewGround);
@@ -784,6 +790,9 @@ static void PM_StartLegsAnim(int anim)
 
 static void PM_ContinueLegsAnim(int anim)
 {
+	//* SPAAACE no animation in drone mode
+	if (pm->ps->persistant[PERS_GAMETYPE] == GT_DRONE) return;
+	//*/
 	if ((pm->ps->legsAnim & ~ANIM_TOGGLEBIT) == anim)
 	{
 		return;
@@ -1128,7 +1137,6 @@ static void PM_ResetGrav(void)
 
 			Inv_ApplyNewGround(Normal, qfalse);
 		}
-
 		WallWalk = qfalse;
 	}
 	pm->ps->pm_flags &= ~PMF_RESET_GRAV;
@@ -1144,13 +1152,13 @@ PM_CheckJump
 static qboolean PM_CheckJump(/*qboolean BigJump*/)
 {
 	int Velocity = JUMP_VELOCITY;
-	//int i;
+	int i;
 	//* SPAAACE! jumping init
 	vec3_t forward;
 	vec3_t right;
 	vec3_t up;
 	vec3_t muzzle;
-	vec3_t oldOrigin;
+	//vec3_t oldOrigin;
 	//*/
 	{
    
@@ -1175,25 +1183,32 @@ static qboolean PM_CheckJump(/*qboolean BigJump*/)
 			pm->ps->velocity[i] -= Velocity * Gravity[i];
 	  /************************************************/
 	  //* SPAAACE! jumping
-	  // set aiming directions
-	  AngleVectors (pm->ps->viewangles, forward, right, up);
-	  //VectorCopy(pm->ps->origin,oldOrigin);
-	  oldOrigin[0] = pm->ps->persistant[PERS_ORIGIN0]/100.0f;
-	  oldOrigin[1] = pm->ps->persistant[PERS_ORIGIN1]/100.0f;
-	  oldOrigin[2] = pm->ps->persistant[PERS_ORIGIN2]/100.0f;
-	  CalcMuzzlePointOriginStuff(*(pm->ps), oldOrigin, forward, right, up, muzzle );
-	  // Recalculate using muzzle as origin
-	  CalcMuzzlePointOriginStuff( *(pm->ps), muzzle, forward, right, up, muzzle);
-	  //AngleVectors (pm->ps->viewangles, forward, right, up);
-	  VectorNormalize(forward);
-	  VectorScale(forward,Velocity,forward);
-	  VectorAdd(pm->ps->velocity,forward,pm->ps->velocity);
-	  /*
-	  for (i = 0; i < 3; ++i)
-			pm->ps->velocity[i] -= kvel[i]; //Velocity * pm->ps->viewangles[i];
-	  //*/
+	  if (pm->cmd.serverTime < pm->ps->ammo[WP_GAUNTLET]+500)
+	  {
+		  //Limit jumping
+	  }
+	  else if(pm->ps->gravity < 100)
+      {
+		  CalcVecDir(pm, forward, right, up, muzzle);
+		  VectorNormalize(forward);
+		  VectorScale(forward,Velocity,forward);
+		  VectorAdd(pm->ps->velocity,forward,pm->ps->velocity);
+		  PM_AddEvent( EV_JUMP );
+		  /*
+		  for (i = 0; i < 3; ++i)
+				pm->ps->velocity[i] -= kvel[i]; //Velocity * pm->ps->viewangles[i];
+		  //*/
+      }
+	  else	//normal jumping up if there is gravity
+	  {
+			for (i = 0; i < 3; ++i)
+				pm->ps->velocity[i] -= Velocity * Gravity[i];
+			
+			PM_AddEvent( EV_JUMP );
+	  }
+	  pm->ps->ammo[WP_GAUNTLET] = pm->cmd.serverTime;
 
-      PM_AddEvent( EV_JUMP );
+      //PM_AddEvent( EV_JUMP );
    
       if ( pm->cmd.forwardmove >= 0 ) {
          PM_ForceLegsAnim( LEGS_JUMP );
@@ -1256,13 +1271,17 @@ static qboolean	PM_CheckWaterJump(void)
 		return qfalse;
 	}
 
-	// jump out of water
-	VectorScale (pml.forward, 200, pm->ps->velocity);
-	pm->ps->velocity[2] = 350;
+	/* SPAAACE don't jump out of water if gravity is off
+	if (pm->ps->gravity > 100)
+	{
+		// jump out of water
+		VectorScale (pml.forward, 200, pm->ps->velocity);
+		pm->ps->velocity[2] = 350;
 
-	pm->ps->pm_flags |= PMF_TIME_WATERJUMP;
-	pm->ps->pm_time = 2000;
-
+		pm->ps->pm_flags |= PMF_TIME_WATERJUMP;
+		pm->ps->pm_time = 2000;
+	}
+	//*/
 	return qtrue;
 }
 
@@ -1314,6 +1333,7 @@ static void PM_WaterMove(void)
 		PM_WaterJumpMove();
 		return;
 	}
+	/*
 #if 0
 	// jump = head for surface
 	if (pm->cmd.upmove >= 10)
@@ -1335,6 +1355,7 @@ static void PM_WaterMove(void)
 		}
 	}
 #endif
+	*/
 	PM_Friction ();
 
 	scale = PM_CmdScale(&pm->cmd);
@@ -1345,7 +1366,11 @@ static void PM_WaterMove(void)
 	{
 		wishvel[0] = 0;
 		wishvel[1] = 0;
-		wishvel[2] = -60;		// sink towards bottom
+		//* SPAAACE no sinking in zero gravity
+		if (pm->ps->gravity < 100) wishvel[2] = 0;
+		else wishvel[2] = -60;
+		//*/
+		//wishvel[2] = -60;		// sink towards bottom
 	}
 	else
 	{
@@ -1380,7 +1405,7 @@ static void PM_WaterMove(void)
 	PM_SlideMove(qfalse);
 }
 
-/*#ifdef MISSIONPACK
+#ifdef MISSIONPACK
 //===================
 //PM_InvulnerabilityMove
 //
@@ -1393,15 +1418,16 @@ static void PM_InvulnerabilityMove(void)
 	pm->cmd.upmove = 0;
 	VectorClear(pm->ps->velocity);
 }
-#endif*/
+#endif
 
+//* SPAAACE rewrite PM_FlyMove******************************************
 /*
 ===================
 PM_FlyMove
 
 Only with the flight powerup
 ===================
-*/
+*//*
 static void PM_FlyMove(void)
 {
 	int		i;
@@ -1412,7 +1438,6 @@ static void PM_FlyMove(void)
 
 	// normal slowdown
 	PM_Friction ();
-
 	scale = PM_CmdScale(&pm->cmd);
 	//
 	// user intentions
@@ -1440,8 +1465,34 @@ static void PM_FlyMove(void)
 
 	PM_StepSlideMove(qfalse);
 }
+//*/
+//********************************SPAAACE********************************************
+static void PM_FlyMove(void) 
+{
+	int i, knock;
+	vec3_t forward, right, up, muzzle, kvel;
 
+	if (pm->cmd.forwardmove != 0 || pm->cmd.rightmove != 0) {
+		PM_AddEvent(EV_FIRE_WEAPON2);
+		CalcVecDir(pm, forward, right, up, muzzle);
+		knock = 2;
+		if (pm->cmd.rightmove == 0) VectorCopy(forward,kvel);
+		else VectorCopy(right, kvel);
+		VectorScale(kvel, knock, kvel);
+		if (pm->cmd.forwardmove < 0 || pm->cmd.rightmove < 0) VectorNegate(kvel, kvel);
+		VectorAdd(pm->ps->velocity, kvel, pm->ps->velocity);
+	}
+	//* cap velocity
+	for (i = 0; i < 3; i++)
+	{
+		if (pm->ps->velocity[i] > maxvel) pm->ps->velocity[i] = maxvel;
+		else if (pm->ps->velocity[i] < -maxvel) pm->ps->velocity[i] = -maxvel;
+	}
+	//*/
+	PM_StepSlideMove(qfalse);
+}
 
+//***********************************************************************************/
 /*
 ===================
 PM_AirMove
@@ -1608,6 +1659,7 @@ static void PM_WalkMove(void)
 	smove = pm->cmd.rightmove;
 
 	cmd = pm->cmd;
+
 	//scale = PM_CmdScale(&cmd, !WallWalk);
 	scale = PM_CmdScale(&cmd);
 	// set the movementDir so clients can rotate the legs for strafing
@@ -1659,6 +1711,7 @@ if (pm->ps->pm_flags & PMF_DUCKED)
 		}
 	}
 
+	/* SPAAACE Don't run slower backwards
 	   //go slower when running backwards
       if ( pm->ps->pm_flags & PMF_BACKWARDS_RUN ) 
       {
@@ -1671,6 +1724,7 @@ if (pm->ps->pm_flags & PMF_DUCKED)
                wishspeed = pm->ps->speed / 2;
          }
       }
+	//*/
 /*************************************************************************/
 
 	// clamp the speed lower if wading or walking on the bottom
@@ -1946,7 +2000,8 @@ static void PM_CrashLand(void)
                PM_AddEvent( EV_FALL_MEDIUM );
             }
          } 
-         else if ( delta > 7 ) {
+		 // SPAAACE Play fall sound more often
+         else if ( delta > 2/*7*/ ) {
             PM_AddEvent( EV_FALL_SHORT );
          } 
          else {
@@ -2146,6 +2201,16 @@ static qboolean PM_CheckDuck(qboolean PutOnGround, vec3_t NewGravity)
 	pm->maxs[1] = 15;
 
 	pm->mins[2] = MINS_Z;
+	//* SPAAACE drone have a smaller hitbox
+	if (pm->ps->persistant[PERS_GAMETYPE] == GT_DRONE) {
+		pm->mins[0] = -12;
+		pm->mins[1] = -12;
+
+		pm->maxs[0] = 12;
+		pm->maxs[1] = 12;
+		pm->maxs[2] = 12;
+	}
+	//*/
 
 	if (pm->ps->pm_type == PM_DEAD)
 	{
@@ -2603,13 +2668,15 @@ static void PM_GroundTrace(qboolean Recurs)
 			vec3_t Dir, point2;
 			trace_t trace2;
 			float l;
-
-			if (Inv_CheckNewGround())
+			// SPAAACE limit gravity change
+			if (Inv_CheckNewGround() || pm->cmd.serverTime > pm->ps->ammo[WP_BFG])
 			{
 				PM_GroundTrace(qfalse);
 				return;
 			}
-
+			if (pm->ps->persistant[PERS_GAUNTLET_FRAG_COUNT] == 0)
+				pm->ps->ammo[WP_BFG] = pm->cmd.serverTime + 1000;
+			else pm->ps->ammo[WP_BFG] = 0;
 			for (i = 0; i < 3; ++i)
 				point2[i] = pm->ps->origin[i] + 32 * Gravity[i];	//Too: Max_Step_Change
 
@@ -3467,6 +3534,7 @@ void PM_UpdateViewAngles(playerState_t *ps, const usercmd_t *cmd)
 		return;		// no view changes at all
 	}
 
+
 	// circularly clamp the angles with deltas
 	for (i=0; i<3; i++)
 	{
@@ -3487,6 +3555,7 @@ void PM_UpdateViewAngles(playerState_t *ps, const usercmd_t *cmd)
 		}
 		ps->viewangles[i] = SHORT2ANGLE(temp);
 	}
+
 
 }
 
@@ -3595,13 +3664,30 @@ void PmoveSingle(pmove_t *pmove/*, InvasionInfo_t *InvInfo*/)
 //	}
 /************************************************************/
     //-JG 3/10/08
-	if (pm->cmd.upmove < 0)//is crouching and an alien//0
-	{ 
+	//* SPAAACE Wallwalk toggle
+	if (pm->cmd.buttons & BUTTON_WALLTOG && pm->cmd.serverTime > toggletimer && pm->ps->persistant[PERS_GAMETYPE] != GT_DRONE) {
+		if (pm->ps->persistant[PERS_GAUNTLET_FRAG_COUNT] == 1) pm->ps->persistant[PERS_GAUNTLET_FRAG_COUNT] = 0;
+		else if (pm->ps->persistant[PERS_GAUNTLET_FRAG_COUNT] == 0) pm->ps->persistant[PERS_GAUNTLET_FRAG_COUNT] = 1;
+
+		toggletimer = pm->cmd.serverTime + 1000;
+		if (pm->ps->persistant[PERS_GAUNTLET_FRAG_COUNT]) PM_AddEvent(EV_MANUALORIENT);
+		else PM_AddEvent(EV_AUTOORIENT);
+	}
+	
+	//*/
+	if (pm->ps->persistant[PERS_GAMETYPE] == GT_DRONE) WallWalk = qfalse;
+	else if (pm->cmd.upmove < 0 )//|| (pmove->cmd.serverTime < pm->ps->persistant[PERS_VIEW_CHANGE_TIME]+10))//is crouching and an alien//0
+	{
 		WallWalk = qfalse;//qtrue;
+		if (pm->ps->persistant[PERS_GAUNTLET_FRAG_COUNT]) WallWalk = qtrue;
 	}
 	else
+	{
 		WallWalk = qtrue; //qfalse;
-	// SPAAACE! switch values for wallwalking
+		if (pm->ps->persistant[PERS_GAUNTLET_FRAG_COUNT]) WallWalk = qfalse;
+	//	pm->ps->persistant[PERS_VIEW_CHANGE_TIME] = pmove->cmd.serverTime;
+	}
+	//*/
 /************************************************************/
 //	else
 //	{
@@ -3705,7 +3791,6 @@ void PmoveSingle(pmove_t *pmove/*, InvasionInfo_t *InvInfo*/)
 	{
 		PM_DeadMove ();
 	}
-
 	PM_DropTimers();
 
 //	CheckLadder();  // ARTHUR TOMLIN check and see if they're on a ladder
@@ -3762,7 +3847,8 @@ void PmoveSingle(pmove_t *pmove/*, InvasionInfo_t *InvInfo*/)
 
     PM_ResetGrav();
 
-	if ( pm->ps->powerups[PW_FLIGHT] ) 
+	// SPAAACE airmove when in drone mode
+	if ( pm->ps->powerups[PW_FLIGHT] || pm->ps->persistant[PERS_GAMETYPE] == GT_DRONE) 
 	{
 		// flight powerup doesn't allow jump and has different friction
 		PM_FlyMove();

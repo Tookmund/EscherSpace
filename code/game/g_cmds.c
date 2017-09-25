@@ -571,10 +571,11 @@ void SetTeam( gentity_t *ent, char *s ) {
 	}
 
 	// override decision if limiting the players
-	if ( (g_gametype.integer == GT_TOURNAMENT)
+	/* SPAAACE dont use spectator mode in drone
+	if ( (g_gametype.integer == GT_DRONE)
 		&& level.numNonSpectatorClients >= 2 ) {
 		team = TEAM_SPECTATOR;
-	} else if ( g_maxGameClients.integer > 0 && 
+	} else /**/if ( g_maxGameClients.integer > 0 && 
 		level.numNonSpectatorClients >= g_maxGameClients.integer ) {
 		team = TEAM_SPECTATOR;
 	}
@@ -592,7 +593,8 @@ void SetTeam( gentity_t *ent, char *s ) {
 	//
 
 	// if the player was dead leave the body
-	if ( client->ps.stats[STAT_HEALTH] <= 0 ) {
+	//* SPAAACE don't spawn bodies if in drone mode
+	if ( client->ps.stats[STAT_HEALTH] <= 0 && client->ps.persistant[PERS_GAMETYPE] != GT_DRONE) {
 		CopyToBodyQue(ent);
 	}
 
@@ -633,6 +635,9 @@ void SetTeam( gentity_t *ent, char *s ) {
 	ClientUserinfoChanged( clientNum );
 
 	ClientBegin( clientNum );
+   //****SPAAACE*************refresh models
+      trap_SendServerCommand( -1, "loaddefered\n" );	
+   //******----***********************************************
 }
 
 /*
@@ -685,11 +690,13 @@ void Cmd_Team_f( gentity_t *ent ) {
 		return;
 	}
 
+	/* SPAAACE don't lose in drone mode
 	// if they are playing a tournement game, count as a loss
-	if ( (g_gametype.integer == GT_TOURNAMENT )
+	if ( (g_gametype.integer == GT_DRONE )
 		&& ent->client->sess.sessionTeam == TEAM_FREE ) {
 		ent->client->sess.losses++;
 	}
+	//*/
 
 	trap_Argv( 1, s, sizeof( s ) );
 
@@ -731,11 +738,13 @@ void Cmd_Follow_f( gentity_t *ent ) {
 		return;
 	}
 
+	/* SPAAACE dont lose in drone mode
 	// if they are playing a tournement game, count as a loss
-	if ( (g_gametype.integer == GT_TOURNAMENT )
+	if ( (g_gametype.integer == GT_DRONE )
 		&& ent->client->sess.sessionTeam == TEAM_FREE ) {
 		ent->client->sess.losses++;
 	}
+	//*/
 
 	// first set them to spectator
 	if ( ent->client->sess.sessionTeam != TEAM_SPECTATOR ) {
@@ -755,11 +764,13 @@ void Cmd_FollowCycle_f( gentity_t *ent, int dir ) {
 	int		clientnum;
 	int		original;
 
+	/* SPAAACE dont lose in drone mode
 	// if they are playing a tournement game, count as a loss
-	if ( (g_gametype.integer == GT_TOURNAMENT )
+	if ( (g_gametype.integer == GT_DRONE )
 		&& ent->client->sess.sessionTeam == TEAM_FREE ) {
 		ent->client->sess.losses++;
 	}
+	//*/
 	// first set them to spectator
 	if ( ent->client->sess.spectatorState == SPECTATOR_NOT ) {
 		SetTeam( ent, "spectator" );
@@ -822,12 +833,14 @@ static void G_SayTo( gentity_t *ent, gentity_t *other, int mode, int color, cons
 	if ( mode == SAY_TEAM  && !OnSameTeam(ent, other) ) {
 		return;
 	}
+	/* SPAAACE allow chat in drone 
 	// no chatting to players in tournements
-	if ( (g_gametype.integer == GT_TOURNAMENT )
+	if ( (g_gametype.integer == GT_DRONE )
 		&& other->client->sess.sessionTeam == TEAM_FREE
 		&& ent->client->sess.sessionTeam != TEAM_FREE ) {
 		return;
 	}
+	//*/
 
 	trap_SendServerCommand( other-g_entities, va("%s \"%s%c%c%s\"", 
 		mode == SAY_TEAM ? "tchat" : "chat",
@@ -975,10 +988,12 @@ static void G_VoiceTo( gentity_t *ent, gentity_t *other, int mode, const char *i
 	if ( mode == SAY_TEAM && !OnSameTeam(ent, other) ) {
 		return;
 	}
+	/* SPAAACE allow chatting in drone
 	// no chatting to players in tournements
-	if ( (g_gametype.integer == GT_TOURNAMENT )) {
+	if ( (g_gametype.integer == GT_DRONE )) {
 		return;
 	}
+	//*/
 
 	if (mode == SAY_TEAM) {
 		color = COLOR_CYAN;
@@ -1198,7 +1213,10 @@ void Cmd_Where_f( gentity_t *ent ) {
 
 static const char *gameNames[] = {
 	"Free For All",
-	"Tournament",
+	//* SPAAACE Drone mode
+	"Drone",
+	//"Tournament",
+	//*/
 	"Single Player",
 	"Team Deathmatch",
 	"Capture the Flag",

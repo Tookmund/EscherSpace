@@ -1,93 +1,96 @@
 @mkdir vm
 @cd vm
+@set PATH=%PATH%;..\..\bin_nt;
+@set INCLUDE="C:\Program Files (x86)\Microsoft Visual Studio\VC98\Include"
 
-call ..\compile ../../ui/ui_main.c
+
+call ..\compile ../code/ui/ui_main.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_cdkey.c
+call ..\compile ../code/ui/ui_cdkey.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_ingame.c
+call ..\compile ../code/ui/ui_ingame.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_confirm.c
+call ..\compile ../code/ui/ui_confirm.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_setup.c
+call ..\compile ../code/ui/ui_setup.c
 @if errorlevel 1 goto quit
-call ..\compile ../../game/bg_misc.c
+call ..\compile ../code/game/bg_misc.c
 @if errorlevel 1 goto quit
-call ..\compile ../../game/bg_lib.c
+call ..\compile ../code/game/bg_lib.c
 @if errorlevel 1 goto quit
-call ..\compile ../../game/q_math.c
+call ..\compile ../code/game/q_math.c
 @if errorlevel 1 goto quit
-call ..\compile ../../game/q_shared.c
+call ..\compile ../code/game/q_shared.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_gameinfo.c
+call ..\compile ../code/ui/ui_gameinfo.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_atoms.c
+call ..\compile ../code/ui/ui_atoms.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_connect.c
+call ..\compile ../code/ui/ui_connect.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_controls2.c
+call ..\compile ../code/ui/ui_controls2.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_demo2.c
+call ..\compile ../code/ui/ui_demo2.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_mfield.c
+call ..\compile ../code/ui/ui_mfield.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_credits.c
+call ..\compile ../code/ui/ui_credits.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_menu.c
+call ..\compile ../code/ui/ui_menu.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_options.c
+call ..\compile ../code/ui/ui_options.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_display.c
+call ..\compile ../code/ui/ui_display.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_sound.c
+call ..\compile ../code/ui/ui_sound.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_network.c
+call ..\compile ../code/ui/ui_network.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_playermodel.c
+call ..\compile ../code/ui/ui_playermodel.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_players.c
+call ..\compile ../code/ui/ui_players.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_playersettings.c
+call ..\compile ../code/ui/ui_playersettings.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_preferences.c
+call ..\compile ../code/ui/ui_preferences.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_qmenu.c
+call ..\compile ../code/ui/ui_qmenu.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_serverinfo.c
+call ..\compile ../code/ui/ui_serverinfo.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_servers2.c
+call ..\compile ../code/ui/ui_servers2.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_sparena.c
+call ..\compile ../code/ui/ui_sparena.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_specifyserver.c
+call ..\compile ../code/ui/ui_specifyserver.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_splevel.c
+call ..\compile ../code/ui/ui_splevel.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_sppostgame.c
+call ..\compile ../code/ui/ui_sppostgame.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_startserver.c
+call ..\compile ../code/ui/ui_startserver.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_syscalls.c
+call ..\compile ../code/ui/ui_syscalls.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_team.c
+call ..\compile ../code/ui/ui_team.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_video.c
+call ..\compile ../code/ui/ui_video.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_cinematics.c
+call ..\compile ../code/ui/ui_cinematics.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_spskill.c
+call ..\compile ../code/ui/ui_spskill.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_addbots.c
+call ..\compile ../code/ui/ui_addbots.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_removebots.c
+call ..\compile ../code/ui/ui_removebots.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_loadconfig.c
+call ..\compile ../code/ui/ui_loadconfig.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_saveconfig.c
+call ..\compile ../code/ui/ui_saveconfig.c
 @if errorlevel 1 goto quit
-call ..\compile ../../ui/ui_teamorders.c
+call ..\compile ../code/ui/ui_teamorders.c
 @if errorlevel 1 goto quit
 
-@..\..\..\bin_nt\q3asm -f ..\ui
+@..\..\bin_nt\q3asm -f ../code/ui
 :quit
 @cd ..

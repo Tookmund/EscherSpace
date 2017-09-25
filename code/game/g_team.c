@@ -219,8 +219,7 @@ void Team_SetFlagStatus( int team, flagStatus_t status ) {
 
 	if( modified ) {
 		char st[4];
-
-		if( g_gametype.integer == GT_CTF ) {
+	if( g_gametype.integer == GT_CTF ) {	
 			st[0] = ctfFlagStatusRemap[teamgame.redStatus];
 			st[1] = ctfFlagStatusRemap[teamgame.blueStatus];
 			st[2] = 0;
@@ -558,7 +557,7 @@ gentity_t *Team_ResetFlag( int team ) {
 }
 
 void Team_ResetFlags( void ) {
-	if( g_gametype.integer == GT_CTF ) {
+  if( g_gametype.integer == GT_CTF ) {	
 		Team_ResetFlag( TEAM_RED );
 		Team_ResetFlag( TEAM_BLUE );
 	}

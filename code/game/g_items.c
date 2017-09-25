@@ -584,9 +584,9 @@ gentity_t *LaunchItem( gitem_t *item, vec3_t origin, vec3_t velocity ) {
 
 	dropped->s.eFlags |= EF_BOUNCE_HALF;
 #ifdef MISSIONPACK
-	if ((g_gametype.integer == GT_CTF || g_gametype.integer == GT_1FCTF)			&& item->giType == IT_TEAM) { // Special case for CTF flags
+	if ((g_gametype.integer == GT_CTF || g_gametype.integer == GT_1FCTF) && item->giType == IT_TEAM) { // Special case for CTF flags
 #else
-	if (g_gametype.integer == GT_CTF && item->giType == IT_TEAM) { // Special case for CTF flags
+    if (g_gametype.integer == GT_CTF && item->giType == IT_TEAM) { // Special case for CTF flags
 #endif
 		dropped->think = Team_DroppedFlagThink;
 		dropped->nextthink = level.time + 30000;
@@ -803,6 +803,12 @@ void ClearRegisteredItems( void ) {
 	// players always start with the base weapon
 	RegisterItem( BG_FindItemForWeapon( WP_MACHINEGUN ) );
 	RegisterItem( BG_FindItemForWeapon( WP_GAUNTLET ) );
+//* SPAAACE! register railgun and lightning weapons (default weapon and alt fire weapon
+	RegisterItem( BG_FindItemForWeapon( WP_LIGHTNING ) );
+	RegisterItem( BG_FindItemForWeapon( WP_RAILGUN ) );
+	RegisterItem(BG_FindItem( "Red Flag" ));
+	RegisterItem(BG_FindItem( "Blue Flag" ));
+//********************************************************/
 #ifdef MISSIONPACK
 	if( g_gametype.integer == GT_HARVESTER ) {
 		RegisterItem( BG_FindItem( "Red Cube" ) );
@@ -881,7 +887,7 @@ void G_SpawnItem (gentity_t *ent, gitem_t *item) {
 	G_SpawnFloat( "random", "0", &ent->random );
 	G_SpawnFloat( "wait", "0", &ent->wait );
 	// SPAAACE no items
-	if ( item->giType == IT_AMMO || item->giType == IT_WEAPON ) {
+	if ( item->giType == IT_AMMO || item->giType == IT_WEAPON || item->giType == IT_ARMOR  || item->giType == IT_HEALTH) {
 		return;
 	}
 	//*/

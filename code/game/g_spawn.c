@@ -289,6 +289,13 @@ qboolean G_CallSpawn( gentity_t *ent ) {
 	// check item spawn functions
 	for ( item=bg_itemlist+1 ; item->classname ; item++ ) {
 		if ( !strcmp(item->classname, ent->classname) ) {
+//***********SPAAACE*******make all powerups and holdables spawn a quad damage (gravity switch) instead
+			if(item->giType==IT_HOLDABLE || item->giType==IT_POWERUP)
+			{
+				item = BG_FindItem("Gravity Switch");
+				ent->classname=item->classname;
+			}
+//**************---*********************************************/
 			G_SpawnItem( ent, item );
 			return qtrue;
 		}
@@ -409,7 +416,7 @@ void G_SpawnGEntityFromSpawnVars( void ) {
 	int			i;
 	gentity_t	*ent;
 	char		*s, *value, *gametypeName;
-	static char *gametypeNames[] = {"ffa", "tournament", "single", "team", "ctf", "oneflag", "obelisk", "harvester", "teamtournament"};
+	static char *gametypeNames[] = {"ffa", /* SPAAACE "tournament"*/"drone", "single", "team", "ctf", "oneflag", "obelisk", "harvester", "teamtournament"};
 
 	// get the next free entity
 	ent = G_Spawn();

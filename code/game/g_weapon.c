@@ -585,7 +585,8 @@ void weapon_railgun_fire (gentity_t *ent) {
 	gentity_t	*unlinkedEntities[MAX_RAIL_HITS];
 	
 	// SPAAACE rail damage
-	damage = 5 * s_quadFactor;
+	//damage = 10 * s_quadFactor;
+	damage = 8 * s_quadFactor;
 	//*/
 	VectorMA (muzzle, 8192, forward, end);
 
@@ -983,6 +984,7 @@ void FireWeapon( gentity_t *ent ) {
 	} else {
 		s_quadFactor = 1;
 	}
+
 #ifdef MISSIONPACK
 	if( ent->client->persistantPowerup && ent->client->persistantPowerup->item && ent->client->persistantPowerup->item->giTag == PW_DOUBLER ) {
 		s_quadFactor *= 2;
@@ -1013,11 +1015,12 @@ void FireWeapon( gentity_t *ent ) {
 	//VectorNegate(forward,kvel);
 	//VectorCopy(muzzle,kvel);
 	VectorNegate(newForward,kvel);
-	// SPAACE alt fire
+	//***********************SPAACE alt fire
 	ucmd = &ent->client->pers.cmd;
-	if (ucmd->buttons & BUTTON_ALT) knock = 100;
-	else knock = 0;
-	//*/
+	if (ent->client->ps.persistant[PERS_GAMETYPE] != GT_DRONE && ucmd->buttons & BUTTON_ALT && g_gravity.value < 100) {
+		knock = 20;
+	} else knock = 0;
+	//**************************************/
 	// fire the specific weapon
 	switch( ent->s.weapon ) {
 	case WP_GAUNTLET:
@@ -1035,9 +1038,6 @@ void FireWeapon( gentity_t *ent ) {
 		} else {
 			Bullet_Fire( ent, MACHINEGUN_SPREAD, MACHINEGUN_TEAM_DAMAGE );
 		}
-		//* SPAAACE! knockback machinegun
-		//knock = 200;
-		//*/
 		break;
 	case WP_GRENADE_LAUNCHER:
 		weapon_grenadelauncher_fire( ent );
@@ -1049,7 +1049,23 @@ void FireWeapon( gentity_t *ent ) {
 		Weapon_Plasmagun_Fire( ent );
 		break;
 	case WP_RAILGUN:
-		weapon_railgun_fire( ent );
+		//*************SPAAACE alt lighting
+		if (ucmd->buttons & BUTTON_ALT) 
+		{
+			if(g_gravity.value < 100)
+				Weapon_LightningFire( ent );
+			// SPAAACE drone mode infinite force ammo
+			if (g_gametype.integer == GT_DRONE) {
+				ent->client->ps.ammo[WP_RAILGUN]++;
+			}
+		}
+		else {
+		//* SPAAACE disable invulnerability when you fire your weapon
+			weapon_railgun_fire( ent );
+			ent->client->ps.powerups[PW_REGEN] = level.time;
+		//*/
+		}
+		//********************************/
 		break;
 	case WP_BFG:
 		BFG_Fire( ent );
@@ -1075,7 +1091,8 @@ void FireWeapon( gentity_t *ent ) {
 	//* SPAAACE! apply knockback
 	VectorScale(kvel,knock,kvel);
 	VectorAdd(ent->client->ps.velocity,kvel,ent->client->ps.velocity);
-
+	//Com_Printf("Velocity: %f %f %f \n", ent->client->ps.velocity[0], ent->client->ps.velocity[1], ent->client->ps.velocity[2]);
+	
 	// Magic
 	if(!ent->client->ps.pm_time) {
 		int t;

@@ -59,6 +59,26 @@ static sfxHandle_t UI_CreditMenu_Key( int key ) {
 UI_CreditMenu_Draw
 ===============
 */
+//* SPAAACE
+
+static void UI_CreditMenu_Draw( void ) {
+	int y = 12;
+	// I don't want to type this a billion times	
+	#define strdraw(s) do { UI_DrawProportionalString( 320, y, s, UI_CENTER|UI_BIGFONT, color_white ); y += 1.42 * PROP_HEIGHT * PROP_SMALL_SIZE_SCALE; } while(0);
+
+	strdraw("SpaceQuake was created by:");
+	strdraw("Jacob Adams");
+	y += 10;
+	strdraw("With help from Rev. O");
+	//strdraw("And ");
+	y += 10;
+	strdraw("Based on EscherQuake")
+	strdraw("By Johnny Goodnow");
+	y += 10;
+	strdraw("And Quake III Arena");
+	strdraw("By ID Software");
+}
+/* SPAAACE New Credit Menu
 static void UI_CreditMenu_Draw( void ) {
 	int		y;
 
@@ -112,7 +132,7 @@ static void UI_CreditMenu_Draw( void ) {
 	y += SMALLCHAR_HEIGHT;
 	UI_DrawString( 320, y, "Quake III Arena(c) 1999-2000, Id Software, Inc.  All Rights Reserved", UI_CENTER|UI_SMALLFONT, color_red );
 }
-
+//*/
 
 /*
 ===============

@@ -63,6 +63,9 @@ qboolean	PM_SlideMove(qboolean gravity);
 void		PM_StepSlideMove(qboolean gravity);
 void Inv_RemoveGravityComponent(vec3_t vec);
 extern qboolean WallWalk;
+/* SPAAACE wallwalk toggle
+extern qboolean WallTog;
+//*/
 /*************************************************/
 qboolean	PM_SlideMove( qboolean gravity );
 void		PM_StepSlideMove( qboolean gravity );

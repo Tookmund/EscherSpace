@@ -674,6 +674,11 @@ typedef struct {
 	qhandle_t	blueFlagShader[3];
 	qhandle_t	flagShader[4];
 
+//***SPAAACE***heart meter and weapon charge meter
+	qhandle_t	heartIcons[14];
+	qhandle_t	clipIcons[14];
+//*********************************************/
+
 	qhandle_t	flagPoleModel;
 	qhandle_t	flagFlapModel;
 
@@ -981,7 +986,9 @@ typedef struct {
 	sfxHandle_t	wstbimpmSound;
 	sfxHandle_t	wstbimpdSound;
 	sfxHandle_t	wstbactvSound;
-
+//*****SPAAACE********************precache player models
+	clientInfo_t playerModels[3];
+/*************************************************************/
 } cgMedia_t;
 
 
@@ -1310,7 +1317,9 @@ void CG_ResetPlayerEntity( centity_t *cent );
 void CG_AddRefEntityWithPowerups( refEntity_t *ent, entityState_t *state, int team );
 void CG_NewClientInfo( int clientNum );
 sfxHandle_t	CG_CustomSound( int clientNum, const char *soundName );
-
+//***SPAAACE***********************precache player models on map start
+void CG_InvCacheAllModels(void);
+/*****************************************************/
 //
 // cg_predict.c
 //
@@ -1434,7 +1443,10 @@ void CG_LoadingString( const char *s );
 void CG_LoadingItem( int itemNum );
 void CG_LoadingClient( int clientNum );
 void CG_DrawInformation( void );
-
+//******SPAAACE************************precache player models on map start
+void CG_CachingClient(char *skin, char *model);
+void CG_ResetLoadingIcons(void);//cg_local
+/*************************************************/
 //
 // cg_scoreboard.c
 //

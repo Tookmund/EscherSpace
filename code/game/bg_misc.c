@@ -41,6 +41,10 @@ An item fires all of its targets when it is picked up.  If the toucher can't car
 "count" override quantity or duration on most items.
 */
 
+//****SPAAACE************************************precache player models on map start
+char *playerModels[4] = { "doom", "crash", "warmach", NULL };
+/*************************************************************************************************/
+
 gitem_t	bg_itemlist[] = 
 {
 	{
@@ -291,7 +295,9 @@ gitem_t	bg_itemlist[] =
         { "models/weapons2/railgun/railgun.md3", 
 		0, 0, 0},
 /* icon */		"icons/iconw_railgun",
-/* pickup */	"Railgun",
+//*******************************SPAAACE change weapon name
+/* pickup *///	"Railgun", //original code
+		"LASER",
 		10,
 		IT_WEAPON,
 		WP_RAILGUN,
@@ -527,7 +533,10 @@ gitem_t	bg_itemlist[] =
         "models/powerups/instant/quad_ring.md3",
 		0, 0 },
 /* icon */		"icons/quad",
-/* pickup */	"Quad Damage",
+//************SPAAACE***************change name of quad damage to gravity switch
+///* pickup */	"Quad Damage",		//original code
+/* pickup */	"Gravity Switch",		
+//***********************************************************************/
 		30,
 		IT_POWERUP,
 		PW_QUAD,
@@ -1158,7 +1167,6 @@ qboolean BG_CanItemBeGrabbed( int gametype, const entityState_t *ent, const play
 					return qtrue;
 			}
 		}
-
 #ifdef MISSIONPACK
 		if( gametype == GT_HARVESTER ) {
 			return qtrue;
@@ -1377,7 +1385,12 @@ char *eventnames[] = {
 
 //Sandro Launchpad/Teleport Stuff 3/7/08 ***************
 	"EV_JUMP_PAD_ENTITY",
-
+//* SPAAACE wallwalk toggle
+	"EV_AUTOORIENT",
+	"EV_MANUALORIENT",
+//*/
+//* SPAAACE wall damage
+	"EV_WALL",
 };
 
 /*

@@ -811,6 +811,9 @@ void CG_RegisterWeapon( int weaponNum ) {
 		cgs.media.railExplosionShader = trap_R_RegisterShader( "railExplosion" );
 		cgs.media.railRingsShader = trap_R_RegisterShader( "railDisc" );
 		cgs.media.railCoreShader = trap_R_RegisterShader( "railCore" );
+        //******SPAAACE*****explosion shader used for gibbing drones with explosion
+		cgs.media.rocketExplosionShader = trap_R_RegisterShader( "rocketExplosion" );
+        //*****************************************/
 		break;
 
 	case WP_BFG:
@@ -1282,7 +1285,7 @@ void CG_AddPlayerWeapon( refEntity_t *parent, playerState_t *ps, centity_t *cent
 
 	CG_PositionEntityOnTag( &gun, parent, parent->hModel, "tag_weapon");
 
-	CG_AddWeaponWithPowerups( &gun, cent->currentState.powerups );
+	// SPAAACE dont draw weapons CG_AddWeaponWithPowerups( &gun, cent->currentState.powerups );
 
 	// add the spinning barrel
 	if ( weapon->barrelModel ) {
@@ -1313,6 +1316,12 @@ void CG_AddPlayerWeapon( refEntity_t *parent, playerState_t *ps, centity_t *cent
 	}
 
 	// add the flash
+	/* SPAAACE Only show muzzle flash with force gun
+    if(weaponNum == WP_LIGHTNING) {
+		return;
+	}
+	//*/
+
 	if ( ( weaponNum == WP_LIGHTNING || weaponNum == WP_GAUNTLET || weaponNum == WP_GRAPPLING_HOOK )
 		&& ( nonPredictedCent->currentState.eFlags & EF_FIRING ) ) 
 	{
@@ -1384,7 +1393,7 @@ void CG_AddViewWeapon( playerState_t *ps )
 
 /*******************************************************/
 	//Don't show guns, cause they're crazy son.-JG
-	cg_drawGun.integer=0;//return;
+	cg_drawGun.integer=1;//return;
 /*******************************************************/
 
 	if ( ps->persistant[PERS_TEAM] == TEAM_SPECTATOR ) {
@@ -1727,10 +1736,12 @@ void CG_FireWeapon( centity_t *cent ) {
 		}
 	}
 
+	/* SPAAACE Don't play quad damage sound
 	// play quad sound if needed
 	if ( cent->currentState.powerups & ( 1 << PW_QUAD ) ) {
 		trap_S_StartSound (NULL, cent->currentState.number, CHAN_ITEM, cgs.media.quadSound );
 	}
+	//*/
 
 	// play a sound
 	for ( c = 0 ; c < 4 ; c++ ) {
@@ -1815,8 +1826,10 @@ void CG_MissileHitWall( int weapon, int clientNum, vec3_t origin, vec3_t dir, im
 		} else {
 			sfx = cgs.media.sfx_lghit3;
 		}
-		mark = cgs.media.holeMarkShader;
-		radius = 12;
+//****SPAAACE!*************no burn mark for using thrust
+		//mark = cgs.media.holeMarkShader;							//original code
+//*****************************************************/
+		radius = 12;	
 		break;
 #ifdef MISSIONPACK
 	case WP_PROX_LAUNCHER:
@@ -1862,7 +1875,9 @@ void CG_MissileHitWall( int weapon, int clientNum, vec3_t origin, vec3_t dir, im
 		mod = cgs.media.ringFlashModel;
 		shader = cgs.media.railExplosionShader;
 		sfx = cgs.media.sfx_plasmaexp;
+		//* SPAAACE disable broken burn mark for laser
 		mark = cgs.media.energyMarkShader;
+		//*/
 		radius = 24;
 		break;
 	case WP_PLASMAGUN:
@@ -1953,6 +1968,10 @@ void CG_MissileHitWall( int weapon, int clientNum, vec3_t origin, vec3_t dir, im
 	//
 	// impact mark
 	//
+//****SPAAACE!*************no burn mark for using thrust
+    if(mark)
+	{
+//*****************************************************/
 	alphaFade = (mark == cgs.media.energyMarkShader);	// plasma fades alpha, all others fade color
 	if ( weapon == WP_RAILGUN ) {
 		float	*color;
@@ -1963,6 +1982,9 @@ void CG_MissileHitWall( int weapon, int clientNum, vec3_t origin, vec3_t dir, im
 	} else {
 		CG_ImpactMark( mark, origin, dir, random()*360, 1,1,1,1, alphaFade, radius, qfalse );
 	}
+//****SPAAACE!*************no burn mark for using thrust
+	}
+//**************************************************/
 }
 
 

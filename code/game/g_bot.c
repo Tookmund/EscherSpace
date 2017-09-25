@@ -432,7 +432,8 @@ void G_CheckMinimumPlayers( void ) {
 			G_RemoveRandomBot( TEAM_BLUE );
 		}
 	}
-	else if (g_gametype.integer == GT_TOURNAMENT ) {
+	/* SPAAACE treat drone mode like FFA
+	else if (g_gametype.integer == GT_DRONE ) {
 		if (minplayers >= g_maxclients.integer) {
 			minplayers = g_maxclients.integer-1;
 		}
@@ -449,7 +450,8 @@ void G_CheckMinimumPlayers( void ) {
 			}
 		}
 	}
-	else if (g_gametype.integer == GT_FFA) {
+	//*/
+	else if (g_gametype.integer == GT_FFA/* SPAAACE */ || g_gametype.integer == GT_DRONE) {
 		if (minplayers >= g_maxclients.integer) {
 			minplayers = g_maxclients.integer-1;
 		}

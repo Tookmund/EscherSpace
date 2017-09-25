@@ -22,7 +22,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
 #include "g_local.h"
-
+//* SPAAACE header
+#include "SPAAACE.h"
+//*/
 
 /*
 ===============
@@ -100,6 +102,9 @@ void P_WorldEffects( gentity_t *ent ) {
 	qboolean	envirosuit;
 	int			waterlevel;
 
+	//* SPAAACE no drowning in spacesuits
+	return;
+	//*/
 	if ( ent->client->noclip ) {
 		ent->client->airOutTime = level.time + 12000;	// don't need air
 		return;
@@ -438,6 +443,7 @@ void ClientTimerActions( gentity_t *ent, int msec ) {
 				G_AddEvent( ent, EV_POWERUP_REGEN, 0 );
 			}
 #else
+		/* SPAAACE use regen for invincibility
 		if ( client->ps.powerups[PW_REGEN] ) {
 			if ( ent->health < client->ps.stats[STAT_MAX_HEALTH]) {
 				ent->health += 15;
@@ -452,13 +458,14 @@ void ClientTimerActions( gentity_t *ent, int msec ) {
 				}
 				G_AddEvent( ent, EV_POWERUP_REGEN, 0 );
 			}
+			//*/
 #endif
-		} else {
+		// SPAAACE } else {
 			// count down health when over max
 			if ( ent->health > client->ps.stats[STAT_MAX_HEALTH] ) {
 				ent->health--;
 			}
-		}
+		// SPAAACE }
 
 		// count down armor when over max
 		if ( client->ps.stats[STAT_ARMOR] > client->ps.stats[STAT_MAX_HEALTH] ) {
@@ -475,7 +482,6 @@ void ClientTimerActions( gentity_t *ent, int msec ) {
 		}
 		//*/
 
-	}
 #ifdef MISSIONPACK
 	if( bg_itemlist[client->ps.stats[STAT_PERSISTANT_POWERUP]].giTag == PW_AMMOREGEN ) {
 		int w, max, inc, t, i;
@@ -515,6 +521,7 @@ void ClientTimerActions( gentity_t *ent, int msec ) {
 	}
 #endif
 }
+}
 
 /*
 ====================
@@ -547,6 +554,9 @@ but any server game effects are handled here
 */
 void ClientEvents( gentity_t *ent, int oldEventSequence ) {
 	int		i, j;
+	//* SPAACE toggle gravity
+	int g;
+	//*/
 	int		event;
 	gclient_t *client;
 	int		damage;
@@ -565,6 +575,8 @@ void ClientEvents( gentity_t *ent, int oldEventSequence ) {
 		event = client->ps.events[ i & (MAX_PS_EVENTS-1) ];
 
 		switch ( event ) {
+		//* SPAAACE damage when you hit the ground
+		case EV_FALL_SHORT:
 		case EV_FALL_MEDIUM:
 		case EV_FALL_FAR:
 			if ( ent->s.eType != ET_PLAYER ) {
@@ -582,8 +594,24 @@ void ClientEvents( gentity_t *ent, int oldEventSequence ) {
 			ent->pain_debounce_time = level.time + 200;	// no normal pain sound
 /**************************** Sandro *********** Commented out fall damage ********* 3/14/08 *******/
 		//G_Damage (ent, NULL, NULL, NULL, NULL, damage, 0, MOD_FALLING);
+			//* SPAAACE take damage when you hit the ground
+			if (ent->client->ps.persistant[PERS_GAMETYPE] == GT_DRONE && g_gravity.value >= 100) {
+				G_Damage (ent, NULL, NULL, NULL, NULL, 5, 0, MOD_FALLING);
+			}
+			//*/
 			break;
-
+	//* SPAAACE wall damage handling
+		case EV_WALL:
+			if ( ent->s.eType != ET_PLAYER ) {
+				break;		// not in the player model
+			}
+			if (ent->client->ps.persistant[PERS_GAMETYPE] != GT_DRONE) {
+				return;
+			}
+			ent->pain_debounce_time = level.time + 200;
+			if (g_gravity.value >= 100) G_Damage (ent, NULL, NULL, NULL, NULL, 2, 0, MOD_FALLING);
+			break;
+	//*/
 		case EV_FIRE_WEAPON:
 			FireWeapon( ent );
 			break;
@@ -666,7 +694,26 @@ void ClientEvents( gentity_t *ent, int oldEventSequence ) {
 			ent->client->invulnerabilityTime = level.time + 10000;
 			break;
 #endif
-
+		
+		//**************************SPAAACE toggle gravity
+		case EV_TAUNT:
+			//if (ent->client->ps.persistant[PERS_GAMETYPE] != GT_DRONE)
+			if(ent->client->ps.powerups[PW_QUAD] || ent->client->ps.powerups[PW_REDFLAG] || ent->client->ps.powerups[PW_BLUEFLAG])
+			{
+				if (g_gravity.value < 100) 
+				{
+					g = 800;
+					trap_SendConsoleCommand( EXEC_APPEND, va( "play sound/feedback/voc_holyshit.wav\n") );
+				}
+				else if (g_gravity.value >= 100) 
+				{
+					g = 25;
+					trap_SendConsoleCommand( EXEC_APPEND, va( "play sound/feedback/voc_holyshit2.wav\n") );
+				}
+				trap_SendConsoleCommand( EXEC_INSERT, va("seta g_gravity %i\n", g) );
+			}
+			break;
+		//***************************************************/
 		default:
 			break;
 		}
@@ -772,6 +819,13 @@ void ClientThink_real( gentity_t *ent ) {
 	int			msec;
 	usercmd_t	*ucmd;
 
+	//* SPAAACE stick to ground init
+	vec3_t forward, right, up, muzzle, end, down;
+	trace_t trace;
+	int DROP_DISTANCE;
+	DROP_DISTANCE = 130;
+	//*/
+	
 	client = ent->client;
 
 	// don't think if the client is not yet connected (and thus not yet spawned in)
@@ -850,12 +904,19 @@ void ClientThink_real( gentity_t *ent ) {
 	}
 
 	client->ps.gravity = g_gravity.value;
-
+	
 	// set speed
 	/*************************************************/
 	//Lower Speed so I don't go blind while testing-JG 2/29/08
 	client->ps.speed = g_speed.value;//g_speed.value;
 	/*************************************************/
+	/* SPAAACE speed up
+	if (ucmd->buttons & BUTTON_WALKING)
+	{
+		client->ps.speed *= 3;
+	}
+	//*/
+
 
 #ifdef MISSIONPACK
 	if( bg_itemlist[client->ps.stats[STAT_PERSISTANT_POWERUP]].giTag == PW_SCOUT ) {
@@ -919,6 +980,7 @@ void ClientThink_real( gentity_t *ent ) {
 
 	pm.ps = &client->ps;
 	pm.cmd = *ucmd;
+	
 	if ( pm.ps->pm_type == PM_DEAD ) {
 		pm.tracemask = MASK_PLAYERSOLID & ~CONTENTS_BODY;
 	}
@@ -984,6 +1046,22 @@ void ClientThink_real( gentity_t *ent ) {
 
 	ent->waterlevel = pm.waterlevel;
 	ent->watertype = pm.watertype;
+
+	//* SPAAACE stick to ground
+	if (client->pers.cmd.forwardmove < 0 && client->ps.persistant[PERS_GAMETYPE] != GT_DRONE)
+	{
+		CalcVecDir(&pm, forward, right, up, muzzle);
+		VectorNegate(up,down);
+		// project down by half lightning range
+		VectorMA(pm.ps->origin, DROP_DISTANCE, down, end);
+		pm.trace(&trace, pm.ps->origin, vec3_origin, vec3_origin, end, pm.ps->clientNum, MASK_SHOT);
+		if (trace.fraction < 1.0f && trace.fraction > 0.2f)
+		{
+			VectorScale(down,20,down);
+			VectorCopy(down,pm.ps->velocity);
+		}
+	}
+	//*/
 
 	// execute client events
 	ClientEvents( ent, oldEventSequence );

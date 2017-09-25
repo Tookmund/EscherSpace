@@ -96,12 +96,15 @@ static startserver_t s_startserver;
 static const char *gametype_items[] = {
 	"Free For All",
 	"Team Deathmatch",
-	"Tournament",
+	//* SPAAACE drone mode
+	//"Tournament",
+	"Drone",
+	//*/
 	"Capture the Flag",
 	0
 };
 
-static int gametype_remap[] = {GT_FFA, GT_TEAM, GT_TOURNAMENT, GT_CTF};
+static int gametype_remap[] = {GT_FFA, GT_TEAM, GT_DRONE, GT_CTF};
 static int gametype_remap2[] = {0, 2, 0, 1, 3};
 
 // use ui_servers2.c definition
@@ -134,7 +137,7 @@ static int GametypeBits( char *string ) {
 		}
 
 		if( Q_stricmp( token, "tourney" ) == 0 ) {
-			bits |= 1 << GT_TOURNAMENT;
+			bits |= 1 << GT_DRONE;
 			continue;
 		}
 
@@ -804,7 +807,7 @@ static void ServerOptions_Start( void ) {
 		trap_Cvar_SetValue( "g_speed", speedValue );
 		break;
 
-	case GT_TOURNAMENT:
+	case GT_DRONE:
 		trap_Cvar_SetValue( "ui_tourney_fraglimit", fraglimit );
 		trap_Cvar_SetValue( "ui_tourney_timelimit", timelimit );
 		trap_Cvar_SetValue( "g_speed", speedValue  );
@@ -1067,7 +1070,7 @@ static void ServerOptions_SpeedStatusBar( void* ptr ) {
 static void ServerOptions_GravStatusBar( void* ptr ) {
 	switch( ((menucommon_s*)ptr)->id ) {
 	default:
-		UI_DrawString( 320, 440, "600 = Standard", UI_CENTER|UI_SMALLFONT, colorWhite );
+		UI_DrawString( 320, 440, "800 = Standard", UI_CENTER|UI_SMALLFONT, colorWhite );
 		break;
 	}
 }
@@ -1204,24 +1207,27 @@ ServerOptions_SetMenuItems
 static void ServerOptions_SetMenuItems( void ) {
 	static char picname[64];
 	/*****************************************************/
+	// SPAAACE make speed modification easier
+	const int spd = 3;
 	//Added g_speed variable-JG 3/6/08
+
 	switch( s_serveroptions.gametype ) {
 	case GT_FFA:
-		// SPAAACE change com sprintf default value from 2 to 3
+	// SPAAACE speed default from 2 to 3
 	default:
 		Com_sprintf( s_serveroptions.fraglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ffa_fraglimit" ) ) );
 		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ffa_timelimit" ) ) );
-		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 3/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
+		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, spd/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
 /****************************************************************************************************************************************************************/
 		//03-03-08-JG
 		Com_sprintf( s_serveroptions.maxclients.field.buffer, 4, "%i", (int)Com_Clamp( 1, 32, trap_Cvar_VariableValue( "sv_maxclients" ) ) );
 /****************************************************************************************************************************************************************/
 		break;
 
-	case GT_TOURNAMENT:
+	case GT_DRONE:
 		Com_sprintf( s_serveroptions.fraglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_tourney_fraglimit" ) ) );
 		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_tourney_timelimit" ) ) );
-		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 3/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
+		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, spd/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
 /****************************************************************************************************************************************************************/
 		//03-03-08-JG
 		Com_sprintf( s_serveroptions.maxclients.field.buffer, 4, "%i", (int)Com_Clamp( 1, 32, trap_Cvar_VariableValue( "sv_maxclients" ) ) );
@@ -1231,7 +1237,7 @@ static void ServerOptions_SetMenuItems( void ) {
 	case GT_TEAM:
 		Com_sprintf( s_serveroptions.fraglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_team_fraglimit" ) ) );
 		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_team_timelimit" ) ) );
-		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 3/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
+		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, spd/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
 		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_team_friendly" ) );
 /****************************************************************************************************************************************************************/
 		//03-03-08-JG
@@ -1242,7 +1248,7 @@ static void ServerOptions_SetMenuItems( void ) {
 	case GT_CTF:
 		Com_sprintf( s_serveroptions.flaglimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 100, trap_Cvar_VariableValue( "ui_ctf_capturelimit" ) ) );
 		Com_sprintf( s_serveroptions.timelimit.field.buffer, 4, "%i", (int)Com_Clamp( 0, 999, trap_Cvar_VariableValue( "ui_ctf_timelimit" ) ) );
-		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, 3/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
+		Com_sprintf( s_serveroptions.playerspeed.field.buffer, 4, "%i", (int)Com_Clamp(0, 999, spd/*trap_Cvar_VariableValue( "g_speed" )*/ ) );
 		s_serveroptions.friendlyfire.curvalue = (int)Com_Clamp( 0, 1, trap_Cvar_VariableValue( "ui_ctf_friendly" ) );
 /****************************************************************************************************************************************************************/
 		//03-03-08-JG

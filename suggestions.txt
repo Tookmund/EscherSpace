@@ -5,3 +5,6 @@ use that value in bg_pmove PM_CheckDuck method to set the pm->ps->viewheight
 to the croucn viewheight when on the ceiling so all items are visible.
 
 -make sure to disable all other uses of that award
+
+
+make flags also spawn and be pickupable in TEAM games (holding a flag gives the power to toggle gravity)

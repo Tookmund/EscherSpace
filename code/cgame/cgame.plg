@@ -6,13 +6,38 @@
 --------------------Configuration: cgame - Win32 Debug--------------------
 </h3>
 <h3>Command Lines</h3>
-Creating temporary file "C:\Users\2130CO~1\AppData\Local\Temp\RSP27FC.tmp" with contents
+Creating temporary file "C:\Users\2130CO~1\AppData\Local\Temp\RSP63FB.tmp" with contents
 [
 /nologo /G5 /MTd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /FR"Debug/" /Fp"Debug/cgame.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /c 
+"C:\ygpip\quake3\escherspace\code\game\bg_misc.c"
 "C:\ygpip\quake3\escherspace\code\game\bg_pmove.c"
+"C:\ygpip\quake3\escherspace\code\game\bg_slidemove.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_consolecmds.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_draw.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_drawtools.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_effects.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_ents.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_event.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_info.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_localents.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_main.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_marks.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_players.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_playerstate.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_predict.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_scoreboard.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_servercmds.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_snapshot.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_syscalls.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_view.c"
+"C:\ygpip\quake3\escherspace\code\cgame\cg_weapons.c"
+"C:\ygpip\quake3\escherspace\code\game\q_math.c"
+"C:\ygpip\quake3\escherspace\code\game\q_shared.c"
+"C:\ygpip\quake3\escherspace\code\game\SPAAACE.c"
+"C:\ygpip\quake3\escherspace\code\ui\ui_shared.c"
 ]
-Creating command line "cl.exe @C:\Users\2130CO~1\AppData\Local\Temp\RSP27FC.tmp" 
-Creating temporary file "C:\Users\2130CO~1\AppData\Local\Temp\RSP27FD.tmp" with contents
+Creating command line "cl.exe @C:\Users\2130CO~1\AppData\Local\Temp\RSP63FB.tmp" 
+Creating temporary file "C:\Users\2130CO~1\AppData\Local\Temp\RSP640B.tmp" with contents
 [
 /nologo /base:"0x30000000" /subsystem:windows /dll /incremental:yes /pdb:"Debug/cgamex86.pdb" /map:"Debug/cgamex86.map" /debug /machine:I386 /def:".\cgame.def" /out:"C:\ygpip\quake3\escherspace\cgamex86.dll" /implib:"Debug/cgamex86.lib" 
 .\Debug\bg_misc.obj
@@ -42,11 +67,37 @@ Creating temporary file "C:\Users\2130CO~1\AppData\Local\Temp\RSP27FD.tmp" with 
 .\Debug\SPAAACE.obj
 .\Debug\ui_shared.obj
 ]
-Creating command line "link.exe @C:\Users\2130CO~1\AppData\Local\Temp\RSP27FD.tmp"
+Creating command line "link.exe @C:\Users\2130CO~1\AppData\Local\Temp\RSP640B.tmp"
 <h3>Output Window</h3>
 Compiling...
+bg_misc.c
 bg_pmove.c
+bg_slidemove.c
+cg_consolecmds.c
+cg_draw.c
+cg_drawtools.c
+cg_effects.c
+cg_ents.c
+cg_event.c
+cg_info.c
+cg_localents.c
+cg_main.c
+cg_marks.c
+cg_players.c
+cg_playerstate.c
+cg_predict.c
+cg_scoreboard.c
+cg_servercmds.c
+cg_snapshot.c
+cg_syscalls.c
+cg_view.c
+cg_weapons.c
+q_math.c
+q_shared.c
+SPAAACE.c
+ui_shared.c
 Linking...
+   Creating library Debug/cgamex86.lib and object Debug/cgamex86.exp
 
 
 

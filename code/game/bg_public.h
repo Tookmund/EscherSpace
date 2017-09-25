@@ -40,7 +40,8 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #define	ITEM_RADIUS			15		// item sizes are needed for client side pickup detection
 
-#define	LIGHTNING_RANGE		768
+//* SPAAACE limit lightning range
+#define	LIGHTNING_RANGE		/*768*/40
 
 #define	SCORE_NOT_PRESENT	-9999	// for the CS_SCORES[12] when only one player is present
 
@@ -96,7 +97,10 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 typedef enum {
 	GT_FFA,				// free for all
-	GT_TOURNAMENT,		// one on one tournament
+	//* SPAAACE drone mode
+	//GT_TOURNAMENT,		// one on one tournament
+	GT_DRONE,
+	//*/
 	GT_SINGLE_PLAYER,	// single player ffa
 
 	//-- team games go after this --
@@ -241,20 +245,27 @@ typedef enum {
 	PERS_SPAWN_COUNT,				// incremented every respawn
 	PERS_PLAYEREVENTS,				// 16 bits that can be flipped for events
 	PERS_ATTACKER,					// clientnum of last damage inflicter
-	PERS_ATTACKEE_ARMOR,			// health/armor of last person we attacked
+	//* SPAAACE gametype awards
+	//PERS_ATTACKEE_ARMOR,			// health/armor of last person we attacked
+	PERS_GAMETYPE,
+	//*/
 	PERS_KILLED,					// count of the number of times you died
 	// player awards tracking
-	/* SPAAAACE awards
+	/* SPAAAACE origin awards
 	PERS_IMPRESSIVE_COUNT,			// two railgun hits in a row
 	PERS_EXCELLENT_COUNT,			// two successive kills in a short amount of time
 	PERS_DEFEND_COUNT,				// defend awards
 	*/
+    PERS_VIEW_CHANGE_TIME,
+
 	PERS_ORIGIN0,
 	PERS_ORIGIN1,
 	PERS_ORIGIN2,
 	//*/
 	PERS_ASSIST_COUNT,				// assist awards
+	//* SPAAACE GAUNTLET used as wallwalk toggle
 	PERS_GAUNTLET_FRAG_COUNT,		// kills with the guantlet
+	//*/
 	PERS_CAPTURES					// captures
 } persEnum_t;
 
@@ -397,7 +408,9 @@ typedef enum {
 	EV_NOAMMO,
 	EV_CHANGE_WEAPON,
 	EV_FIRE_WEAPON,
-
+//* SPAAACE Alt fire event
+	EV_FIRE_WEAPON2,
+	//*/
 	EV_USE_ITEM0,
 	EV_USE_ITEM1,
 	EV_USE_ITEM2,
@@ -472,7 +485,12 @@ typedef enum {
 
 //Sandro Launchpad/Teleport Stuff 3/7/8 **************8
 	EV_JUMP_PAD_ENTITY,
-
+	//* SPAAACE wallwalk toggle
+	EV_AUTOORIENT,
+	EV_MANUALORIENT,
+	//*/
+	//* SPAAACE wall damage
+	EV_WALL,
 }
  entity_event_t;
 
@@ -771,6 +789,12 @@ void Inv_QuatToMatrix(vec4_t Quat, vec3_t Matrix[3]);
 
 qboolean Inv_ApplyGravityRotation(float Time, vec4_t Final);
 extern vec3_t Gravity;
+/* SPAACE allow Wall Walk to be accessed from everywhere
+extern qboolean WallTog;
+//*/
 /************************************************************/
 /****************************END WALLWALKING JG**********************************/
 
+//*****SPAAACE********************precache player models at map start
+extern char *playerModels[4];
+/******************************************/

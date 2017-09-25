@@ -137,6 +137,28 @@ void CG_LoadingClient( int clientNum ) {
 	CG_LoadingString( personality );
 }
 
+//******SPAAACE****precache player models on map start
+void CG_CachingClient(char *model, char *skin)
+{
+	char iconName[MAX_QPATH];
+	char *s;
+
+	Com_sprintf(iconName, MAX_QPATH, "models/players/%s/icon_%s.tga", model, skin);
+
+	if (loadingPlayerIconCount < MAX_LOADING_PLAYER_ICONS)
+	{
+		loadingPlayerIcons[loadingPlayerIconCount++] = trap_R_RegisterShaderNoMip(iconName);
+	}
+
+	s = va("%s (in cache)", model);
+	CG_LoadingString(s);
+}
+
+void CG_ResetLoadingIcons(void)
+{
+	loadingPlayerIconCount = 0;
+}
+//******---************************************/
 
 /*
 ====================
@@ -241,8 +263,11 @@ void CG_DrawInformation( void ) {
 	case GT_SINGLE_PLAYER:
 		s = "Single Player";
 		break;
-	case GT_TOURNAMENT:
-		s = "Tournament";
+	case GT_DRONE:
+		//* SPAAACE drone mode
+		s = "Drone";
+		//s = "Tournament";
+		//*/
 		break;
 	case GT_TEAM:
 		s = "Team Deathmatch";

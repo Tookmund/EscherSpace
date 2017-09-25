@@ -277,8 +277,11 @@ void body_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int d
 		self->health = GIB_HEALTH+1;
 		return;
 	}
-
-	GibEntity( self, 0 );
+//******SPAAACE*************don't gib bodies unless they are drones
+	self->health = GIB_HEALTH+1;
+	self->takedamage = qfalse;
+	//GibEntity( self, 0 );			//original code
+//*****------********************/
 }
 
 
@@ -518,7 +521,7 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 			if( meansOfDeath == MOD_GAUNTLET ) {
 				
 				// play humiliation on player
-				attacker->client->ps.persistant[PERS_GAUNTLET_FRAG_COUNT]++;
+				// SPAAACE attacker->client->ps.persistant[PERS_GAUNTLET_FRAG_COUNT]++;
 
 				// add the sprite over the player's head
 				attacker->client->ps.eFlags &= ~(EF_AWARD_IMPRESSIVE | EF_AWARD_EXCELLENT | EF_AWARD_GAUNTLET | EF_AWARD_ASSIST | EF_AWARD_DEFEND | EF_AWARD_CAP );
@@ -633,10 +636,20 @@ void player_die( gentity_t *self, gentity_t *inflictor, gentity_t *attacker, int
 	memset( self->client->ps.powerups, 0, sizeof(self->client->ps.powerups) );
 
 	// never gib in a nodrop
-	if ( (self->health <= GIB_HEALTH && !(contents & CONTENTS_NODROP) && g_blood.integer) || meansOfDeath == MOD_SUICIDE) {
+/*************SPAAACE*******no Gibbing unless you are a drone
+	// never gib in a nodrop
+	if ( (self->health <= GIB_HEALTH && !(contents & CONTENTS_NODROP) && g_blood.integer) || meansOfDeath == MOD_SUICIDE) 
+	{
 		// gib death
 		GibEntity( self, killer );
-	} else {
+	} 
+	else		//original code
+*/
+	if(g_gametype.integer == GT_DRONE)
+		GibEntity( self, 0 );
+	else
+//*****************-----**************/
+	{
 		// normal death
 		static int i;
 
@@ -831,11 +844,15 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 #ifdef MISSIONPACK
 	vec3_t		bouncedir, impactpoint;
 #endif
-
+	
 	if (!targ->takedamage) {
 		return;
 	}
-
+	//* SPAAACE don't take damage if target has regen
+	if (targ && targ->client && targ->client->ps.powerups[PW_REGEN]) {
+		return;
+	}
+	//*/
 	// the intermission has allready been qualified for, so don't
 	// allow any extra scoring
 	if ( level.intermissionQueued ) {
@@ -906,6 +923,12 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 	if ( dflags & DAMAGE_NO_KNOCKBACK ) {
 		knockback = 0;
 	}
+
+//*************SPAAACE************no knockback from enemy weapons
+	//for attacker onto victim
+	//if(targ->client && attacker->client && attacker != targ)
+		knockback = 0;
+//******************************************************************
 
 	// figure momentum add, even if the damage won't be taken
 	if ( knockback && targ->client ) {
@@ -984,7 +1007,7 @@ void G_Damage( gentity_t *targ, gentity_t *inflictor, gentity_t *attacker,
 		} else {
 			attacker->client->ps.persistant[PERS_HITS]++;
 		}
-		attacker->client->ps.persistant[PERS_ATTACKEE_ARMOR] = (targ->health<<8)|(client->ps.stats[STAT_ARMOR]);
+		// SPAAACE attacker->client->ps.persistant[PERS_ATTACKEE_ARMOR] = (targ->health<<8)|(client->ps.stats[STAT_ARMOR]);
 	}
 
 	// always give half damage if hurting self

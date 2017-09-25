@@ -62,6 +62,9 @@ qboolean	PM_SlideMove(qboolean gravity)
 			// slide along the ground plane
 			PM_ClipVelocity (pm->ps->velocity, pml.groundTrace.plane.normal,
 				pm->ps->velocity, OVERCLIP);
+			//* SPAAACE take damage when you hit the ground in drone
+			Com_Printf("Ground!\n");
+			//*/
 		}
 	}
 
@@ -315,7 +318,11 @@ void PM_StepSlideMove(qboolean gravity)
 	VectorCopy (trace.endpos, pm->ps->origin);
 	VectorCopy (start_v, pm->ps->velocity);
 
-	PM_SlideMove(gravity);
+	//* SPAAACE take damage when hitting walls in drone mode
+	if (PM_SlideMove(gravity) && pm->ps->persistant[PERS_GAMETYPE] == GT_DRONE) {
+		PM_AddEvent(EV_WALL);
+	}
+	//*/
 
 	// push down the final amount
 	VectorCopy (pm->ps->origin, down);

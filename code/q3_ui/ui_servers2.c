@@ -108,7 +108,10 @@ static const char *servertype_items[] = {
 	"All",
 	"Free For All",
 	"Team Deathmatch",
-	"Tournament",
+	//* SPAAACE drone mode
+	"Drone"
+	//"Tournament",
+	//*/
 	"Capture the Flag",
 	0
 };
@@ -501,7 +504,7 @@ static void ArenaServers_UpdateMenu( void ) {
 			break;
 
 		case GAMES_TOURNEY:
-			if( servernodeptr->gametype != GT_TOURNAMENT ) {
+			if( servernodeptr->gametype != GT_DRONE ) {
 				continue;
 			}
 			break;

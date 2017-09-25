@@ -848,7 +848,9 @@ static int CG_CalcFov( void ) {
 					if( fov_x > 160 )
 						fov_x = 160;
 		}
-
+		//* SPAAACE set FOV in drone
+		if (cg.snap->ps.persistant[PERS_GAMETYPE] == GT_DRONE) fov_x = 120;
+		//*/
 		// account for zooms
 		zoomFov = cg_zoomFov.value;
 		if ( zoomFov < 1 ) {

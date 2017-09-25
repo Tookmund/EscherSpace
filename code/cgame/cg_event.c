@@ -541,7 +541,8 @@ void CG_EntityEvent( centity_t *cent, vec3_t position ) {
 	case EV_FALL_MEDIUM:
 		DEBUGNAME("EV_FALL_MEDIUM");
 		// use normal pain sound
-		trap_S_StartSound( NULL, es->number, CHAN_VOICE, CG_CustomSound( es->number, "*pain100_1.wav" ) );
+		// SPAAACE use custom land sound
+		trap_S_StartSound( NULL, es->number, CHAN_VOICE, cgs.media.landSound );//CG_CustomSound( es->number, "*pain100_1.wav" ) );
 		if ( clientNum == cg.predictedPlayerState.clientNum ) {
 			// smooth landing z changes
 			cg.landChange = -16;
@@ -550,7 +551,8 @@ void CG_EntityEvent( centity_t *cent, vec3_t position ) {
 		break;
 	case EV_FALL_FAR:
 		DEBUGNAME("EV_FALL_FAR");
-		trap_S_StartSound (NULL, es->number, CHAN_AUTO, CG_CustomSound( es->number, "*fall1.wav" ) );
+		// SPAAACE use custom land sound
+		trap_S_StartSound (NULL, es->number, CHAN_AUTO, cgs.media.landSound ); //CG_CustomSound( es->number, "*fall1.wav" ) );
 		cent->pe.painTime = cg.time;	// don't play a pain sound right after this
 		if ( clientNum == cg.predictedPlayerState.clientNum ) {
 			// smooth landing z changes
@@ -558,7 +560,11 @@ void CG_EntityEvent( centity_t *cent, vec3_t position ) {
 			cg.landTime = cg.time;
 		}
 		break;
-
+//* SPAAACE wall damage client
+	case EV_WALL:
+		DEBUGNAME("EV_WALL");
+		break;
+//*/
 	case EV_STEP_4:
 	case EV_STEP_8:
 	case EV_STEP_12:
@@ -670,7 +676,9 @@ void CG_EntityEvent( centity_t *cent, vec3_t position ) {
 		break;
 	case EV_TAUNT:
 		DEBUGNAME("EV_TAUNT");
+		/* SPAAACE disable taunt sound
 		trap_S_StartSound (NULL, es->number, CHAN_VOICE, CG_CustomSound( es->number, "*taunt.wav" ) );
+		//*/
 		break;
 #ifdef MISSIONPACK
 	case EV_TAUNT_YES:
@@ -799,6 +807,8 @@ void CG_EntityEvent( centity_t *cent, vec3_t position ) {
 		trap_S_StartSound (NULL, es->number, CHAN_AUTO, cgs.media.selectSound );
 		break;
 	case EV_FIRE_WEAPON:
+	//* SPAAACE Alt fire
+	case EV_FIRE_WEAPON2:
 		DEBUGNAME("EV_FIRE_WEAPON");
 		CG_FireWeapon( cent );
 		break;
@@ -1202,7 +1212,18 @@ void CG_EntityEvent( centity_t *cent, vec3_t position ) {
 		DEBUGNAME("EV_DEBUG_LINE");
 		CG_Beam( cent );
 		break;
-
+	//* SPAAACE wallwalk toggle
+	case EV_AUTOORIENT:
+		DEBUGNAME("EV_AUTOORIENT");
+		if ( es->number == cg.snap->ps.clientNum )
+			CG_CenterPrint("AUTO ORIENTATION", SCREEN_HEIGHT * .90, BIGCHAR_WIDTH/1.5);
+		break;
+	case EV_MANUALORIENT:
+		DEBUGNAME("EV_MANUALORIENT");
+		if ( es->number == cg.snap->ps.clientNum )
+			CG_CenterPrint("MANUAL ORIENTATION", SCREEN_HEIGHT * .90, BIGCHAR_WIDTH/1.5);
+		break;
+	//*/
 	default:
 		DEBUGNAME("UNKNOWN");
 		CG_Error( "Unknown event: %i", event );

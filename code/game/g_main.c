@@ -970,10 +970,12 @@ void BeginIntermission( void ) {
 		return;		// already active
 	}
 
+	/* SPAAACE dont bother with tournament scores
 	// if in tournement mode, change the wins / losses
-	if ( g_gametype.integer == GT_TOURNAMENT ) {
+	if ( g_gametype.integer == GT_DRONE ) {
 		AdjustTournamentScores();
 	}
+	//*/
 
 	level.intermissiontime = level.time;
 	FindIntermissionPoint();
@@ -1025,9 +1027,10 @@ void ExitLevel (void) {
 	//bot interbreeding
 	BotInterbreedEndMatch();
 
+	/* SPAAACE dont kick to spectator in drone mode
 	// if we are running a tournement map, kick the loser to spectator status,
 	// which will automatically grab the next spectator and restart
-	if ( g_gametype.integer == GT_TOURNAMENT  ) {
+	if ( g_gametype.integer == GT_DRONE  ) {
 		if ( !level.restarted ) {
 			RemoveTournamentLoser();
 			trap_SendConsoleCommand( EXEC_APPEND, "map_restart 0\n" );
@@ -1037,6 +1040,7 @@ void ExitLevel (void) {
 		}
 		return;	
 	}
+	//*/
 
 
 	trap_SendConsoleCommand( EXEC_APPEND, "vstr nextmap\n" );
@@ -1404,8 +1408,10 @@ void CheckTournament( void ) {
 	if ( level.numPlayingClients == 0 ) {
 		return;
 	}
-
-	if ( g_gametype.integer == GT_TOURNAMENT ) {
+	//* SPAAACE what if we dont bother with checktournament
+	return;
+	//*/
+	if ( g_gametype.integer == GT_DRONE ) {
 
 		// pull in a spectator if needed
 		if ( level.numPlayingClients < 2 ) {

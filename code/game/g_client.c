@@ -498,13 +498,17 @@ respawn
 */
 void respawn( gentity_t *ent ) {
 	gentity_t	*tent;
-
-	CopyToBodyQue (ent);
+	
+	//* SPAAACE only add to body que if not in drone mode
+	if (ent->client->ps.persistant[PERS_GAMETYPE] != GT_DRONE) CopyToBodyQue (ent);
 	ClientSpawn(ent);
 
 	// add a teleportation effect
 	tent = G_TempEntity( ent->client->ps.origin, EV_PLAYER_TELEPORT_IN );
 	tent->s.clientNum = ent->s.clientNum;
+	//****SPAAACE*************refresh models
+      trap_SendServerCommand( -1, "loaddefered\n" );	
+   //******----***********************************************
 }
 
 /*
@@ -709,7 +713,9 @@ void ClientUserinfoChanged( int clientNum ) {
 	char	redTeam[MAX_INFO_STRING];
 	char	blueTeam[MAX_INFO_STRING];
 	char	userinfo[MAX_INFO_STRING];
-
+//*********SPAAACE********define random variable to select player model
+	int		random;
+//********----******************/
 	ent = g_entities + clientNum;
 	client = ent->client;
 
@@ -773,13 +779,41 @@ void ClientUserinfoChanged( int clientNum ) {
 	client->ps.stats[STAT_MAX_HEALTH] = client->pers.maxHealth;
 
 	// set model
-	if( g_gametype.integer >= GT_TEAM ) {
+//*******************************SPAAACE force model
+
+/*	if( g_gametype.integer >= GT_TEAM ) {		//original code	
 		Q_strncpyz( model, Info_ValueForKey (userinfo, "team_model"), sizeof( model ) );
 		Q_strncpyz( headModel, Info_ValueForKey (userinfo, "team_headmodel"), sizeof( headModel ) );
 	} else {
 		Q_strncpyz( model, Info_ValueForKey (userinfo, "model"), sizeof( model ) );
 		Q_strncpyz( headModel, Info_ValueForKey (userinfo, "headmodel"), sizeof( headModel ) );
+	}  */
+    if(Q_stricmp( model, "crash" ) || Q_stricmp( model, "doom" ) /*|| Q_stricmp( model, "orbb" ) */|| Q_stricmp( model, "warmach" ))
+	{
+		//* SPAAACE load warmach in drone mode
+		if(g_gametype.integer == GT_DRONE) {
+			Q_strncpyz( model, "warmach", sizeof( model ) );
+			Q_strncpyz( headModel, "warmach", sizeof( headModel ) );
+		}
+		else {
+		//*/
+		random = rand() % 2;
+		if(random == 0)
+		{
+			Q_strncpyz( model, "doom", sizeof( model ) );
+			Q_strncpyz( headModel, "doom", sizeof( headModel ) );
+		}
+		else
+		{
+			Q_strncpyz( model, "crash", sizeof( model ) );
+			Q_strncpyz( headModel, "crash", sizeof( headModel ) );
+		}
+		//*
+		}
+		//*/
 	}
+
+//**************************************************/
 
 	// bots set their team a few frames later
 	if (g_gametype.integer >= GT_TEAM && g_entities[clientNum].r.svFlags & SVF_BOT) {
@@ -1029,9 +1063,11 @@ void ClientBegin( int clientNum ) {
 		tent = G_TempEntity( ent->client->ps.origin, EV_PLAYER_TELEPORT_IN );
 		tent->s.clientNum = ent->s.clientNum;
 
-		if ( g_gametype.integer != GT_TOURNAMENT  ) {
+		//* SPAAACE always announce players
+		//if ( g_gametype.integer != GT_DRONE  ) {
 			trap_SendServerCommand( -1, va("print \"%s" S_COLOR_WHITE " entered the game\n\"", client->pers.netname) );
-		}
+		//*/}
+		
 	}
 	G_LogPrintf( "ClientBegin: %i\n", clientNum );
 
@@ -1195,6 +1231,10 @@ void ClientSpawn(gentity_t *ent) {
 	// health will count down towards max_health
 	ent->health = client->ps.stats[STAT_HEALTH] = client->ps.stats[STAT_MAX_HEALTH] + 25;
 
+	//* SPAAACE give regen after spawn
+	client->ps.powerups[PW_REGEN] = level.time + 5000;
+	//*/
+
 	G_SetOrigin( ent, spawn_origin );
 	VectorCopy( spawn_origin, client->ps.origin );
 
@@ -1263,6 +1303,10 @@ void ClientSpawn(gentity_t *ent) {
 
 	// clear entity state values
 	BG_PlayerStateToEntityState( &client->ps, &ent->s, qtrue );
+
+	//* SPAAACE store gametype in PERS_ATTACKEE_ARMOR
+	ent->client->ps.persistant[PERS_GAMETYPE] = g_gametype.integer;
+	//*/
 }
 
 
@@ -1322,12 +1366,14 @@ void ClientDisconnect( int clientNum ) {
 	G_LogPrintf( "ClientDisconnect: %i\n", clientNum );
 
 	// if we are playing in tourney mode and losing, give a win to the other player
-	if ( (g_gametype.integer == GT_TOURNAMENT )
+	/* SPAAACE don't give wins in drone mode
+	if ( (g_gametype.integer == GT_DRONE )
 		&& !level.intermissiontime
 		&& !level.warmupTime && level.sortedClients[1] == clientNum ) {
 		level.clients[ level.sortedClients[0] ].sess.wins++;
 		ClientUserinfoChanged( level.sortedClients[0] );
 	}
+	//*/
 
 	trap_UnlinkEntity (ent);
 	ent->s.modelindex = 0;
